@@ -1,0 +1,48 @@
+[
+  {
+    "company": "BeIT",
+    "position": "Front End Programmer",
+    "location": "Bogor",
+    "date": "01/2020 - Current",
+    "functions": [
+      "On working...",
+      "On working...",
+      "On working..."
+    ]
+  },
+  {
+    "company": "Ink And Canvas",
+    "position": "Back End Programmer",
+    "location": "Bogor",
+    "date": "11/2017 - 10/2019",
+    "functions": [
+      "Worked closely with clients to establish problem, specifications and system designs.",
+      "Coordinated with the team in developing project plans and solutions.",
+      "Built, tested, deployed, and modified applications.",
+      "Tuned up code from the initial version to release the better application\"s performance.",
+      "Collect and debugged application issues."
+    ]
+  },
+  {
+    "company": "Indovisual Investama",
+    "position": "Full Stack Developer",
+    "location": "Jakarta",
+    "date": "02/2016 - 11/2017",
+    "functions": [
+      "Collaborated with product management to design, build, integrate and test systems.",
+      "Designed new product elements such as IR and RF connection, RSTP live streaming, hardware integration, and device-to-device communication.",
+      "Modified existing software to correct errors, and improve performance."
+    ]
+  },
+  {
+    "company": "LP3I Jakarta",
+    "position": "Programmer & Data Entry",
+    "location": "Jakarta",
+    "date": "02/2016 - 11/2017",
+    "functions": [
+      "Designed, built and maintained an application that helps data entry input matriculant data.",
+      "Reviewed completed work for compliance with regulations.",
+      "Organized, sorted and checked data form against original documents."
+    ]
+  }
+]

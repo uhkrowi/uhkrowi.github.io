@@ -15,7 +15,7 @@
 .bubble {
   overflow: hidden;
   display: inline-block;
-  margin: 0 0 .125rem 0;
+  margin: 0 0 .2rem 0;
   padding: .5rem .85rem;
   line-height: 1.25rem;
   border-radius: 1.25rem;
@@ -27,9 +27,9 @@
   border-bottom-left-radius: 0;
 }
 .bubble.left {
-  /* background: rgba(206,206,206,0.50); */
-  background: rgba(0,0,0, 0.3);
-  color: white;
+  background: white;
+  color: #34322C;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 .bubble:after {
   content: "";
@@ -54,7 +54,7 @@
   opacity: 0;
 }
 .bubble a {
-  color: #90CDF4;
+  color: rgb(21, 131, 199);
 }
 .bubble .loading {
   position: absolute;

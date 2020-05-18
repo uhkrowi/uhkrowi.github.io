@@ -13,7 +13,7 @@ function introduction () {
     'I do code and design application 🚀',
     'Currently I\'m working as a freelancer <br>of full stack developer',
     'If you have anything to ask, just find me on <br> <a target="_blank" href="https://facebook.com/uhkrowi">facebook/uhkrowi</a> <br> <a target="_blank" href="http://www.linkedin.com/in/uhkrowi">linkedin/uhkrowi</a> <br> <a target="_blank" href="http://github.com/uhkrowi">github/uhkrowi</a> <br> <a target="_blank" href="mailto:uhkrowi@gmail.com">uhkrowi@gmail.com</a> <br> <a target="_blank" href="http://t.me/uhkrowi">telegram/uhkrowi</a> <br> <a target="_blank" href="https://api.whatsapp.com/send?phone=628977031387&text=Hello, I just visited your portfolio pages...">whatsapp</a>',
-    'Anyway... there are some works I\'ve code <a target="_self" href="/project">here</a>',
+    'Anyway... there are some works I\'ve code <a target="_self" href="/showcase">here</a>',
     'Check \'em out! 😁'
   ]
 
