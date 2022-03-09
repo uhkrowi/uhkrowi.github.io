@@ -1,4 +1,7 @@
-My name's Nurul, I'm a fan of Go and love coding with it, I used PHP and C# in the past but for now I'm focusing on Go and JavaScript.   
-I'm currently working as a freelance web developer, you can check some of my works [here](/#/showcase).
+Hi, I'm Nurul,  
+I'm currently working as a freelance web developer.  
+This site is where I show my works and share some of my experiences and learnings.  
 
+To check my works, go [here](/#/showcase).  
+To read my blog posts, go [here](/#/blog).  
 Cheers! 🍻
