@@ -1,0 +1,1 @@
+import{a as t,c as s,h as l,t as o,k as r,l as n}from"./vendor.b9a3026d.js";const c={class:"w-full py-[20px]"},d={key:0,class:"text-xl font-bold"},u={props:{label:String},setup(e){return(a,i)=>(t(),s("div",c,[e.label?(t(),s("h2",d,[l("div",null,o(e.label),1)])):r("",!0),n(a.$slots,"default")]))}};export{u as _};
