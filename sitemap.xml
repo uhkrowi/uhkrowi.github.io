@@ -2,85 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/ds-array/</loc>
+    <lastmod>2022-03-16T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/tags/dsa/</loc>
+    <lastmod>2022-03-16T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/post/</loc>
+    <lastmod>2022-03-16T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2022-03-16T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2022-03-16T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/ds-intro/</loc>
+    <lastmod>2022-03-15T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/rounded-image-canvas/</loc>
+    <lastmod>2022-03-11T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/base64-from-url/</loc>
+    <lastmod>2022-03-11T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/tags/javascript/</loc>
+    <lastmod>2022-03-11T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/tags/snippet/</loc>
+    <lastmod>2022-03-11T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/generate-pdf-with-pdfmake/</loc>
+    <lastmod>2022-03-09T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/tags/web/</loc>
+    <lastmod>2022-03-09T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/tags/sql/</loc>
+    <lastmod>2022-02-27T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/stored-procedure/</loc>
+    <lastmod>2022-02-27T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/styling-with-tailwindcss-in-quasar/</loc>
+    <lastmod>2022-02-15T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/headless-wordpress-intro/</loc>
+    <lastmod>2022-02-13T02:13:50+00:00</lastmod>
+  </url><url>
+    <loc>/tags/wordpress/</loc>
+    <lastmod>2022-02-13T02:13:50+00:00</lastmod>
+  </url><url>
     <loc>/page/about/</loc>
     <lastmod>2015-04-03T02:13:50+00:00</lastmod>
   </url><url>
     <loc>/page/</loc>
     <lastmod>2015-04-03T02:13:50+00:00</lastmod>
   </url><url>
-    <loc>/</loc>
-    <lastmod>2015-04-03T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/attayasa/</loc>
+    <loc>/page/projects/attayasa/</loc>
     <lastmod>2014-09-28T02:13:50+00:00</lastmod>
   </url><url>
-    <loc>/billing-receipt-generator/</loc>
+    <loc>/page/projects/billing-receipt-generator/</loc>
     <lastmod>2014-09-28T02:13:50+00:00</lastmod>
   </url><url>
-    <loc>/ds-intro/</loc>
+    <loc>/page/projects/gmn/</loc>
     <lastmod>2014-09-28T02:13:50+00:00</lastmod>
   </url><url>
-    <loc>/ds-array/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/tags/dsa/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/rounded-image-canvas/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/generate-pdf-with-pdfmake/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/base64-from-url/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/headless-wordpress-intro/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/tags/javascript/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/meeting-room-management/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/post/</loc>
+    <loc>/page/projects/meeting-room-management/</loc>
     <lastmod>2014-09-28T02:13:50+00:00</lastmod>
   </url><url>
     <loc>/tags/project/</loc>
     <lastmod>2014-09-28T02:13:50+00:00</lastmod>
   </url><url>
-    <loc>/rental-housing/</loc>
+    <loc>/page/projects/rental-housing/</loc>
     <lastmod>2014-09-28T02:13:50+00:00</lastmod>
   </url><url>
-    <loc>/ship-rental-management/</loc>
+    <loc>/page/projects/ship-rental-management/</loc>
     <lastmod>2014-09-28T02:13:50+00:00</lastmod>
   </url><url>
-    <loc>/tags/snippet/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/tags/sql/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/stored-procedure/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/styling-with-tailwindcss-in-quasar/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/tags/web/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/tags/wordpress/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/gmn/</loc>
-    <lastmod>2014-09-28T02:13:50+00:00</lastmod>
-  </url><url>
-    <loc>/zumstar/</loc>
+    <loc>/page/projects/zumstar/</loc>
     <lastmod>2014-09-28T02:13:50+00:00</lastmod>
   </url><url>
     <loc>/page/project/</loc>

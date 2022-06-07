@@ -9,29 +9,40 @@
     <lastBuildDate>Sun, 28 Sep 2014 02:13:50 +0000</lastBuildDate><atom:link href="/tags/project/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Attayasa</title>
-      <link>/attayasa/</link>
+      <link>/page/projects/attayasa/</link>
       <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
       
-      <guid>/attayasa/</guid>
+      <guid>/page/projects/attayasa/</guid>
       <description>Tech stacks:
 WordPress REST API MySQL Vue.js Tailwind CSS </description>
     </item>
     
     <item>
       <title>Billing Receipt Generator</title>
-      <link>/billing-receipt-generator/</link>
+      <link>/page/projects/billing-receipt-generator/</link>
       <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
       
-      <guid>/billing-receipt-generator/</guid>
+      <guid>/page/projects/billing-receipt-generator/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Meeting Room Management</title>
-      <link>/meeting-room-management/</link>
+      <title>GMN</title>
+      <link>/page/projects/gmn/</link>
       <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
       
-      <guid>/meeting-room-management/</guid>
+      <guid>/page/projects/gmn/</guid>
+      <description>Company Profile Website of Graha Multimedia Nusantara.
+Tech stacks:
+WordPress REST API MySQL Tailwind CSS </description>
+    </item>
+    
+    <item>
+      <title>Meeting Room Management</title>
+      <link>/page/projects/meeting-room-management/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/page/projects/meeting-room-management/</guid>
       <description>A mobile application for scheduling meeting with booking available rooms feature, note of MOM, participants invitation, extending meeting time if possible, order meals to the pantry, etc.
 Tech stacks:
 Laravel for REST API MySQL Flutter SQLite </description>
@@ -39,10 +50,10 @@ Laravel for REST API MySQL Flutter SQLite </description>
     
     <item>
       <title>Rental Housing Management</title>
-      <link>/rental-housing/</link>
+      <link>/page/projects/rental-housing/</link>
       <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
       
-      <guid>/rental-housing/</guid>
+      <guid>/page/projects/rental-housing/</guid>
       <description>Rental flat, private and public housing in Indonesia for low economic citizen, supply and demand management of properties, facilitate citizen to book and rent house with ease.
 Tech Stacks:
 Go Vue.js 3 Quasar Tailwind CSS MySQL Heroku Screenshots:
@@ -51,10 +62,10 @@ Demo URL: https://pupr-rental-housing.netlify.app/</description>
     
     <item>
       <title>Ship Rental Management</title>
-      <link>/ship-rental-management/</link>
+      <link>/page/projects/ship-rental-management/</link>
       <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
       
-      <guid>/ship-rental-management/</guid>
+      <guid>/page/projects/ship-rental-management/</guid>
       <description>Ship rent management aim to ease fishermen to rent ships, including picking type of ship, setting rental period, extending the period, monitoring their payment. the application also helps the owners of rental to manage information about ships, their customers, payments and reports.
 Tech stacks:
 Laravel MySQL Vue.js Vuetify </description>
@@ -62,21 +73,10 @@ Laravel MySQL Vue.js Vuetify </description>
     
     <item>
       <title>Zumstar</title>
-      <link>/gmn/</link>
+      <link>/page/projects/zumstar/</link>
       <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
       
-      <guid>/gmn/</guid>
-      <description>Company Profile Website of Graha Multimedia Nusantara.
-Tech stacks:
-WordPress REST API MySQL Tailwind CSS </description>
-    </item>
-    
-    <item>
-      <title>Zumstar</title>
-      <link>/zumstar/</link>
-      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
-      
-      <guid>/zumstar/</guid>
+      <guid>/page/projects/zumstar/</guid>
       <description>Company Profile Website of Zumstar (product of Graha Multimedia Nusantara).</description>
     </item>
     
