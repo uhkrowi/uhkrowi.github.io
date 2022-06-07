@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Uhkrowi</title>
+    <link>/page/</link>
+    <description>Recent content in Pages on Uhkrowi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Nurul Uhkrowi</copyright>
+    <lastBuildDate>Fri, 03 Apr 2015 02:13:50 +0000</lastBuildDate><atom:link href="/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>/page/about/</link>
+      <pubDate>Fri, 03 Apr 2015 02:13:50 +0000</pubDate>
+      
+      <guid>/page/about/</guid>
+      <description>Hi, my name&amp;rsquo;s Nurul.
+I&amp;rsquo;m currently working as a freelance web developer. This site is a place where I show my works and share some of my experiences and learnings about software development and web technology in general.
+You can find me at Facebook, LinkedIn or Github.
+Experience Back-End Web Developer
+PT Astra International Tbk
+Dec 2021 - May 2022
+As a body hire from PT BeIT, join into Astra team to modify their existing system and focusing on tax regulation.</description>
+    </item>
+    
+    <item>
+      <title>Project</title>
+      <link>/page/project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/page/project/</guid>
+      <description> Name Stacks Platform Billing Receipt Generator Electron, vue.js, HTML, CSS desktop link Zumstar Wordpress web link GMN Wordpress, vue.js, TailwindCSS web link Ship Rental Management Laravel, MySQL, vue.js, Vuetify web link Meeting Room Management Laravel, MySQL, Flutter, SQLite web, mobile link Rental Housing Management Go, MySQL, vue.js, Quasar, TailwindCSS web link Attayasa Wordpress, vue.js, TailwindCSS web link </description>
+    </item>
+    
+  </channel>
+</rss>

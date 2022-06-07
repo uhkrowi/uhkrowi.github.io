@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uhkrowi</title>
+    <link>/</link>
+    <description>Recent content on Uhkrowi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Nurul Uhkrowi</copyright>
+    <lastBuildDate>Fri, 03 Apr 2015 02:13:50 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>/page/about/</link>
+      <pubDate>Fri, 03 Apr 2015 02:13:50 +0000</pubDate>
+      
+      <guid>/page/about/</guid>
+      <description>Hi, my name&amp;rsquo;s Nurul.
+I&amp;rsquo;m currently working as a freelance web developer. This site is a place where I show my works and share some of my experiences and learnings about software development and web technology in general.
+You can find me at Facebook, LinkedIn or Github.
+Experience Back-End Web Developer
+PT Astra International Tbk
+Dec 2021 - May 2022
+As a body hire from PT BeIT, join into Astra team to modify their existing system and focusing on tax regulation.</description>
+    </item>
+    
+    <item>
+      <title>Attayasa</title>
+      <link>/attayasa/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/attayasa/</guid>
+      <description>Tech stacks:
+WordPress REST API MySQL Vue.js Tailwind CSS </description>
+    </item>
+    
+    <item>
+      <title>Billing Receipt Generator</title>
+      <link>/billing-receipt-generator/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/billing-receipt-generator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DS Intro</title>
+      <link>/ds-intro/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/ds-intro/</guid>
+      <description>Data structure is a systematic way to store and organize data in order to use it efficiently in time (how long the time it takes) and/or space (memory allocation), in other words it a way how you manage data with usage of memory as small as possible and with execution time as little as possible.
+Data structure is agnostic or independent from programming languages, so you can implement the idea in any language you want, it’s also provides operations to organize the data easily.</description>
+    </item>
+    
+    <item>
+      <title>DS: Array</title>
+      <link>/ds-array/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/ds-array/</guid>
+      <description>Array is a collection of items that stored at contiguous memory location, its a static linear non-primitive data structure, the purpose of array is to store multiple element of the same type. Each item of the array is commonly called ‘element of array’, and every element has its own index of its sequence where you can use it as a key to peek the element you want to see, the indexes start from zero or also known as zero base.</description>
+    </item>
+    
+    <item>
+      <title>Fully rounded canvas of an image</title>
+      <link>/rounded-image-canvas/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/rounded-image-canvas/</guid>
+      <description>// create new image element const image = new Image(); image.src = &amp;#34;/images/sample.jpg&amp;#34;; // create canvas element const canvas = document.createElement(&amp;#34;canvas&amp;#34;); // set width and height of the canvas canvas.width = 100; canvas.height = 100; // context let ctx = canvas.getContext(&amp;#34;2d&amp;#34;); // background purpose ctx.fillStyle = &amp;#34;white&amp;#34;; ctx.fillRect(0, 0, canvas.width, canvas.height); ctx.save(); // cropping ctx.beginPath(); ctx.arc(50, 50, 50, 0, Math.PI * 2, true); ctx.closePath(); ctx.clip(); ctx.drawImage(img, 0, 0, 100, 100); ctx.</description>
+    </item>
+    
+    <item>
+      <title>Generate CV with PDFmake</title>
+      <link>/generate-pdf-with-pdfmake/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/generate-pdf-with-pdfmake/</guid>
+      <description>In this personal site I decided to generate my CV myself rather than taking up from URL of another website (e.g you could get generated CV from kalibrr.com).
+In my previous project I did the job, generating pdf of documents is pretty simple, there’re some packages you could use out there, one of them is PDFmake.
+PDFmake is a package that helps you to generate PDF for server-side and client-side usage in pure JavaScript (read its documentation here), it’s a powerful tool yet easy to use, it has a playground too for you to try it online.</description>
+    </item>
+    
+    <item>
+      <title>Get base64 from URL</title>
+      <link>/base64-from-url/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/base64-from-url/</guid>
+      <description>async function getBase64FromUrl(URL) { const data = await fetch(URL); const blob = await data.blob(); return new Promise((resolve) =&amp;gt; { const reader = new FileReader(); reader.readAsDataURL(blob); reader.onloadend = () =&amp;gt; { const base64data = reader.result; resolve(base64data); }; }); }; </description>
+    </item>
+    
+    <item>
+      <title>Headless WordPress Introduction</title>
+      <link>/headless-wordpress-intro/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/headless-wordpress-intro/</guid>
+      <description>I think every web developer know WordPress is, in a nutshell it’s a popular content management system built with php that allows you to manage &amp;amp; manipulate posts, pages, custom post types, categories and more. You can create themes of the web you build with WordPress, it’s quite simple but I don’t want to talk about it now.
+One of advantages of WordPress is that it can be a headless CMS, headless means that you don’t need html structure in the CMS or you can say the CMS system is separated with its frontend, in other word you just consume data thru its REST API so you could do CRUD with another frontend stack solutions or integrate it to your another app.</description>
+    </item>
+    
+    <item>
+      <title>Meeting Room Management</title>
+      <link>/meeting-room-management/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/meeting-room-management/</guid>
+      <description>A mobile application for scheduling meeting with booking available rooms feature, note of MOM, participants invitation, extending meeting time if possible, order meals to the pantry, etc.
+Tech stacks:
+Laravel for REST API MySQL Flutter SQLite </description>
+    </item>
+    
+    <item>
+      <title>Rental Housing Management</title>
+      <link>/rental-housing/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/rental-housing/</guid>
+      <description>Rental flat, private and public housing in Indonesia for low economic citizen, supply and demand management of properties, facilitate citizen to book and rent house with ease.
+Tech Stacks:
+Go Vue.js 3 Quasar Tailwind CSS MySQL Heroku Screenshots:
+Demo URL: https://pupr-rental-housing.netlify.app/</description>
+    </item>
+    
+    <item>
+      <title>Ship Rental Management</title>
+      <link>/ship-rental-management/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/ship-rental-management/</guid>
+      <description>Ship rent management aim to ease fishermen to rent ships, including picking type of ship, setting rental period, extending the period, monitoring their payment. the application also helps the owners of rental to manage information about ships, their customers, payments and reports.
+Tech stacks:
+Laravel MySQL Vue.js Vuetify </description>
+    </item>
+    
+    <item>
+      <title>Stored Procedure</title>
+      <link>/stored-procedure/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/stored-procedure/</guid>
+      <description>Recently I have to work with stored procedures for a pretty huge monolith project, it’s not something new for me but I’ve been leaving it for a quite long time so I need to refresh my knowledge.
+To get it simplified, stored procedure is just a bunch of SQL queries that wrapped and can be executed with a single command (you can also call functions in it when you have several common tasks to run).</description>
+    </item>
+    
+    <item>
+      <title>Styling with tailwindcss in Quasar</title>
+      <link>/styling-with-tailwindcss-in-quasar/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/styling-with-tailwindcss-in-quasar/</guid>
+      <description>I’ve been working with Quasar and Tailwind for some projects, both are really helpful tools, sometimes I need to style my Quasar app with Tailwind because I feel more comfort with Tailwind for styling and I love how it works.
+It’s quite simple to integrate Tailwind to Quasar, you just need to do some little configurations.
+Open your Quasar project in terminal and run these commands.
+yarn add -D tailwindcss &amp;amp; npx tailwindcss init There will be a new file named tailwind.</description>
+    </item>
+    
+    <item>
+      <title>Zumstar</title>
+      <link>/gmn/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/gmn/</guid>
+      <description>Company Profile Website of Graha Multimedia Nusantara.
+Tech stacks:
+WordPress REST API MySQL Tailwind CSS </description>
+    </item>
+    
+    <item>
+      <title>Zumstar</title>
+      <link>/zumstar/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/zumstar/</guid>
+      <description>Company Profile Website of Zumstar (product of Graha Multimedia Nusantara).</description>
+    </item>
+    
+    <item>
+      <title>Project</title>
+      <link>/page/project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/page/project/</guid>
+      <description> Name Stacks Platform Billing Receipt Generator Electron, vue.js, HTML, CSS desktop link Zumstar Wordpress web link GMN Wordpress, vue.js, TailwindCSS web link Ship Rental Management Laravel, MySQL, vue.js, Vuetify web link Meeting Room Management Laravel, MySQL, Flutter, SQLite web, mobile link Rental Housing Management Go, MySQL, vue.js, Quasar, TailwindCSS web link Attayasa Wordpress, vue.js, TailwindCSS web link </description>
+    </item>
+    
+  </channel>
+</rss>

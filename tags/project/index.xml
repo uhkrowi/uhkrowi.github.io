@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>project on Uhkrowi</title>
+    <link>/tags/project/</link>
+    <description>Recent content in project on Uhkrowi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Nurul Uhkrowi</copyright>
+    <lastBuildDate>Sun, 28 Sep 2014 02:13:50 +0000</lastBuildDate><atom:link href="/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Attayasa</title>
+      <link>/attayasa/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/attayasa/</guid>
+      <description>Tech stacks:
+WordPress REST API MySQL Vue.js Tailwind CSS </description>
+    </item>
+    
+    <item>
+      <title>Billing Receipt Generator</title>
+      <link>/billing-receipt-generator/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/billing-receipt-generator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meeting Room Management</title>
+      <link>/meeting-room-management/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/meeting-room-management/</guid>
+      <description>A mobile application for scheduling meeting with booking available rooms feature, note of MOM, participants invitation, extending meeting time if possible, order meals to the pantry, etc.
+Tech stacks:
+Laravel for REST API MySQL Flutter SQLite </description>
+    </item>
+    
+    <item>
+      <title>Rental Housing Management</title>
+      <link>/rental-housing/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/rental-housing/</guid>
+      <description>Rental flat, private and public housing in Indonesia for low economic citizen, supply and demand management of properties, facilitate citizen to book and rent house with ease.
+Tech Stacks:
+Go Vue.js 3 Quasar Tailwind CSS MySQL Heroku Screenshots:
+Demo URL: https://pupr-rental-housing.netlify.app/</description>
+    </item>
+    
+    <item>
+      <title>Ship Rental Management</title>
+      <link>/ship-rental-management/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/ship-rental-management/</guid>
+      <description>Ship rent management aim to ease fishermen to rent ships, including picking type of ship, setting rental period, extending the period, monitoring their payment. the application also helps the owners of rental to manage information about ships, their customers, payments and reports.
+Tech stacks:
+Laravel MySQL Vue.js Vuetify </description>
+    </item>
+    
+    <item>
+      <title>Zumstar</title>
+      <link>/gmn/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/gmn/</guid>
+      <description>Company Profile Website of Graha Multimedia Nusantara.
+Tech stacks:
+WordPress REST API MySQL Tailwind CSS </description>
+    </item>
+    
+    <item>
+      <title>Zumstar</title>
+      <link>/zumstar/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/zumstar/</guid>
+      <description>Company Profile Website of Zumstar (product of Graha Multimedia Nusantara).</description>
+    </item>
+    
+  </channel>
+</rss>

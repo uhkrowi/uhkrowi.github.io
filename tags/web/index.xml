@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Uhkrowi</title>
+    <link>/tags/web/</link>
+    <description>Recent content in Web on Uhkrowi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Nurul Uhkrowi</copyright>
+    <lastBuildDate>Sun, 28 Sep 2014 02:13:50 +0000</lastBuildDate><atom:link href="/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generate CV with PDFmake</title>
+      <link>/generate-pdf-with-pdfmake/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/generate-pdf-with-pdfmake/</guid>
+      <description>In this personal site I decided to generate my CV myself rather than taking up from URL of another website (e.g you could get generated CV from kalibrr.com).
+In my previous project I did the job, generating pdf of documents is pretty simple, there’re some packages you could use out there, one of them is PDFmake.
+PDFmake is a package that helps you to generate PDF for server-side and client-side usage in pure JavaScript (read its documentation here), it’s a powerful tool yet easy to use, it has a playground too for you to try it online.</description>
+    </item>
+    
+    <item>
+      <title>Headless WordPress Introduction</title>
+      <link>/headless-wordpress-intro/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/headless-wordpress-intro/</guid>
+      <description>I think every web developer know WordPress is, in a nutshell it’s a popular content management system built with php that allows you to manage &amp;amp; manipulate posts, pages, custom post types, categories and more. You can create themes of the web you build with WordPress, it’s quite simple but I don’t want to talk about it now.
+One of advantages of WordPress is that it can be a headless CMS, headless means that you don’t need html structure in the CMS or you can say the CMS system is separated with its frontend, in other word you just consume data thru its REST API so you could do CRUD with another frontend stack solutions or integrate it to your another app.</description>
+    </item>
+    
+    <item>
+      <title>Styling with tailwindcss in Quasar</title>
+      <link>/styling-with-tailwindcss-in-quasar/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/styling-with-tailwindcss-in-quasar/</guid>
+      <description>I’ve been working with Quasar and Tailwind for some projects, both are really helpful tools, sometimes I need to style my Quasar app with Tailwind because I feel more comfort with Tailwind for styling and I love how it works.
+It’s quite simple to integrate Tailwind to Quasar, you just need to do some little configurations.
+Open your Quasar project in terminal and run these commands.
+yarn add -D tailwindcss &amp;amp; npx tailwindcss init There will be a new file named tailwind.</description>
+    </item>
+    
+  </channel>
+</rss>

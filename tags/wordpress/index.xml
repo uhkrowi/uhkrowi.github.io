@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress on Uhkrowi</title>
+    <link>/tags/wordpress/</link>
+    <description>Recent content in Wordpress on Uhkrowi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Nurul Uhkrowi</copyright>
+    <lastBuildDate>Sun, 28 Sep 2014 02:13:50 +0000</lastBuildDate><atom:link href="/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Headless WordPress Introduction</title>
+      <link>/headless-wordpress-intro/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/headless-wordpress-intro/</guid>
+      <description>I think every web developer know WordPress is, in a nutshell it’s a popular content management system built with php that allows you to manage &amp;amp; manipulate posts, pages, custom post types, categories and more. You can create themes of the web you build with WordPress, it’s quite simple but I don’t want to talk about it now.
+One of advantages of WordPress is that it can be a headless CMS, headless means that you don’t need html structure in the CMS or you can say the CMS system is separated with its frontend, in other word you just consume data thru its REST API so you could do CRUD with another frontend stack solutions or integrate it to your another app.</description>
+    </item>
+    
+  </channel>
+</rss>

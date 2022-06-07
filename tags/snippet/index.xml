@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Snippet on Uhkrowi</title>
+    <link>/tags/snippet/</link>
+    <description>Recent content in Snippet on Uhkrowi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Nurul Uhkrowi</copyright>
+    <lastBuildDate>Sun, 28 Sep 2014 02:13:50 +0000</lastBuildDate><atom:link href="/tags/snippet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fully rounded canvas of an image</title>
+      <link>/rounded-image-canvas/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/rounded-image-canvas/</guid>
+      <description>// create new image element const image = new Image(); image.src = &amp;#34;/images/sample.jpg&amp;#34;; // create canvas element const canvas = document.createElement(&amp;#34;canvas&amp;#34;); // set width and height of the canvas canvas.width = 100; canvas.height = 100; // context let ctx = canvas.getContext(&amp;#34;2d&amp;#34;); // background purpose ctx.fillStyle = &amp;#34;white&amp;#34;; ctx.fillRect(0, 0, canvas.width, canvas.height); ctx.save(); // cropping ctx.beginPath(); ctx.arc(50, 50, 50, 0, Math.PI * 2, true); ctx.closePath(); ctx.clip(); ctx.drawImage(img, 0, 0, 100, 100); ctx.</description>
+    </item>
+    
+    <item>
+      <title>Get base64 from URL</title>
+      <link>/base64-from-url/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/base64-from-url/</guid>
+      <description>async function getBase64FromUrl(URL) { const data = await fetch(URL); const blob = await data.blob(); return new Promise((resolve) =&amp;gt; { const reader = new FileReader(); reader.readAsDataURL(blob); reader.onloadend = () =&amp;gt; { const base64data = reader.result; resolve(base64data); }; }); }; </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DSA on Uhkrowi</title>
+    <link>/tags/dsa/</link>
+    <description>Recent content in DSA on Uhkrowi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Nurul Uhkrowi</copyright>
+    <lastBuildDate>Sun, 28 Sep 2014 02:13:50 +0000</lastBuildDate><atom:link href="/tags/dsa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DS Intro</title>
+      <link>/ds-intro/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/ds-intro/</guid>
+      <description>Data structure is a systematic way to store and organize data in order to use it efficiently in time (how long the time it takes) and/or space (memory allocation), in other words it a way how you manage data with usage of memory as small as possible and with execution time as little as possible.
+Data structure is agnostic or independent from programming languages, so you can implement the idea in any language you want, it’s also provides operations to organize the data easily.</description>
+    </item>
+    
+    <item>
+      <title>DS: Array</title>
+      <link>/ds-array/</link>
+      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      
+      <guid>/ds-array/</guid>
+      <description>Array is a collection of items that stored at contiguous memory location, its a static linear non-primitive data structure, the purpose of array is to store multiple element of the same type. Each item of the array is commonly called ‘element of array’, and every element has its own index of its sequence where you can use it as a key to peek the element you want to see, the indexes start from zero or also known as zero base.</description>
+    </item>
+    
+  </channel>
+</rss>
