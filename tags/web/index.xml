@@ -27,7 +27,7 @@ PDFmake is a package that helps you to generate PDF for server-side and client-s
       <description>I’ve been working with Quasar and Tailwind for some projects, both are really helpful tools, sometimes I need to style my Quasar app with Tailwind because I feel more comfort with Tailwind for styling and I love how it works.
 It’s quite simple to integrate Tailwind to Quasar, you just need to do some little configurations.
 Open your Quasar project in terminal and run these commands.
-yarn add -D tailwindcss &amp;amp; npx tailwindcss init There will be a new file named tailwind.</description>
+1yarn add -D tailwindcss &amp;amp; npx tailwindcss init There will be a new file named tailwind.</description>
     </item>
     
     <item>

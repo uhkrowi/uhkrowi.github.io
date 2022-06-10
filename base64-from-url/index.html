@@ -1,84 +1,53 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Get base64 from URL &middot; Nurul Uhkrowi</title>
-        <meta name="description" content="async function getBase64FromUrl(URL) { const data = await fetch(URL); const blob = await data.blob(); return new Promise((resolve) =&gt; { const reader = new FileReader(); reader.readAsDataURL(blob); reader.onloadend = () =&gt; { const base64data = reader.result; resolve(base64data); }; }); }; ">
-        <meta name="HandheldFriendly" content="True">
-        <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.100.1" />
-        <meta name="robots" content="index,follow">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta property="og:title" content="Get base64 from URL">
-<meta property="og:description" content="async function getBase64FromUrl(URL) { const data = await fetch(URL); const blob = await data.blob(); return new Promise((resolve) =&gt; { const reader = new FileReader(); reader.readAsDataURL(blob); reader.onloadend = () =&gt; { const base64data = reader.result; resolve(base64data); }; }); }; ">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Get base64 from URL &middot; Nurul Uhkrowi</title>
+    <meta name="description" content=" 1async function getBase64FromUrl(URL) { 2 const data = await fetch(URL); 3 const blob = await data.blob(); 4 return new Promise((resolve) =&gt; { 5 const reader = new FileReader(); 6 reader.readAsDataURL(blob); 7 reader.onloadend = () =&gt; { 8 const base64data = reader.result; 9 resolve(base64data); 10 }; 11 }); 12}; ">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="generator" content="Hugo 0.100.1" />
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Get base64 from URL">
+<meta property="og:description" content=" 1async function getBase64FromUrl(URL) { 2 const data = await fetch(URL); 3 const blob = await data.blob(); 4 return new Promise((resolve) =&gt; { 5 const reader = new FileReader(); 6 reader.readAsDataURL(blob); 7 reader.onloadend = () =&gt; { 8 const base64data = reader.result; 9 resolve(base64data); 10 }; 11 }); 12}; ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="/base64-from-url/">
-        <link rel="icon" type="image/x-icon" href="/favicon.ico">
-        <link rel="stylesheet" href="/dist/site.css">
-        <link rel="stylesheet" href="/dist/syntax.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/prism-dark.css">
+    <link rel="stylesheet" href="/css/prism-line-numbers.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/mycustom.css">
+  </head>
+  <body class="flex justify-center">
+    <div class="container" style="padding-top: 30px;">
+      <header class="flex justify-between items-center">
         
-        
-        
-        
-        
+        <a href="/" class="text-main">Home</a>
+        <div class="flex items-center site-nav">
+            
+    <span class="site-nav-item">
+        <a href="/page/about/" class="text-main">About</a>
+    </span>
 
-    </head>
-    <body>
-        
+    <span class="site-nav-item">
+        <a href="/" class="text-main">Blog</a>
+    </span>
 
-        <div id="wrapper">
-            <header class="site-header">
-                <div class="container">
-                    <div class="site-title-wrapper">
-                        
-                        
-                            <a class="button-square" href="/index.xml" aria-label="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a>
-                        
-                        
-                        
-                        
-                        
-                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/uhkrowi" rel="me">
-                                <i class="fa fa-github-alt" aria-hidden="true"></i>
-                            </a>
-                        
-                        
-                        
-                        
-                            <a class="button-square button-social hint--top" data-hint="Email" aria-label="Send an Email" href="mailto:uhkrowi@gmail.com">
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                            </a>
-                        
-                        
-                            <a class="button-square button-social hint--top" data-hint="CV" aria-label="Download CV" href="/CV%20Nurul%20Uhkrowi.pdf">
-                                CV
-                            </a>
-                        
-                    </div>
-
-                    <ul class="site-nav">
-                        
-    <li class="site-nav-item">
-        <a href="/page/about/">About</a>
-    </li>
-
-    <li class="site-nav-item">
-        <a href="/">Blog</a>
-    </li>
-
-    <li class="site-nav-item">
-        <a href="/page/project/">Project</a>
-    </li>
+    <span class="site-nav-item">
+        <a href="/page/works/" class="text-main">Works</a>
+    </span>
 
 
-                    </ul>
-                </div>
-            </header>
-
-            <div id="container">
+        </div>
+      </header>
+      <hr>
+      <main>
+  
 
 
 <div class="container">
@@ -86,73 +55,67 @@
         <header class="post-header">
     <h1 class="post-title" itemprop="name headline">Get base64 from URL</h1>
     
-    <p class="post-date">
-        <span>Published <time datetime="2022-03-11" itemprop="datePublished">Mar 11, 2022</time></span>
+    <p class="post-date pb-4 text-xs">
+        <span>Posted at — <time datetime="2022-03-11" itemprop="datePublished">Mar 11, 2022</time></span>
     </p>
 </header>
 
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getBase64FromUrl</span>(<span style="color:#a6e22e">URL</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">URL</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">blob</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">blob</span>();
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>) =&gt; {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FileReader</span>();
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">reader</span>.<span style="color:#a6e22e">readAsDataURL</span>(<span style="color:#a6e22e">blob</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">reader</span>.<span style="color:#a6e22e">onloadend</span> <span style="color:#f92672">=</span> () =&gt; {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">base64data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">reader</span>.<span style="color:#a6e22e">result</span>;
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">base64data</span>);
-</span></span><span style="display:flex;"><span>    };
-</span></span><span style="display:flex;"><span>  });
-</span></span><span style="display:flex;"><span>};
+    <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getBase64FromUrl</span>(<span style="color:#a6e22e">URL</span>) {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">URL</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">blob</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">blob</span>();
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>) =&gt; {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">reader</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FileReader</span>();
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#a6e22e">reader</span>.<span style="color:#a6e22e">readAsDataURL</span>(<span style="color:#a6e22e">blob</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#a6e22e">reader</span>.<span style="color:#a6e22e">onloadend</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">base64data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">reader</span>.<span style="color:#a6e22e">result</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>      <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">base64data</span>);
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    };
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>  });
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>};
 </span></span></code></pre></div>
 </div>
 
-        <footer class="post-footer clearfix">
-        <p class="post-tags">
-            <span>Tagged:</span>
+        <footer class="post-footer clearfix" style="margin-top: 50px;">
+        <p class="post-tags text-xs">
+            <span>Tags:</span>
                 <a href="/tags/javascript/">Javascript</a>, 
                 <a href="/tags/snippet/">Snippet</a>
         </p>
-    <div class="share">
-            <a class="icon-twitter" href="https://twitter.com/share?text=Get%20base64%20from%20URL&url=%2fbase64-from-url%2f"
-                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
-            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fbase64-from-url%2f"
-                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" aria-label="Share on Facebook">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-    </div>
+    
 </footer>
 
         
     </article>
 </div>
 
-            </div>
-        </div>
-
-        <footer class="footer">
-            <div class="container">
-                <div class="site-title-wrapper">
-                    <h1 class="site-title">
-                        <a href="/">Uhkrowi</a>
-                    </h1>
-                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
-                        <i class="fa fa-angle-up" aria-hidden="true"></i>
-                    </a>
-                </div>
-
-                
-            </div>
-        </footer>
-
-        <script src="/js/jquery-1.11.3.min.js"></script>
-        <script src="/js/jquery.fitvids.js"></script>
-        <script src="/js/scripts.js"></script>
+<div class="footer flex justify-between items-center">
+    <span class="" style="font-size: 14px;">&copy; Nurul Uhkrowi 2022</span>
+    <div>
         
-    </body>
+            <a class="ml-5 icon" data-hint="Github" aria-label="Github" href="https://github.com/uhkrowi" rel="me">
+                <i class="fa fa-github-alt text-main" aria-hidden="true"></i>
+            </a>
+        
+        
+            <a class="ml-5 icon" data-hint="Email" aria-label="Send an Email" href="mailto:uhkrowi@gmail.com">
+                <i class="fa fa-envelope text-main" aria-hidden="true"></i>
+            </a>
+        
+        
+        
+            <a class="ml-5 icon" data-hint="CV" aria-label="LinkedIn" href="https://www.linkedin.com/in/uhkrowi">
+                <i class="fa fa-linkedin text-main" aria-hidden="true"></i>
+            </a>
+        
+        
+            <a class="ml-5 icon" href="/index.xml" aria-label="RSS"><i class="fa fa-rss text-main" aria-hidden="true"></i></a>
+        
+    </div>
+</div>
+</main>
+</div>
+</body>
 </html>
-

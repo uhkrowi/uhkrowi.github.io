@@ -32,7 +32,7 @@ Data structure is agnostic or independent from programming languages, so you can
       <pubDate>Fri, 11 Mar 2022 02:13:50 +0000</pubDate>
       
       <guid>/rounded-image-canvas/</guid>
-      <description>// create new image element const image = new Image(); image.src = &amp;#34;/images/sample.jpg&amp;#34;; // create canvas element const canvas = document.createElement(&amp;#34;canvas&amp;#34;); // set width and height of the canvas canvas.width = 100; canvas.height = 100; // context let ctx = canvas.getContext(&amp;#34;2d&amp;#34;); // background purpose ctx.fillStyle = &amp;#34;white&amp;#34;; ctx.fillRect(0, 0, canvas.width, canvas.height); ctx.save(); // cropping ctx.beginPath(); ctx.arc(50, 50, 50, 0, Math.PI * 2, true); ctx.closePath(); ctx.clip(); ctx.drawImage(img, 0, 0, 100, 100); ctx.</description>
+      <description>1// create new image element 2const image = new Image(); 3image.src = &amp;#34;/images/sample.jpg&amp;#34;; 4 5// create canvas element 6const canvas = document.createElement(&amp;#34;canvas&amp;#34;); 7 8// set width and height of the canvas 9canvas.width = 100; 10canvas.height = 100; 11 12// context 13let ctx = canvas.getContext(&amp;#34;2d&amp;#34;); 14 15// background purpose 16ctx.fillStyle = &amp;#34;white&amp;#34;; 17ctx.fillRect(0, 0, canvas.width, canvas.height); 18ctx.save(); 19 20// cropping 21ctx.beginPath(); 22ctx.arc(50, 50, 50, 0, Math.PI * 2, true); 23ctx.closePath(); 24ctx.</description>
     </item>
     
     <item>
@@ -41,7 +41,7 @@ Data structure is agnostic or independent from programming languages, so you can
       <pubDate>Fri, 11 Mar 2022 02:13:50 +0000</pubDate>
       
       <guid>/base64-from-url/</guid>
-      <description>async function getBase64FromUrl(URL) { const data = await fetch(URL); const blob = await data.blob(); return new Promise((resolve) =&amp;gt; { const reader = new FileReader(); reader.readAsDataURL(blob); reader.onloadend = () =&amp;gt; { const base64data = reader.result; resolve(base64data); }; }); }; </description>
+      <description> 1async function getBase64FromUrl(URL) { 2 const data = await fetch(URL); 3 const blob = await data.blob(); 4 return new Promise((resolve) =&amp;gt; { 5 const reader = new FileReader(); 6 reader.readAsDataURL(blob); 7 reader.onloadend = () =&amp;gt; { 8 const base64data = reader.result; 9 resolve(base64data); 10 }; 11 }); 12}; </description>
     </item>
     
     <item>
@@ -74,7 +74,7 @@ To get it simplified, stored procedure is just a bunch of SQL queries that wrapp
       <description>I’ve been working with Quasar and Tailwind for some projects, both are really helpful tools, sometimes I need to style my Quasar app with Tailwind because I feel more comfort with Tailwind for styling and I love how it works.
 It’s quite simple to integrate Tailwind to Quasar, you just need to do some little configurations.
 Open your Quasar project in terminal and run these commands.
-yarn add -D tailwindcss &amp;amp; npx tailwindcss init There will be a new file named tailwind.</description>
+1yarn add -D tailwindcss &amp;amp; npx tailwindcss init There will be a new file named tailwind.</description>
     </item>
     
     <item>
@@ -88,16 +88,18 @@ One of advantages of WordPress is that it can be a headless CMS, headless means 
     </item>
     
     <item>
-      <title>About</title>
+      <title></title>
       <link>/page/about/</link>
       <pubDate>Fri, 03 Apr 2015 02:13:50 +0000</pubDate>
       
       <guid>/page/about/</guid>
-      <description>Hi, my name&amp;rsquo;s Nurul.
-I&amp;rsquo;m currently working as a freelance web developer. This site is a place where I show my works and share some of my experiences and learnings about software development and web technology in general.
+      <description>Hi 👋 My name&amp;rsquo;s Nurul,
+I&amp;rsquo;m a freelance web developer.
+This site is a place where I show my works and share some of my experiences and learnings about software development and web technology in general.
 You can find me at Facebook, LinkedIn or Telegram.
+&amp;hellip;
 Experience Full-stack Web Developer
-PT Idea Nusantara Cipta
+at PT Idea Nusantara Cipta
 Apr 2021 - present
 As A Freelance Web Developer. Building a research management application system of lecturers of Indonesia.</description>
     </item>
@@ -152,7 +154,7 @@ Laravel for REST API MySQL Flutter SQLite </description>
       <description>Rental flat, private and public housing in Indonesia for low economic citizen, supply and demand management of properties, facilitate citizen to book and rent house with ease.
 Tech Stacks:
 Go Vue.js 3 Quasar Tailwind CSS MySQL Heroku Screenshots:
-Demo URL: https://pupr-rental-housing.netlify.app/</description>
+Demo: https://pupr-rental-housing.netlify.app/</description>
     </item>
     
     <item>
@@ -176,12 +178,12 @@ Laravel MySQL Vue.js Vuetify </description>
     </item>
     
     <item>
-      <title>Project</title>
-      <link>/page/project/</link>
+      <title>Works</title>
+      <link>/page/works/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/page/project/</guid>
-      <description> Name Stacks Platform Billing Receipt Generator Electron, vue.js, HTML, CSS desktop link Zumstar Wordpress web link GMN Wordpress, vue.js, TailwindCSS web link Ship Rental Management Laravel, MySQL, vue.js, Vuetify web link Meeting Room Management Laravel, MySQL, Flutter, SQLite web, mobile link Rental Housing Management Go, MySQL, vue.js, Quasar, TailwindCSS web link Attayasa Wordpress, vue.js, TailwindCSS web link </description>
+      <guid>/page/works/</guid>
+      <description> Project Name Stacks Billing Receipt Generator Electron, vue.js, HTML, CSS Zumstar Wordpress GMN Wordpress, vue.js, TailwindCSS Ship Rental Management Laravel, MySQL, vue.js, Vuetify Meeting Room Management Laravel, MySQL, Flutter, SQLite Rental Housing Management Go, MySQL, vue.js, Quasar, TailwindCSS Attayasa Wordpress, vue.js, TailwindCSS </description>
     </item>
     
   </channel>

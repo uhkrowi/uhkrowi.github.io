@@ -1,90 +1,59 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Styling with tailwindcss in Quasar &middot; Nurul Uhkrowi</title>
-        <meta name="description" content="I’ve been working with Quasar and Tailwind for some projects, both are really helpful tools, sometimes I need to style my Quasar app with Tailwind because I feel more comfort with Tailwind for styling and I love how it works.
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Styling with tailwindcss in Quasar &middot; Nurul Uhkrowi</title>
+    <meta name="description" content="I’ve been working with Quasar and Tailwind for some projects, both are really helpful tools, sometimes I need to style my Quasar app with Tailwind because I feel more comfort with Tailwind for styling and I love how it works.
 It’s quite simple to integrate Tailwind to Quasar, you just need to do some little configurations.
 Open your Quasar project in terminal and run these commands.
-yarn add -D tailwindcss &amp; npx tailwindcss init There will be a new file named tailwind.">
-        <meta name="HandheldFriendly" content="True">
-        <meta name="MobileOptimized" content="320">
-        <meta name="generator" content="Hugo 0.100.1" />
-        <meta name="robots" content="index,follow">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta property="og:title" content="Styling with tailwindcss in Quasar">
+1yarn add -D tailwindcss &amp; npx tailwindcss init There will be a new file named tailwind.">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="generator" content="Hugo 0.100.1" />
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Styling with tailwindcss in Quasar">
 <meta property="og:description" content="I’ve been working with Quasar and Tailwind for some projects, both are really helpful tools, sometimes I need to style my Quasar app with Tailwind because I feel more comfort with Tailwind for styling and I love how it works.
 It’s quite simple to integrate Tailwind to Quasar, you just need to do some little configurations.
 Open your Quasar project in terminal and run these commands.
-yarn add -D tailwindcss &amp; npx tailwindcss init There will be a new file named tailwind.">
+1yarn add -D tailwindcss &amp; npx tailwindcss init There will be a new file named tailwind.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="/styling-with-tailwindcss-in-quasar/">
-        <link rel="icon" type="image/x-icon" href="/favicon.ico">
-        <link rel="stylesheet" href="/dist/site.css">
-        <link rel="stylesheet" href="/dist/syntax.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/prism-dark.css">
+    <link rel="stylesheet" href="/css/prism-line-numbers.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      <link rel="stylesheet" href="/css/mycustom.css">
+  </head>
+  <body class="flex justify-center">
+    <div class="container" style="padding-top: 30px;">
+      <header class="flex justify-between items-center">
         
-        
-        
-        
-        
+        <a href="/" class="text-main">Home</a>
+        <div class="flex items-center site-nav">
+            
+    <span class="site-nav-item">
+        <a href="/page/about/" class="text-main">About</a>
+    </span>
 
-    </head>
-    <body>
-        
+    <span class="site-nav-item">
+        <a href="/" class="text-main">Blog</a>
+    </span>
 
-        <div id="wrapper">
-            <header class="site-header">
-                <div class="container">
-                    <div class="site-title-wrapper">
-                        
-                        
-                            <a class="button-square" href="/index.xml" aria-label="RSS"><i class="fa fa-rss" aria-hidden="true"></i></a>
-                        
-                        
-                        
-                        
-                        
-                            <a class="button-square button-social hint--top" data-hint="Github" aria-label="Github" href="https://github.com/uhkrowi" rel="me">
-                                <i class="fa fa-github-alt" aria-hidden="true"></i>
-                            </a>
-                        
-                        
-                        
-                        
-                            <a class="button-square button-social hint--top" data-hint="Email" aria-label="Send an Email" href="mailto:uhkrowi@gmail.com">
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                            </a>
-                        
-                        
-                            <a class="button-square button-social hint--top" data-hint="CV" aria-label="Download CV" href="/CV%20Nurul%20Uhkrowi.pdf">
-                                CV
-                            </a>
-                        
-                    </div>
-
-                    <ul class="site-nav">
-                        
-    <li class="site-nav-item">
-        <a href="/page/about/">About</a>
-    </li>
-
-    <li class="site-nav-item">
-        <a href="/">Blog</a>
-    </li>
-
-    <li class="site-nav-item">
-        <a href="/page/project/">Project</a>
-    </li>
+    <span class="site-nav-item">
+        <a href="/page/works/" class="text-main">Works</a>
+    </span>
 
 
-                    </ul>
-                </div>
-            </header>
-
-            <div id="container">
+        </div>
+      </header>
+      <hr>
+      <main>
+  
 
 
 <div class="container">
@@ -92,8 +61,8 @@ yarn add -D tailwindcss &amp; npx tailwindcss init There will be a new file name
         <header class="post-header">
     <h1 class="post-title" itemprop="name headline">Styling with tailwindcss in Quasar</h1>
     
-    <p class="post-date">
-        <span>Published <time datetime="2022-02-15" itemprop="datePublished">Feb 15, 2022</time></span>
+    <p class="post-date pb-4 text-xs">
+        <span>Posted at — <time datetime="2022-02-15" itemprop="datePublished">Feb 15, 2022</time></span>
     </p>
 </header>
 
@@ -103,72 +72,66 @@ yarn add -D tailwindcss &amp; npx tailwindcss init There will be a new file name
     <p>I’ve been working with Quasar and Tailwind for some projects, both are really helpful tools, sometimes I need to style my Quasar app with Tailwind because I feel more comfort with Tailwind for styling and I love how it works.</p>
 <p>It’s quite simple to integrate Tailwind to Quasar, you just need to do some little configurations.</p>
 <p>Open your Quasar project in terminal and run these commands.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yarn add -D tailwindcss &amp; npx tailwindcss init
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>yarn add -D tailwindcss &amp; npx tailwindcss init
 </span></span></code></pre></div><p>There will be a new file named tailwind.config.js created.
 Open the file and add new property “prefix” with value “tw-“, then change value of content property to [“./src/*/.{html,js,vue}”].</p>
 <p><img src="/image-20.png" alt="image"></p>
 <p>note: we have to use prefix to avoid clashes of Quasar classes and Tailwind’s.</p>
 <p>Now open scr/css/app.scss and add these to import utility classes of Tailwind.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>@<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;tailwindcss/base&#34;</span>;
-</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;tailwindcss/components&#34;</span>;
-</span></span><span style="display:flex;"><span>@<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;tailwindcss/utilities&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-css" data-lang="css"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>@<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;tailwindcss/base&#34;</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>@<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;tailwindcss/components&#34;</span>;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>@<span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;tailwindcss/utilities&#34;</span>;
 </span></span></code></pre></div><p>The last thing to do is add Tailwind in .postcssrc.js file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;tailwindcss&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-js" data-lang="js"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;tailwindcss&#34;</span>)
 </span></span></code></pre></div><p><img src="/image-19.png" alt="image"></p>
 <p>Alright, now you can use Tailwind classes in your project, try to make a square div with red background and make it rounded at its every corner then place a text at center.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> 
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tw-h-24 tw-w-24 tw-bg-red-500 tw-rounded tw-flex tw-justify-center tw-items-center tw-text-white tw-text-lg&#34;</span>
-</span></span><span style="display:flex;"><span>&gt;
-</span></span><span style="display:flex;"><span>  Hola!
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-html" data-lang="html"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>&lt;<span style="color:#f92672">div</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tw-h-24 tw-w-24 tw-bg-red-500 tw-rounded tw-flex tw-justify-center tw-items-center tw-text-white tw-text-lg&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>  Hola!
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>&lt;/<span style="color:#f92672">div</span>&gt;
 </span></span></code></pre></div><p><img src="/image-17.png" alt="image"></p>
 <p>You can also combine Quasar classes and Tailwind when you need.</p>
 
 </div>
 
-        <footer class="post-footer clearfix">
-        <p class="post-tags">
-            <span>Tagged:</span>
+        <footer class="post-footer clearfix" style="margin-top: 50px;">
+        <p class="post-tags text-xs">
+            <span>Tags:</span>
                 <a href="/tags/web/">Web</a>
         </p>
-    <div class="share">
-            <a class="icon-twitter" href="https://twitter.com/share?text=Styling%20with%20tailwindcss%20in%20Quasar&url=%2fstyling-with-tailwindcss-in-quasar%2f"
-                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
-            <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=%2fstyling-with-tailwindcss-in-quasar%2f"
-                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" aria-label="Share on Facebook">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-    </div>
+    
 </footer>
 
         
     </article>
 </div>
 
-            </div>
-        </div>
-
-        <footer class="footer">
-            <div class="container">
-                <div class="site-title-wrapper">
-                    <h1 class="site-title">
-                        <a href="/">Uhkrowi</a>
-                    </h1>
-                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
-                        <i class="fa fa-angle-up" aria-hidden="true"></i>
-                    </a>
-                </div>
-
-                
-            </div>
-        </footer>
-
-        <script src="/js/jquery-1.11.3.min.js"></script>
-        <script src="/js/jquery.fitvids.js"></script>
-        <script src="/js/scripts.js"></script>
+<div class="footer flex justify-between items-center">
+    <span class="" style="font-size: 14px;">&copy; Nurul Uhkrowi 2022</span>
+    <div>
         
-    </body>
+            <a class="ml-5 icon" data-hint="Github" aria-label="Github" href="https://github.com/uhkrowi" rel="me">
+                <i class="fa fa-github-alt text-main" aria-hidden="true"></i>
+            </a>
+        
+        
+            <a class="ml-5 icon" data-hint="Email" aria-label="Send an Email" href="mailto:uhkrowi@gmail.com">
+                <i class="fa fa-envelope text-main" aria-hidden="true"></i>
+            </a>
+        
+        
+        
+            <a class="ml-5 icon" data-hint="CV" aria-label="LinkedIn" href="https://www.linkedin.com/in/uhkrowi">
+                <i class="fa fa-linkedin text-main" aria-hidden="true"></i>
+            </a>
+        
+        
+            <a class="ml-5 icon" href="/index.xml" aria-label="RSS"><i class="fa fa-rss text-main" aria-hidden="true"></i></a>
+        
+    </div>
+</div>
+</main>
+</div>
+</body>
 </html>
-
