@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en" class="astro-GHAJDBVF">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="generator" content="Astro v1.1.5">
+
+<!-- Primary Meta Tags -->
+<title>Styling with Tailwind CSS in Quasar</title>
+<meta name="title" content="Styling with Tailwind CSS in Quasar">
+<meta name="description">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/blog/styling-with-tailwindcss-in-quasar/">
+<meta property="og:title" content="Styling with Tailwind CSS in Quasar">
+<meta property="og:description">
+<meta property="og:image" content="https://example.com/placeholder-social.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://example.com/blog/styling-with-tailwindcss-in-quasar/">
+<meta property="twitter:title" content="Styling with Tailwind CSS in Quasar">
+<meta property="twitter:description">
+<meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
+
+		
+	<link rel="stylesheet" href="/assets/b59b845c.c6f5972e.css" />
+<link rel="stylesheet" href="/assets/b41d1a55.374d0fb9.css" /></head>
+
+	<body class="astro-GHAJDBVF">
+		<header class="astro-5C7BTAAG">
+	<!-- <h2>
+		{SITE_TITLE}
+	</h2> -->
+	<nav class="astro-5C7BTAAG">
+		<!-- <HeaderLink href="/">Home</HeaderLink> -->
+		<a href="/about" class="astro-5C7BTAAG astro-KWAAWCVX">
+	About
+</a>
+
+		<a href="/blog" class="astro-5C7BTAAG astro-KWAAWCVX">
+	Blog
+</a>
+
+		<a href="/projects" class="astro-5C7BTAAG astro-KWAAWCVX">
+	Projects
+</a>
+
+		<!-- <HeaderLink href="https://www.linkedin.com/in/uhkrowi" target="_blank">LinkedIn</HeaderLink> -->
+		<a href="https://github.com/uhkrowi" class="astro-5C7BTAAG astro-KWAAWCVX" target="_blank">
+	GitHub
+</a>
+
+	</nav>
+</header>
+
+		<main class="astro-GHAJDBVF">
+			<article class="astro-GHAJDBVF">
+				<!-- <div>
+					&larr; <span style="cursor: pointer; text-decoration: underline;">back</span>
+				</div> -->
+				
+				<h1 class="title astro-GHAJDBVF">Styling with Tailwind CSS in Quasar</h1>
+				<span style="font-size: 14px" class="astro-GHAJDBVF">Posted at — </span><time style="font-size: 14px" class="astro-GHAJDBVF">Feb 15, 2022</time>
+				
+				<!-- <hr/> -->
+				<p>I’ve been working with Quasar and Tailwind CSS for some projects, both are really helpful tools, sometimes I need to style my Quasar app with Tailwind CSS because I feel more comfort with Tailwind CSS for styling and I love how it works.</p>
+<p>It’s quite simple to integrate Tailwind CSS to Quasar, you just need to do some little configurations.</p>
+<p>Open your Quasar project in terminal and run these commands.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">yarn add -D tailwindcss </span><span style="color: #FF7B72">&#x26;</span><span style="color: #C9D1D9"> npx tailwindcss init</span></span></code></pre>
+<p>There will be a new file named tailwind.config.js created. Open the file and add new property “prefix” with value “tw-“, then change value of content property to [“./src/<em>/</em>.{html,js,vue}”].</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #79C0FF">module</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">exports</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  prefix: </span><span style="color: #A5D6FF">"tw-"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  content: [</span><span style="color: #A5D6FF">"./src/**/*.{html,js,vue}"</span><span style="color: #C9D1D9">]</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>note: we have to use prefix to avoid clashes of Quasar classes and Tailwind CSS’s.</p>
+<p>Now open scr/css/app.scss and add these to import utility classes of Tailwind CSS.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">@import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">"tailwindcss/base"</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #FF7B72">@import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">"tailwindcss/components"</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"><span style="color: #FF7B72">@import</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">"tailwindcss/utilities"</span><span style="color: #C9D1D9">;</span></span></code></pre>
+<p>The last thing to do is add Tailwind CSS in .postcssrc.js file.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #D2A8FF">require</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"tailwindcss"</span><span style="color: #C9D1D9">)</span></span></code></pre>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #79C0FF">module</span><span style="color: #C9D1D9">.</span><span style="color: #79C0FF">exports</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  plugins: [</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">require</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"tailwindcss"</span><span style="color: #C9D1D9">),</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">require</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"autoprefixer"</span><span style="color: #C9D1D9">),</span></span>
+<span class="line"><span style="color: #C9D1D9">  ]</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>Alright, now you can use Tailwind CSS classes in your project, try to make a square div with red background and make it rounded at its every corner then place a text at center.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9"> </span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #79C0FF">class</span><span style="color: #FF7B72">=</span><span style="color: #A5D6FF">"tw-h-24 tw-w-24 tw-bg-red-500 tw-rounded tw-flex tw-justify-center tw-items-center tw-text-white tw-text-lg"</span></span>
+<span class="line"><span style="color: #C9D1D9">></span></span>
+<span class="line"><span style="color: #C9D1D9">  Hola!</span></span>
+<span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">div</span><span style="color: #C9D1D9">></span></span></code></pre>
+<p><img src="/blog/styling-with-tailwindcss-in-quasar/image.png" alt="result"></p>
+<p>You can also combine Quasar classes and Tailwind CSS when you need.</p>
+			</article>
+		</main>
+		<footer class="astro-3WTO37UZ">
+	<span class="astro-3WTO37UZ">&copy; Nurul Uhkrowi. 2022</span>
+	<!-- <div style="display: flex;">
+		<span>✉️</span>
+		<span><img src="https://img.icons8.com/material-rounded/2x/mail.png"></span>
+		<span><img src="https://img.icons8.com/ios-glyphs/2x/github.png"></span>
+		<span>✉️</span>
+	</div> -->
+</footer>
+
+	</body></html>

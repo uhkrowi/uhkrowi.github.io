@@ -1,0 +1,349 @@
+<!DOCTYPE html><html lang="en" class="astro-GHAJDBVF">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="generator" content="Astro v1.1.5">
+
+<!-- Primary Meta Tags -->
+<title>Generate PDF with PDFMake</title>
+<meta name="title" content="Generate PDF with PDFMake">
+<meta name="description">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/blog/generate-pdf-with-pdfmake/">
+<meta property="og:title" content="Generate PDF with PDFMake">
+<meta property="og:description">
+<meta property="og:image" content="https://example.com/placeholder-social.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://example.com/blog/generate-pdf-with-pdfmake/">
+<meta property="twitter:title" content="Generate PDF with PDFMake">
+<meta property="twitter:description">
+<meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
+
+		
+	<link rel="stylesheet" href="/assets/b59b845c.c6f5972e.css" />
+<link rel="stylesheet" href="/assets/b41d1a55.374d0fb9.css" /></head>
+
+	<body class="astro-GHAJDBVF">
+		<header class="astro-5C7BTAAG">
+	<!-- <h2>
+		{SITE_TITLE}
+	</h2> -->
+	<nav class="astro-5C7BTAAG">
+		<!-- <HeaderLink href="/">Home</HeaderLink> -->
+		<a href="/about" class="astro-5C7BTAAG astro-KWAAWCVX">
+	About
+</a>
+
+		<a href="/blog" class="astro-5C7BTAAG astro-KWAAWCVX">
+	Blog
+</a>
+
+		<a href="/projects" class="astro-5C7BTAAG astro-KWAAWCVX">
+	Projects
+</a>
+
+		<!-- <HeaderLink href="https://www.linkedin.com/in/uhkrowi" target="_blank">LinkedIn</HeaderLink> -->
+		<a href="https://github.com/uhkrowi" class="astro-5C7BTAAG astro-KWAAWCVX" target="_blank">
+	GitHub
+</a>
+
+	</nav>
+</header>
+
+		<main class="astro-GHAJDBVF">
+			<article class="astro-GHAJDBVF">
+				<!-- <div>
+					&larr; <span style="cursor: pointer; text-decoration: underline;">back</span>
+				</div> -->
+				
+				<h1 class="title astro-GHAJDBVF">Generate PDF with PDFMake</h1>
+				<span style="font-size: 14px" class="astro-GHAJDBVF">Posted at — </span><time style="font-size: 14px" class="astro-GHAJDBVF">Mar 09, 2022</time>
+				
+				<!-- <hr/> -->
+				<p>In this personal site I decided to generate my CV myself rather than taking up from URL of another website (e.g you could get generated CV from <a href="https://uhkrowi.github.io/generate-pdf-with-pdfmake/">kalibrr.com</a>).</p>
+<p>In my previous project I did the job, generating pdf of documents is pretty simple, there’re some packages you could use out there, one of them is PDFmake.</p>
+<p>PDFmake is a package that helps you to generate PDF for server-side and client-side usage in pure JavaScript (read its documentation <a href="http://pdfmake.org/">here</a>), it’s a powerful tool yet easy to use, it has a <a href="http://pdfmake.org/playground.html">playground</a> too for you to try it online.</p>
+<p>Let’s get some actions.</p>
+<p>We’ll create a PDF document of curriculum vitae that includes data of work experiences, skills and interests. To achieve that we have to provide the data and install PDFmake package first.</p>
+<p>…</p>
+<h3 id="providing-data"><strong>Providing Data</strong></h3>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">experiences</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span></span>
+<span class="line"><span style="color: #C9D1D9">  {</span></span>
+<span class="line"><span style="color: #C9D1D9">    position: </span><span style="color: #A5D6FF">"Back End Web Developer"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    company: </span><span style="color: #A5D6FF">"ABCD Company"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    date: </span><span style="color: #A5D6FF">"Dec 2021 – Current"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    jobs: [</span><span style="color: #A5D6FF">"Do something"</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"Do something else"</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"Doing it again"</span><span style="color: #C9D1D9">]</span></span>
+<span class="line"><span style="color: #C9D1D9">  },</span></span>
+<span class="line"><span style="color: #C9D1D9">  {</span></span>
+<span class="line"><span style="color: #C9D1D9">    position: </span><span style="color: #A5D6FF">"Front End Web Developer"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    company: </span><span style="color: #A5D6FF">"EFG Company"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    date: </span><span style="color: #A5D6FF">"Jan 2021 – Dec 2021"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    jobs: [</span><span style="color: #A5D6FF">"Do something"</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"Do something else"</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"Doing it again"</span><span style="color: #C9D1D9">]</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">skills</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"Javascript"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"NodeJS"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"React.js"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"Vue.js"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"PostgreSQL"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"MongoDB"</span></span>
+<span class="line"><span style="color: #C9D1D9">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">interests</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"Programming"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"Web Design"</span></span>
+<span class="line"><span style="color: #C9D1D9">];</span></span></code></pre>
+<h3 id="install-the-package"><strong>Install the package</strong></h3>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">npm i pdfmake</span></span></code></pre>
+<h3 id="import-the-package-into-your-project"><strong>Import the package into your project</strong></h3>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> pdfMake </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">"pdfmake/build/pdfmake"</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E">// if there's any font you want to use</span></span>
+<span class="line"><span style="color: #C9D1D9">pdfMake.fonts </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  Roboto: {</span></span>
+<span class="line"><span style="color: #C9D1D9">    normal: window.location.origin </span><span style="color: #FF7B72">+</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">"/fonts/Inter-Regular.ttf"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    bold: window.location.origin </span><span style="color: #FF7B72">+</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">"/fonts/Inter-Bold.ttf"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  },</span></span>
+<span class="line"><span style="color: #C9D1D9">};</span></span></code></pre>
+<p>…</p>
+<p>Create helper function to build document object</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// to get label of section, there will be 3 section: Experience, Skill and Interest</span></span>
+<span class="line"><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">getSectionLabel</span><span style="color: #C9D1D9">(</span><span style="color: #FFA657">text</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> { text, style: [</span><span style="color: #A5D6FF">"textBlue"</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"bold"</span><span style="color: #C9D1D9">], margin: [</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">5</span><span style="color: #C9D1D9">] };</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E">// our sections and their values will be wrapped into tables, so we need the function below to simplify creating the tables</span></span>
+<span class="line"><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">generateTable</span><span style="color: #C9D1D9">(</span><span style="color: #FFA657">body</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    table: {</span></span>
+<span class="line"><span style="color: #C9D1D9">      widths: [</span><span style="color: #79C0FF">150</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"*"</span><span style="color: #C9D1D9">],</span></span>
+<span class="line"><span style="color: #C9D1D9">      body,</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">    layout: </span><span style="color: #A5D6FF">"noBorders"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  };</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>Let’s map our data and generate the table with generateTable() function</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #8B949E">// generate experiences</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">generatedExperiences</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> experiences.</span><span style="color: #D2A8FF">map</span><span style="color: #C9D1D9">((</span><span style="color: #FFA657">experience</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> [</span></span>
+<span class="line"><span style="color: #C9D1D9">    experience.date,</span></span>
+<span class="line"><span style="color: #C9D1D9">    {</span></span>
+<span class="line"><span style="color: #C9D1D9">      stack: [</span></span>
+<span class="line"><span style="color: #C9D1D9">        { text: experience.position, style: [</span><span style="color: #A5D6FF">"bold"</span><span style="color: #C9D1D9">] },</span></span>
+<span class="line"><span style="color: #C9D1D9">        { text: experience.company, margin: [</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">5</span><span style="color: #C9D1D9">] },</span></span>
+<span class="line"><span style="color: #C9D1D9">        {</span></span>
+<span class="line"><span style="color: #C9D1D9">          ul: experience.jobs,</span></span>
+<span class="line"><span style="color: #C9D1D9">        },</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #A5D6FF">"</span><span style="color: #79C0FF">\n</span><span style="color: #A5D6FF">"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">      ],</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">  ];</span></span>
+<span class="line"><span style="color: #C9D1D9">});</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">generatedExperienceTable</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">generateTable</span><span style="color: #C9D1D9">(generatedExperiences);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E">// generate skills</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">generatedSkills</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> skills</span></span>
+<span class="line"><span style="color: #C9D1D9">  .</span><span style="color: #D2A8FF">map</span><span style="color: #C9D1D9">((</span><span style="color: #FFA657">skill</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> [</span><span style="color: #A5D6FF">""</span><span style="color: #C9D1D9">, { ul: [skill.label] }];</span></span>
+<span class="line"><span style="color: #C9D1D9">  });</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">generatedSkillTable</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">generateTable</span><span style="color: #C9D1D9">(generatedSkills);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E">// generate interests</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">generatedInterests</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> interests.</span><span style="color: #D2A8FF">map</span><span style="color: #C9D1D9">((</span><span style="color: #FFA657">interest</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> [</span><span style="color: #A5D6FF">""</span><span style="color: #C9D1D9">, { ul: [interest] }];</span></span>
+<span class="line"><span style="color: #C9D1D9">});</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">generatedInterestTable</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">generateTable</span><span style="color: #C9D1D9">(generatedInterests);</span></span></code></pre>
+<p>Then we create the document object</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> dd </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  content: [</span></span>
+<span class="line"><span style="color: #C9D1D9">    {</span></span>
+<span class="line"><span style="color: #C9D1D9">      text: </span><span style="color: #A5D6FF">"John Doe"</span><span style="color: #C9D1D9">, </span></span>
+<span class="line"><span style="color: #C9D1D9">      style: </span><span style="color: #A5D6FF">"header"</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">"</span><span style="color: #79C0FF">\n</span><span style="color: #A5D6FF">"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    {</span></span>
+<span class="line"><span style="color: #C9D1D9">      text: </span><span style="color: #A5D6FF">"t.me/johndoe007 | johndoe@coolmail.com"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">      margin: [</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">],</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">"</span><span style="color: #79C0FF">\n</span><span style="color: #A5D6FF">"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">getSectionLabel</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"WORK EXPERIENCE"</span><span style="color: #C9D1D9">),</span></span>
+<span class="line"><span style="color: #C9D1D9">    generatedExperienceTable,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">"</span><span style="color: #79C0FF">\n</span><span style="color: #A5D6FF">"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">getSectionLabel</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"SKILL"</span><span style="color: #C9D1D9">),</span></span>
+<span class="line"><span style="color: #C9D1D9">    generatedSkillTable,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">"</span><span style="color: #79C0FF">\n</span><span style="color: #A5D6FF">"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">getSectionLabel</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"INTEREST"</span><span style="color: #C9D1D9">),</span></span>
+<span class="line"><span style="color: #C9D1D9">    generatedInterestTable,</span></span>
+<span class="line"><span style="color: #C9D1D9">  ],</span></span>
+<span class="line"><span style="color: #C9D1D9">  styles: {</span></span>
+<span class="line"><span style="color: #C9D1D9">    header: {</span></span>
+<span class="line"><span style="color: #C9D1D9">      fontSize: </span><span style="color: #79C0FF">18</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">      bold: </span><span style="color: #79C0FF">true</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">    small: {</span></span>
+<span class="line"><span style="color: #C9D1D9">      fontSize: </span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">    bold: {</span></span>
+<span class="line"><span style="color: #C9D1D9">      bold: </span><span style="color: #79C0FF">true</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">    textBlue: {</span></span>
+<span class="line"><span style="color: #C9D1D9">      color: </span><span style="color: #A5D6FF">"#3576ba"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">  },</span></span>
+<span class="line"><span style="color: #C9D1D9">  defaultStyle: {</span></span>
+<span class="line"><span style="color: #C9D1D9">    fontSize: </span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    font: </span><span style="color: #A5D6FF">"Roboto"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  },</span></span>
+<span class="line"><span style="color: #C9D1D9">};</span></span></code></pre>
+<p>The last but not least, create the PDF file and download it. You can just open the file too with .open() function.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">pdfMake.</span><span style="color: #D2A8FF">createPdf</span><span style="color: #C9D1D9">(dd).</span><span style="color: #D2A8FF">download</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"Awesome CV"</span><span style="color: #C9D1D9">);</span></span></code></pre>
+<p>The full code is here:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> pdfMake </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">"pdfmake/build/pdfmake"</span><span style="color: #C9D1D9">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">experiences</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span></span>
+<span class="line"><span style="color: #C9D1D9">  {</span></span>
+<span class="line"><span style="color: #C9D1D9">    position: </span><span style="color: #A5D6FF">"Back End Web Developer"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    company: </span><span style="color: #A5D6FF">"ABCD Company"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    date: </span><span style="color: #A5D6FF">"Dec 2021 – Current"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    jobs: [</span><span style="color: #A5D6FF">"Do something"</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"Do something else"</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"Doing it again"</span><span style="color: #C9D1D9">]</span></span>
+<span class="line"><span style="color: #C9D1D9">  },</span></span>
+<span class="line"><span style="color: #C9D1D9">  {</span></span>
+<span class="line"><span style="color: #C9D1D9">    position: </span><span style="color: #A5D6FF">"Front End Web Developer"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    company: </span><span style="color: #A5D6FF">"EFG Company"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    date: </span><span style="color: #A5D6FF">"Jan 2021 – Dec 2021"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    jobs: [</span><span style="color: #A5D6FF">"Do something"</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"Do something else"</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"Doing it again"</span><span style="color: #C9D1D9">]</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">skills</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"Javascript"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"NodeJS"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"React.js"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"Vue.js"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"PostgreSQL"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #A5D6FF">"MongoDB"</span></span>
+<span class="line"><span style="color: #C9D1D9">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">interests</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span><span style="color: #A5D6FF">"Programming"</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"Web Design"</span><span style="color: #C9D1D9">];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E">// if there's any font you want to use</span></span>
+<span class="line"><span style="color: #C9D1D9">pdfMake.fonts </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  Roboto: {</span></span>
+<span class="line"><span style="color: #C9D1D9">    normal: window.location.origin </span><span style="color: #FF7B72">+</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">"/fonts/Inter-Regular.ttf"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    bold: window.location.origin </span><span style="color: #FF7B72">+</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">"/fonts/Inter-Bold.ttf"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  },</span></span>
+<span class="line"><span style="color: #C9D1D9">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E">// to get label of section, there will be 3 section: Experience, Skill and Interest</span></span>
+<span class="line"><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">getSectionLabel</span><span style="color: #C9D1D9">(</span><span style="color: #FFA657">text</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> { text, style: [</span><span style="color: #A5D6FF">"textBlue"</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"bold"</span><span style="color: #C9D1D9">], margin: [</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">5</span><span style="color: #C9D1D9">] };</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E">// our sections and their values will be wrapped into tables, so we need the function below to simplify creating the tables</span></span>
+<span class="line"><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">generateTable</span><span style="color: #C9D1D9">(</span><span style="color: #FFA657">body</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    table: {</span></span>
+<span class="line"><span style="color: #C9D1D9">      widths: [</span><span style="color: #79C0FF">150</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">"*"</span><span style="color: #C9D1D9">],</span></span>
+<span class="line"><span style="color: #C9D1D9">      body,</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">    layout: </span><span style="color: #A5D6FF">"noBorders"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  };</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E">// generate experiences</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">generatedExperiences</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> experiences.</span><span style="color: #D2A8FF">map</span><span style="color: #C9D1D9">((</span><span style="color: #FFA657">experience</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> [</span></span>
+<span class="line"><span style="color: #C9D1D9">    experience.date,</span></span>
+<span class="line"><span style="color: #C9D1D9">    {</span></span>
+<span class="line"><span style="color: #C9D1D9">      stack: [</span></span>
+<span class="line"><span style="color: #C9D1D9">        { text: experience.position, style: [</span><span style="color: #A5D6FF">"bold"</span><span style="color: #C9D1D9">] },</span></span>
+<span class="line"><span style="color: #C9D1D9">        { text: experience.company, margin: [</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">5</span><span style="color: #C9D1D9">] },</span></span>
+<span class="line"><span style="color: #C9D1D9">        {</span></span>
+<span class="line"><span style="color: #C9D1D9">          ul: experience.jobs,</span></span>
+<span class="line"><span style="color: #C9D1D9">        },</span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #A5D6FF">"</span><span style="color: #79C0FF">\n</span><span style="color: #A5D6FF">"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">      ],</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">  ];</span></span>
+<span class="line"><span style="color: #C9D1D9">});</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">generatedExperienceTable</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">generateTable</span><span style="color: #C9D1D9">(generatedExperiences);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E">// generate skills</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">generatedSkills</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> skills</span></span>
+<span class="line"><span style="color: #C9D1D9">  .</span><span style="color: #D2A8FF">map</span><span style="color: #C9D1D9">((</span><span style="color: #FFA657">skill</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> [</span><span style="color: #A5D6FF">""</span><span style="color: #C9D1D9">, { ul: [skill] }];</span></span>
+<span class="line"><span style="color: #C9D1D9">  });</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">generatedSkillTable</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">generateTable</span><span style="color: #C9D1D9">(generatedSkills);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #8B949E">// generate interests</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">generatedInterests</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> interests.</span><span style="color: #D2A8FF">map</span><span style="color: #C9D1D9">((</span><span style="color: #FFA657">interest</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> [</span><span style="color: #A5D6FF">""</span><span style="color: #C9D1D9">, { ul: [interest] }];</span></span>
+<span class="line"><span style="color: #C9D1D9">});</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">generatedInterestTable</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">generateTable</span><span style="color: #C9D1D9">(generatedInterests);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">var</span><span style="color: #C9D1D9"> dd </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  content: [</span></span>
+<span class="line"><span style="color: #C9D1D9">    {</span></span>
+<span class="line"><span style="color: #C9D1D9">      text: </span><span style="color: #A5D6FF">"John Doe"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">      style: </span><span style="color: #A5D6FF">"header"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">"</span><span style="color: #79C0FF">\n</span><span style="color: #A5D6FF">"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    {</span></span>
+<span class="line"><span style="color: #C9D1D9">      text: </span><span style="color: #A5D6FF">"t.me/johndoe007 | johndoe@coolmail.com"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">      margin: [</span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">],</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">"</span><span style="color: #79C0FF">\n</span><span style="color: #A5D6FF">"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">getSectionLabel</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"WORK EXPERIENCE"</span><span style="color: #C9D1D9">),</span></span>
+<span class="line"><span style="color: #C9D1D9">    generatedExperienceTable,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">"</span><span style="color: #79C0FF">\n</span><span style="color: #A5D6FF">"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">getSectionLabel</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"SKILL"</span><span style="color: #C9D1D9">),</span></span>
+<span class="line"><span style="color: #C9D1D9">    generatedSkillTable,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #A5D6FF">"</span><span style="color: #79C0FF">\n</span><span style="color: #A5D6FF">"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #D2A8FF">getSectionLabel</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"INTEREST"</span><span style="color: #C9D1D9">),</span></span>
+<span class="line"><span style="color: #C9D1D9">    generatedInterestTable,</span></span>
+<span class="line"><span style="color: #C9D1D9">  ],</span></span>
+<span class="line"><span style="color: #C9D1D9">  styles: {</span></span>
+<span class="line"><span style="color: #C9D1D9">    header: {</span></span>
+<span class="line"><span style="color: #C9D1D9">      fontSize: </span><span style="color: #79C0FF">18</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">      bold: </span><span style="color: #79C0FF">true</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">    small: {</span></span>
+<span class="line"><span style="color: #C9D1D9">      fontSize: </span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">    bold: {</span></span>
+<span class="line"><span style="color: #C9D1D9">      bold: </span><span style="color: #79C0FF">true</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">    textBlue: {</span></span>
+<span class="line"><span style="color: #C9D1D9">      color: </span><span style="color: #A5D6FF">"#3576ba"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    },</span></span>
+<span class="line"><span style="color: #C9D1D9">  },</span></span>
+<span class="line"><span style="color: #C9D1D9">  defaultStyle: {</span></span>
+<span class="line"><span style="color: #C9D1D9">    fontSize: </span><span style="color: #79C0FF">10</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">    font: </span><span style="color: #A5D6FF">"Roboto"</span><span style="color: #C9D1D9">,</span></span>
+<span class="line"><span style="color: #C9D1D9">  },</span></span>
+<span class="line"><span style="color: #C9D1D9">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">pdfMake.</span><span style="color: #D2A8FF">createPdf</span><span style="color: #C9D1D9">(dd).</span><span style="color: #D2A8FF">download</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"Awesome CV"</span><span style="color: #C9D1D9">);</span></span></code></pre>
+<p>The result will look like this:
+<img src="/blog/generate-pdf-with-pdfmake/image.png" alt="result"></p>
+<p>You can do more complex structures of pdf document if needed, you can explore the documentation of the package <a href="https://pdfmake.github.io/docs/0.1/">here</a>.</p>
+			</article>
+		</main>
+		<footer class="astro-3WTO37UZ">
+	<span class="astro-3WTO37UZ">&copy; Nurul Uhkrowi. 2022</span>
+	<!-- <div style="display: flex;">
+		<span>✉️</span>
+		<span><img src="https://img.icons8.com/material-rounded/2x/mail.png"></span>
+		<span><img src="https://img.icons8.com/ios-glyphs/2x/github.png"></span>
+		<span>✉️</span>
+	</div> -->
+</footer>
+
+	</body></html>

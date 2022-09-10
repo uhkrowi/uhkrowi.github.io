@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en" class="astro-GHAJDBVF">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="generator" content="Astro v1.1.5">
+
+<!-- Primary Meta Tags -->
+<title>Get base64 from URL</title>
+<meta name="title" content="Get base64 from URL">
+<meta name="description">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/blog/get-base-64-url/">
+<meta property="og:title" content="Get base64 from URL">
+<meta property="og:description">
+<meta property="og:image" content="https://example.com/placeholder-social.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://example.com/blog/get-base-64-url/">
+<meta property="twitter:title" content="Get base64 from URL">
+<meta property="twitter:description">
+<meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
+
+		
+	<link rel="stylesheet" href="/assets/b59b845c.c6f5972e.css" />
+<link rel="stylesheet" href="/assets/b41d1a55.374d0fb9.css" /></head>
+
+	<body class="astro-GHAJDBVF">
+		<header class="astro-5C7BTAAG">
+	<!-- <h2>
+		{SITE_TITLE}
+	</h2> -->
+	<nav class="astro-5C7BTAAG">
+		<!-- <HeaderLink href="/">Home</HeaderLink> -->
+		<a href="/about" class="astro-5C7BTAAG astro-KWAAWCVX">
+	About
+</a>
+
+		<a href="/blog" class="astro-5C7BTAAG astro-KWAAWCVX">
+	Blog
+</a>
+
+		<a href="/projects" class="astro-5C7BTAAG astro-KWAAWCVX">
+	Projects
+</a>
+
+		<!-- <HeaderLink href="https://www.linkedin.com/in/uhkrowi" target="_blank">LinkedIn</HeaderLink> -->
+		<a href="https://github.com/uhkrowi" class="astro-5C7BTAAG astro-KWAAWCVX" target="_blank">
+	GitHub
+</a>
+
+	</nav>
+</header>
+
+		<main class="astro-GHAJDBVF">
+			<article class="astro-GHAJDBVF">
+				<!-- <div>
+					&larr; <span style="cursor: pointer; text-decoration: underline;">back</span>
+				</div> -->
+				
+				<h1 class="title astro-GHAJDBVF">Get base64 from URL</h1>
+				<span style="font-size: 14px" class="astro-GHAJDBVF">Posted at — </span><time style="font-size: 14px" class="astro-GHAJDBVF">Jul 22, 2022</time>
+				
+				<!-- <hr/> -->
+				<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">async</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">getBase64FromUrl</span><span style="color: #C9D1D9">(</span><span style="color: #FFA657">URL</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">data</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">await</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">fetch</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">URL</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">blob</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">await</span><span style="color: #C9D1D9"> data.</span><span style="color: #D2A8FF">blob</span><span style="color: #C9D1D9">();</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">Promise</span><span style="color: #C9D1D9">((</span><span style="color: #FFA657">resolve</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">reader</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">FileReader</span><span style="color: #C9D1D9">();</span></span>
+<span class="line"><span style="color: #C9D1D9">    reader.</span><span style="color: #D2A8FF">readAsDataURL</span><span style="color: #C9D1D9">(blob);</span></span>
+<span class="line"><span style="color: #C9D1D9">    reader.</span><span style="color: #D2A8FF">onloadend</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> () </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">      </span><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">base64data</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> reader.result;</span></span>
+<span class="line"><span style="color: #C9D1D9">      </span><span style="color: #D2A8FF">resolve</span><span style="color: #C9D1D9">(base64data);</span></span>
+<span class="line"><span style="color: #C9D1D9">    };</span></span>
+<span class="line"><span style="color: #C9D1D9">  });</span></span>
+<span class="line"><span style="color: #C9D1D9">};</span></span></code></pre>
+			</article>
+		</main>
+		<footer class="astro-3WTO37UZ">
+	<span class="astro-3WTO37UZ">&copy; Nurul Uhkrowi. 2022</span>
+	<!-- <div style="display: flex;">
+		<span>✉️</span>
+		<span><img src="https://img.icons8.com/material-rounded/2x/mail.png"></span>
+		<span><img src="https://img.icons8.com/ios-glyphs/2x/github.png"></span>
+		<span>✉️</span>
+	</div> -->
+</footer>
+
+	</body></html>

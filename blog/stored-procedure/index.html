@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en" class="astro-GHAJDBVF">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="generator" content="Astro v1.1.5">
+
+<!-- Primary Meta Tags -->
+<title>Stored Procedure</title>
+<meta name="title" content="Stored Procedure">
+<meta name="description">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/blog/stored-procedure/">
+<meta property="og:title" content="Stored Procedure">
+<meta property="og:description">
+<meta property="og:image" content="https://example.com/placeholder-social.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://example.com/blog/stored-procedure/">
+<meta property="twitter:title" content="Stored Procedure">
+<meta property="twitter:description">
+<meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
+
+		
+	<link rel="stylesheet" href="/assets/b59b845c.c6f5972e.css" />
+<link rel="stylesheet" href="/assets/b41d1a55.374d0fb9.css" /></head>
+
+	<body class="astro-GHAJDBVF">
+		<header class="astro-5C7BTAAG">
+	<!-- <h2>
+		{SITE_TITLE}
+	</h2> -->
+	<nav class="astro-5C7BTAAG">
+		<!-- <HeaderLink href="/">Home</HeaderLink> -->
+		<a href="/about" class="astro-5C7BTAAG astro-KWAAWCVX">
+	About
+</a>
+
+		<a href="/blog" class="astro-5C7BTAAG astro-KWAAWCVX">
+	Blog
+</a>
+
+		<a href="/projects" class="astro-5C7BTAAG astro-KWAAWCVX">
+	Projects
+</a>
+
+		<!-- <HeaderLink href="https://www.linkedin.com/in/uhkrowi" target="_blank">LinkedIn</HeaderLink> -->
+		<a href="https://github.com/uhkrowi" class="astro-5C7BTAAG astro-KWAAWCVX" target="_blank">
+	GitHub
+</a>
+
+	</nav>
+</header>
+
+		<main class="astro-GHAJDBVF">
+			<article class="astro-GHAJDBVF">
+				<!-- <div>
+					&larr; <span style="cursor: pointer; text-decoration: underline;">back</span>
+				</div> -->
+				
+				<h1 class="title astro-GHAJDBVF">Stored Procedure</h1>
+				<span style="font-size: 14px" class="astro-GHAJDBVF">Posted at — </span><time style="font-size: 14px" class="astro-GHAJDBVF">Jul 08, 2022</time>
+				
+				<!-- <hr/> -->
+				<p>Recently I have to work with stored procedures for a pretty huge monolith project, it’s not something new for me but I’ve been leaving it for a quite long time so I need to refresh my knowledge.</p>
+<p>To get it simplified, stored procedure is just a bunch of SQL queries that wrapped and can be executed with a single command (you can also call functions in it when you have several common tasks to run).</p>
+<p>Anyway I don’t really like to manipulate data through neither SQL stored procedures, functions nor views, because I don’t want to separate my app logics, so I do every manipulating processes on the backend code with ORM’s query builder or a plain query if possible.</p>
+<p>That’s not a big deal tho, if you prefer to do so, you could group the queries into a single stored procedure then execute it when needed.</p>
+<p>Okay, now we know what do stored procedures used for, let’s get some practices.</p>
+<p><strong>Creating tables and put some values</strong></p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">CREATE</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">TABLE</span><span style="color: #C9D1D9"> Employee</span></span>
+<span class="line"><span style="color: #C9D1D9">(ID </span><span style="color: #FF7B72">INT</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">NOT</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">NULL</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">IDENTITY</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">,</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">PRIMARY</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">KEY</span><span style="color: #C9D1D9">, FullName </span><span style="color: #FF7B72">VARCHAR</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">100</span><span style="color: #C9D1D9">), Salary </span><span style="color: #FF7B72">DECIMAL</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #FF7B72">GO</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">CREATE</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">TABLE</span><span style="color: #C9D1D9"> EmployeeAttendance</span></span>
+<span class="line"><span style="color: #C9D1D9">(ID </span><span style="color: #FF7B72">INT</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">NOT</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">NULL</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">IDENTITY</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">,</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">PRIMARY</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">KEY</span><span style="color: #C9D1D9">, EmployeeID </span><span style="color: #FF7B72">INT</span><span style="color: #C9D1D9">, TimeIn </span><span style="color: #FF7B72">DATETIME</span><span style="color: #C9D1D9">, </span><span style="color: #FF7B72">TimeOut</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">DATETIME</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #FF7B72">GO</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">INSERT</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">INTO</span><span style="color: #C9D1D9"> Employee (FullName, Salary) </span><span style="color: #FF7B72">VALUES</span><span style="color: #C9D1D9"> (</span><span style="color: #A5D6FF">'Leo Wick'</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">5000</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #A5D6FF">'Peter Potter'</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">4500</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #A5D6FF">'Harry Parker'</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">6000</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #FF7B72">GO</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">INSERT</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">INTO</span><span style="color: #C9D1D9"> EmployeeAttendance (EmployeeID, TimeIn, </span><span style="color: #FF7B72">TimeOut</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">VALUES</span><span style="color: #C9D1D9"> (</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-04 09:00:00'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-04 18:00:00'</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-05 09:00:00'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-05 18:00:00'</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-06 09:00:00'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-06 18:00:00'</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-07 09:00:00'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-07 18:00:00'</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-08 09:00:00'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-08 18:00:00'</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-04 09:00:00'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-04 18:00:00'</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-05 09:00:00'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-05 18:00:00'</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-06 09:00:00'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-06 18:00:00'</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-07 09:00:00'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-07 18:00:00'</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-08 09:00:00'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-08 18:00:00'</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-04 09:00:00'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-04 18:00:00'</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-05 09:00:00'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-05 18:00:00'</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-06 09:00:00'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-06 18:00:00'</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-07 09:00:00'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-07 18:00:00'</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">,(</span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-08 09:00:00'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'2021-02-08 18:00:00'</span><span style="color: #C9D1D9">)</span></span></code></pre>
+			</article>
+		</main>
+		<footer class="astro-3WTO37UZ">
+	<span class="astro-3WTO37UZ">&copy; Nurul Uhkrowi. 2022</span>
+	<!-- <div style="display: flex;">
+		<span>✉️</span>
+		<span><img src="https://img.icons8.com/material-rounded/2x/mail.png"></span>
+		<span><img src="https://img.icons8.com/ios-glyphs/2x/github.png"></span>
+		<span>✉️</span>
+	</div> -->
+</footer>
+
+	</body></html>
