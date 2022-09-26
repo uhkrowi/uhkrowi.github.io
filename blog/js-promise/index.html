@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en" class="astro-AUGU53B7">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="generator" content="Astro v1.1.5">
+
+<!-- Primary Meta Tags -->
+<title>JavaScript: Promise</title>
+<meta name="title" content="JavaScript: Promise">
+<meta name="description">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/blog/js-promise/">
+<meta property="og:title" content="JavaScript: Promise">
+<meta property="og:description">
+<meta property="og:image" content="https://example.com/placeholder-social.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://example.com/blog/js-promise/">
+<meta property="twitter:title" content="JavaScript: Promise">
+<meta property="twitter:description">
+<meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
+
+		
+	<link rel="stylesheet" href="/assets/c6872810.4b067dcb.css" />
+<link rel="stylesheet" href="/assets/8670ac88.66791c32.css" /></head>
+
+	<body class="astro-AUGU53B7">
+		<header class="astro-VC2XLQGV">
+	<div style="display: flex; justify-content: space-between; align-items: center;" class="astro-VC2XLQGV">
+		<span style="font-size: 25px;" class="astro-VC2XLQGV">
+			<a href="/blog" style="text-decoration: none;" class="astro-VC2XLQGV">Nurul Uhkrowi</a>
+		</span>
+		<nav class="astro-VC2XLQGV">
+			<a href="/about" class="astro-VC2XLQGV astro-F3FWBWT5">
+	About
+</a>
+
+			<a href="/projects" class="astro-VC2XLQGV astro-F3FWBWT5">
+	Project
+</a>
+
+		</nav>
+	</div>
+	<div class="border astro-VC2XLQGV"></div>
+</header>
+
+		<main class="astro-AUGU53B7">
+			<article class="astro-AUGU53B7">
+				
+				<h1 class="title astro-AUGU53B7">JavaScript: Promise</h1>
+				<span style="color: #848484;" class="astro-AUGU53B7">
+					<span style="font-size: 14px" class="astro-AUGU53B7">Posted at — </span>
+					<time style="font-size: 14px" class="astro-AUGU53B7">Jul 15, 2022</time>
+				</span>
+				
+				<p><em>Promises</em> give us a way to make sense out of asynchronous behavior. When making an asynchronous request, one of two things can happen: everything goes as we hope or there’s an error. There may be several different types of successful or unsuccessful requests. For example, we could try several ways to obtain the data to reach success. We could also receive multiple types of errors. Promises give us a way to simplify back to a simple pass or fail.</p>
+<p>Let’s create an asynchronous promise for loading data from the <code>randomuser</code>.me API. This API has information like email address, name, phone number, location, and so on for fake members and is great to use as dummy data.</p>
+<p>The <code>getFakeMembers</code> function returns a new promise. The promise makes a request to the API. If the promise is successful, the data will load. If the promise is unsuccessful, an error will occur</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">getFakeMembers</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FFA657">count</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">Promise</span><span style="color: #C9D1D9">((</span><span style="color: #FFA657">resolves</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">rejects</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">api</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">`https://api.randomuser.me/?nat=US&#x26;results=${</span><span style="color: #C9D1D9">count</span><span style="color: #A5D6FF">}`</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">request</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">XMLHttpRequest</span><span style="color: #C9D1D9">()</span></span>
+<span class="line"><span style="color: #C9D1D9">  request.</span><span style="color: #D2A8FF">open</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'GET'</span><span style="color: #C9D1D9">, api)</span></span>
+<span class="line"><span style="color: #C9D1D9">  request.</span><span style="color: #D2A8FF">onload</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> () </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> </span></span>
+<span class="line"><span style="color: #C9D1D9">       (request.status </span><span style="color: #FF7B72">===</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">200</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">?</span><span style="color: #C9D1D9"> </span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #D2A8FF">resolves</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">JSON</span><span style="color: #C9D1D9">.</span><span style="color: #D2A8FF">parse</span><span style="color: #C9D1D9">(request.response).results) </span><span style="color: #FF7B72">:</span><span style="color: #C9D1D9"> </span></span>
+<span class="line"><span style="color: #C9D1D9">        </span><span style="color: #D2A8FF">reject</span><span style="color: #C9D1D9">(</span><span style="color: #D2A8FF">Error</span><span style="color: #C9D1D9">(request.statusText))</span></span>
+<span class="line"><span style="color: #C9D1D9">  request.</span><span style="color: #D2A8FF">onerror</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> (</span><span style="color: #FFA657">err</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">rejects</span><span style="color: #C9D1D9">(err)</span></span>
+<span class="line"><span style="color: #C9D1D9">  request.</span><span style="color: #D2A8FF">send</span><span style="color: #C9D1D9">()</span></span>
+<span class="line"><span style="color: #C9D1D9">})</span></span></code></pre>
+<p>With that, the promise has been created, but it hasn’t been used yet. We can use the promise by calling the <code>getFakeMembers</code> function and passing in the number of members that should be loaded. The <code>then</code> function can be chained on to do something once the promise has been fulfilled. This is called composition. We’ll also use an additional callback that handles errors:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #D2A8FF">getFakeMembers</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">5</span><span style="color: #C9D1D9">).</span><span style="color: #D2A8FF">then</span><span style="color: #C9D1D9">(</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FFA657">members</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> console.</span><span style="color: #D2A8FF">log</span><span style="color: #C9D1D9">(members),</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FFA657">err</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> console.</span><span style="color: #D2A8FF">error</span><span style="color: #C9D1D9">(</span></span>
+<span class="line"><span style="color: #C9D1D9">      </span><span style="color: #FF7B72">new</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">Error</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"cannot load members from randomuser.me"</span><span style="color: #C9D1D9">))</span></span>
+<span class="line"><span style="color: #C9D1D9">)</span></span></code></pre>
+<p>Promises make dealing with asynchronous requests easier, which is good, because we have to deal with a lot of asynchronous data in JavaScript. You’ll also see promises used heavily in Node.js, so a solid understanding of promises is essential for the modern JavaScript engineer.</p>
+			</article>
+		</main>
+		<footer class="astro-3WTO37UZ">
+	<span class="astro-3WTO37UZ">&copy; Nurul Uhkrowi. 2022</span>
+	<!-- <div style="display: flex;">
+		<span>✉️</span>
+		<span><img src="https://img.icons8.com/material-rounded/2x/mail.png"></span>
+		<span><img src="https://img.icons8.com/ios-glyphs/2x/github.png"></span>
+		<span>✉️</span>
+	</div> -->
+</footer>
+
+	</body></html>
