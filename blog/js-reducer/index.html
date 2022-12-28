@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="en" class="astro-52TQRVIM">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="generator" content="Astro v1.1.5">
+
+<!-- Primary Meta Tags -->
+<title>JS: Reducer</title>
+<meta name="title" content="JS: Reducer">
+<meta name="description">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/blog/js-reducer/">
+<meta property="og:title" content="JS: Reducer">
+<meta property="og:description">
+<meta property="og:image" content="https://example.com/placeholder-social.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://example.com/blog/js-reducer/">
+<meta property="twitter:title" content="JS: Reducer">
+<meta property="twitter:description">
+<meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
+
+		
+	<link rel="stylesheet" href="/assets/6324ff10.a7b42444.css" />
+<link rel="stylesheet" href="/assets/6bc620f5.ecf6360b.css" /></head>
+
+	<body class="astro-52TQRVIM">
+		<header class="astro-2XB2HEM7">
+	<div style="display: flex; justify-content: space-between; align-items: center;" class="astro-2XB2HEM7">
+		<span style="font-size: 20px;" class="astro-2XB2HEM7">
+			<a href="/blog" style="text-decoration: none;" class="astro-2XB2HEM7">Nurul Uhkrowi</a>
+		</span>
+		<nav class="astro-2XB2HEM7">
+			<a href="/about" class="astro-2XB2HEM7 astro-F3FWBWT5">
+	About
+</a>
+
+			<a href="/projects" class="astro-2XB2HEM7 astro-F3FWBWT5">
+	Project
+</a>
+
+		</nav>
+	</div>
+	<div class="border astro-2XB2HEM7"></div>
+</header>
+
+		<main class="astro-52TQRVIM">
+			<!-- <article style="backdrop-filter: blur(8px);"> -->
+			<article class="astro-52TQRVIM">
+				
+				<span class="title astro-52TQRVIM">JS: Reducer</span>
+				
+				
+				<p>The <code>Array.reduce</code> method is a powerful tool for processing and transforming arrays in JavaScript. It allows you to iterate over an array and perform a function on each element, cumulatively reducing the array to a single value. This can be useful for tasks such as summing the elements of an array, concatenating strings, or even flattening a multi-dimensional array.</p>
+<p>To use the <code>Array.reduce</code> method, you pass it a callback function that defines the operation to be performed on each element of the array. The callback function takes two arguments: an accumulator and the current element being processed. The accumulator is the value that is accumulated during the reduction process, and it is initialized to the first value in the array. The current element is the element being processed in the current iteration.</p>
+<p>Here is an example of how you might use the <code>Array.reduce</code> method to sum the elements of an array:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">numbers</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">4</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">5</span><span style="color: #C9D1D9">];</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">sum</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> numbers.</span><span style="color: #D2A8FF">reduce</span><span style="color: #C9D1D9">((</span><span style="color: #FFA657">accumulator</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">current</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> accumulator </span><span style="color: #FF7B72">+</span><span style="color: #C9D1D9"> current, </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">console.</span><span style="color: #D2A8FF">log</span><span style="color: #C9D1D9">(sum); </span><span style="color: #8B949E">// 15</span></span></code></pre>
+<p>In this example, the callback function is defined as <code>(accumulator, current) => accumulator + current</code>. The initial value of the accumulator is 0, so the first time the callback function is called, the accumulator is 0 and the current element is 1. The callback function returns the sum of the accumulator and the current element (0 + 1), which becomes the new value of the accumulator. The next time the callback function is called, the accumulator is 1 and the current element is 2, and so on.</p>
+<p>You can also use the <code>Array.reduce</code> method to perform more complex operations, such as concatenating strings or flattening a multi-dimensional array. For example:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">words</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span><span style="color: #A5D6FF">'Hello'</span><span style="color: #C9D1D9">, </span><span style="color: #A5D6FF">'world!'</span><span style="color: #C9D1D9">];</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">message</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> words.</span><span style="color: #D2A8FF">reduce</span><span style="color: #C9D1D9">((</span><span style="color: #FFA657">accumulator</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">current</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> accumulator </span><span style="color: #FF7B72">+</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">' '</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">+</span><span style="color: #C9D1D9"> current);</span></span>
+<span class="line"><span style="color: #C9D1D9">console.</span><span style="color: #D2A8FF">log</span><span style="color: #C9D1D9">(message); </span><span style="color: #8B949E">// "Hello world!"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">nested</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [[</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">], [</span><span style="color: #79C0FF">3</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">4</span><span style="color: #C9D1D9">], [</span><span style="color: #79C0FF">5</span><span style="color: #C9D1D9">, </span><span style="color: #79C0FF">6</span><span style="color: #C9D1D9">]];</span></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">flattened</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> nested.</span><span style="color: #D2A8FF">reduce</span><span style="color: #C9D1D9">((</span><span style="color: #FFA657">accumulator</span><span style="color: #C9D1D9">, </span><span style="color: #FFA657">current</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">=></span><span style="color: #C9D1D9"> accumulator.</span><span style="color: #D2A8FF">concat</span><span style="color: #C9D1D9">(current), []);</span></span>
+<span class="line"><span style="color: #C9D1D9">console.</span><span style="color: #D2A8FF">log</span><span style="color: #C9D1D9">(flattened); </span><span style="color: #8B949E">// [1, 2, 3, 4, 5, 6]</span></span></code></pre>
+<p>As you can see, the <code>Array.reduce</code> method is a versatile and powerful tool for processing and transforming arrays in JavaScript. It can be used to perform a wide range of operations, from simple tasks like summing the elements of an array to more complex tasks like flattening multi-dimensional arrays.</p>
+			</article>
+		</main>
+		<footer class="astro-BXMVPOOQ">
+	<span class="astro-BXMVPOOQ">&copy; Nurul Uhkrowi. 2022</span>
+</footer>
+
+	</body></html>

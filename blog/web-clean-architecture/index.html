@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en" class="astro-52TQRVIM">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="generator" content="Astro v1.1.5">
+
+<!-- Primary Meta Tags -->
+<title>Clean Architecture</title>
+<meta name="title" content="Clean Architecture">
+<meta name="description">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/blog/web-clean-architecture/">
+<meta property="og:title" content="Clean Architecture">
+<meta property="og:description">
+<meta property="og:image" content="https://example.com/placeholder-social.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://example.com/blog/web-clean-architecture/">
+<meta property="twitter:title" content="Clean Architecture">
+<meta property="twitter:description">
+<meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
+
+		
+	<link rel="stylesheet" href="/assets/6324ff10.a7b42444.css" />
+<link rel="stylesheet" href="/assets/6bc620f5.ecf6360b.css" /></head>
+
+	<body class="astro-52TQRVIM">
+		<header class="astro-2XB2HEM7">
+	<div style="display: flex; justify-content: space-between; align-items: center;" class="astro-2XB2HEM7">
+		<span style="font-size: 20px;" class="astro-2XB2HEM7">
+			<a href="/blog" style="text-decoration: none;" class="astro-2XB2HEM7">Nurul Uhkrowi</a>
+		</span>
+		<nav class="astro-2XB2HEM7">
+			<a href="/about" class="astro-2XB2HEM7 astro-F3FWBWT5">
+	About
+</a>
+
+			<a href="/projects" class="astro-2XB2HEM7 astro-F3FWBWT5">
+	Project
+</a>
+
+		</nav>
+	</div>
+	<div class="border astro-2XB2HEM7"></div>
+</header>
+
+		<main class="astro-52TQRVIM">
+			<!-- <article style="backdrop-filter: blur(8px);"> -->
+			<article class="astro-52TQRVIM">
+				
+				<span class="title astro-52TQRVIM">Clean Architecture</span>
+				
+				
+				<p>Clean Architecture is a software design philosophy that aims to separate the concerns of an application into distinct layers, with the goal of making the application more maintainable, testable, and scalable.</p>
+<p>The basic structure of a clean architecture application is as follows:</p>
+<p>The innermost layer is the domain layer, which contains the business logic and entities of the application. This layer should not depend on any other layers.</p>
+<p>The next layer is the interface adapters layer, which contains the code that communicates with external systems, such as databases, APIs, and user interfaces. This layer should depend only on the domain layer.</p>
+<p>The outermost layer is the frameworks and drivers layer, which contains the code that interfaces with the operating system and other external dependencies. This layer should depend only on the interface adapters layer.</p>
+<p>By following this structure, the application can be more easily maintained and tested, as changes to the outer layers will not affect the inner layers.</p>
+<p>Here is an example of a clean architecture application in Go:</p>
+<ul>
+<li>
+<h4 id="domain-layer">Domain Layer</h4>
+</li>
+</ul>
+<p>The domain layer contains the business logic and entities of the application. It should not depend on any other layers.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">type</span><span style="color: #C9D1D9"> </span><span style="color: #FFA657">User</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">struct</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">	ID   </span><span style="color: #FF7B72">int</span></span>
+<span class="line"><span style="color: #C9D1D9">	Name </span><span style="color: #FF7B72">string</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<ul>
+<li>
+<h4 id="interface-adapters-layer">Interface Adapters Layer</h4>
+</li>
+</ul>
+<p>The interface adapters layer contains the code that communicates with external systems, such as databases, APIs, and user interfaces. It should depend only on the domain layer.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">type</span><span style="color: #C9D1D9"> </span><span style="color: #FFA657">UserRepository</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">interface</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">	</span><span style="color: #79C0FF">Get</span><span style="color: #C9D1D9">(id </span><span style="color: #FF7B72">int</span><span style="color: #C9D1D9">) (</span><span style="color: #FF7B72">*</span><span style="color: #C9D1D9">User, </span><span style="color: #FF7B72">error</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">	</span><span style="color: #79C0FF">Save</span><span style="color: #C9D1D9">(</span><span style="color: #FF7B72">*</span><span style="color: #C9D1D9">User) </span><span style="color: #FF7B72">error</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<ul>
+<li>
+<h4 id="frameworks-and-drivers-layer">Frameworks and Drivers Layer</h4>
+</li>
+</ul>
+<p>The frameworks and drivers layer contains the code that interfaces with the operating system and other external dependencies. It should depend only on the interface adapters layer.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">type</span><span style="color: #C9D1D9"> </span><span style="color: #FFA657">HTTPHandler</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">struct</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">	repo UserRepository</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">func</span><span style="color: #C9D1D9"> (h </span><span style="color: #FF7B72">*</span><span style="color: #C9D1D9">HTTPHandler) </span><span style="color: #D2A8FF">ServeHTTP</span><span style="color: #C9D1D9">(w http.ResponseWriter, r </span><span style="color: #FF7B72">*</span><span style="color: #C9D1D9">http.Request) {</span></span>
+<span class="line"><span style="color: #C9D1D9">	user, err </span><span style="color: #FF7B72">:=</span><span style="color: #C9D1D9"> h.repo.</span><span style="color: #79C0FF">Get</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">	</span><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> err </span><span style="color: #FF7B72">!=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">nil</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">		http.</span><span style="color: #79C0FF">Error</span><span style="color: #C9D1D9">(w, err.</span><span style="color: #79C0FF">Error</span><span style="color: #C9D1D9">(), http.StatusInternalServerError)</span></span>
+<span class="line"><span style="color: #C9D1D9">		</span><span style="color: #FF7B72">return</span></span>
+<span class="line"><span style="color: #C9D1D9">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">	w.</span><span style="color: #79C0FF">Write</span><span style="color: #C9D1D9">([]</span><span style="color: #79C0FF">byte</span><span style="color: #C9D1D9">(fmt.</span><span style="color: #79C0FF">Sprintf</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"Hello, </span><span style="color: #79C0FF">%s</span><span style="color: #A5D6FF">!"</span><span style="color: #C9D1D9">, user.Name)))</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<h4 id="full-code">Full code:</h4>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">type</span><span style="color: #C9D1D9"> </span><span style="color: #FFA657">User</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">struct</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">	ID   </span><span style="color: #FF7B72">int</span></span>
+<span class="line"><span style="color: #C9D1D9">	Name </span><span style="color: #FF7B72">string</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">type</span><span style="color: #C9D1D9"> </span><span style="color: #FFA657">UserRepository</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">interface</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">	</span><span style="color: #79C0FF">Get</span><span style="color: #C9D1D9">(id </span><span style="color: #FF7B72">int</span><span style="color: #C9D1D9">) (</span><span style="color: #FF7B72">*</span><span style="color: #C9D1D9">User, </span><span style="color: #FF7B72">error</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">	</span><span style="color: #79C0FF">Save</span><span style="color: #C9D1D9">(</span><span style="color: #FF7B72">*</span><span style="color: #C9D1D9">User) </span><span style="color: #FF7B72">error</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">type</span><span style="color: #C9D1D9"> </span><span style="color: #FFA657">HTTPHandler</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">struct</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">	repo UserRepository</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">func</span><span style="color: #C9D1D9"> (h </span><span style="color: #FF7B72">*</span><span style="color: #C9D1D9">HTTPHandler) </span><span style="color: #D2A8FF">ServeHTTP</span><span style="color: #C9D1D9">(w http.ResponseWriter, r </span><span style="color: #FF7B72">*</span><span style="color: #C9D1D9">http.Request) {</span></span>
+<span class="line"><span style="color: #C9D1D9">	user, err </span><span style="color: #FF7B72">:=</span><span style="color: #C9D1D9"> h.repo.</span><span style="color: #79C0FF">Get</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">)</span></span>
+<span class="line"><span style="color: #C9D1D9">	</span><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> err </span><span style="color: #FF7B72">!=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">nil</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">		http.</span><span style="color: #79C0FF">Error</span><span style="color: #C9D1D9">(w, err.</span><span style="color: #79C0FF">Error</span><span style="color: #C9D1D9">(), http.StatusInternalServerError)</span></span>
+<span class="line"><span style="color: #C9D1D9">		</span><span style="color: #FF7B72">return</span></span>
+<span class="line"><span style="color: #C9D1D9">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C9D1D9">	w.</span><span style="color: #79C0FF">Write</span><span style="color: #C9D1D9">([]</span><span style="color: #79C0FF">byte</span><span style="color: #C9D1D9">(fmt.</span><span style="color: #79C0FF">Sprintf</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">"Hello, </span><span style="color: #79C0FF">%s</span><span style="color: #A5D6FF">!"</span><span style="color: #C9D1D9">, user.Name)))</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>In this example, the <code>User</code> struct is part of the domain layer, the <code>UserRepository</code> interface is part of the interface adapters layer, and the <code>HTTPHandler</code> struct is part of the frameworks and drivers layer and depends on the <code>UserRepository</code> interface, which is part of the interface adapters layer, but not on the implementation of the repository, which allows the application to be more flexible and maintainable.</p>
+			</article>
+		</main>
+		<footer class="astro-BXMVPOOQ">
+	<span class="astro-BXMVPOOQ">&copy; Nurul Uhkrowi. 2022</span>
+</footer>
+
+	</body></html>

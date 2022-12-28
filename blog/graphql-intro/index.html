@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en" class="astro-52TQRVIM">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="generator" content="Astro v1.1.5">
+
+<!-- Primary Meta Tags -->
+<title>GraphQL: Intro</title>
+<meta name="title" content="GraphQL: Intro">
+<meta name="description">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/blog/graphql-intro/">
+<meta property="og:title" content="GraphQL: Intro">
+<meta property="og:description">
+<meta property="og:image" content="https://example.com/placeholder-social.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://example.com/blog/graphql-intro/">
+<meta property="twitter:title" content="GraphQL: Intro">
+<meta property="twitter:description">
+<meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
+
+		
+	<link rel="stylesheet" href="/assets/6324ff10.a7b42444.css" />
+<link rel="stylesheet" href="/assets/6bc620f5.ecf6360b.css" /></head>
+
+	<body class="astro-52TQRVIM">
+		<header class="astro-2XB2HEM7">
+	<div style="display: flex; justify-content: space-between; align-items: center;" class="astro-2XB2HEM7">
+		<span style="font-size: 20px;" class="astro-2XB2HEM7">
+			<a href="/blog" style="text-decoration: none;" class="astro-2XB2HEM7">Nurul Uhkrowi</a>
+		</span>
+		<nav class="astro-2XB2HEM7">
+			<a href="/about" class="astro-2XB2HEM7 astro-F3FWBWT5">
+	About
+</a>
+
+			<a href="/projects" class="astro-2XB2HEM7 astro-F3FWBWT5">
+	Project
+</a>
+
+		</nav>
+	</div>
+	<div class="border astro-2XB2HEM7"></div>
+</header>
+
+		<main class="astro-52TQRVIM">
+			<!-- <article style="backdrop-filter: blur(8px);"> -->
+			<article class="astro-52TQRVIM">
+				
+				<span class="title astro-52TQRVIM">GraphQL: Intro</span>
+				
+				
+				<p>GraphQL is a query language for your API that allows clients to request exactly the data they need, and nothing more. It was developed by Facebook and released as open source in 2015.</p>
+<p>One of the main benefits of using GraphQL is that it allows the client to request exactly the data it needs, rather than having to rely on a fixed set of endpoints for different data types. This flexibility makes it easier to evolve APIs over time, and allows the client to get all the data it needs in a single request.</p>
+<p>In addition to being flexible, GraphQL is also strongly typed, which means that the server can validate the queries it receives to ensure that they are well-formed and contain all required fields. This can help catch errors before they reach the server, making it easier to debug and maintain the API.</p>
+<p>To use GraphQL, you define a schema for your data and write queries to retrieve it. The schema defines the types of data that are available, and the relationships between them. For example, a simple schema for a blog might define a Post type with fields for the title, body, and author, and a User type with fields for the name and email.</p>
+<p>Here is an example of a GraphQL query that retrieves a list of posts and their authors:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">{</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FFA657">posts</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FFA657">title</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FFA657">body</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FFA657">author</span><span style="color: #C9D1D9"> {</span></span>
+<span class="line"><span style="color: #C9D1D9">      </span><span style="color: #FFA657">name</span></span>
+<span class="line"><span style="color: #C9D1D9">      </span><span style="color: #FFA657">email</span></span>
+<span class="line"><span style="color: #C9D1D9">    }</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>This query would return a JSON object with a posts field, containing an array of objects with the specified fields.</p>
+<p>To use GraphQL, you will need to set up a server that can handle GraphQL queries. There are several libraries available for different languages that make it easy to do this, such as graphql-go for Go and graphql-js for JavaScript.</p>
+<p>Once you have set up a GraphQL server, you can use it to build powerful and flexible APIs for your applications.</p>
+			</article>
+		</main>
+		<footer class="astro-BXMVPOOQ">
+	<span class="astro-BXMVPOOQ">&copy; Nurul Uhkrowi. 2022</span>
+</footer>
+
+	</body></html>

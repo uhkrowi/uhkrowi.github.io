@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en" class="astro-52TQRVIM">
+	<head>
+		<!-- Global Metadata --><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="generator" content="Astro v1.1.5">
+
+<!-- Primary Meta Tags -->
+<title>JS: Memoization</title>
+<meta name="title" content="JS: Memoization">
+<meta name="description">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/blog/js-memoization/">
+<meta property="og:title" content="JS: Memoization">
+<meta property="og:description">
+<meta property="og:image" content="https://example.com/placeholder-social.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://example.com/blog/js-memoization/">
+<meta property="twitter:title" content="JS: Memoization">
+<meta property="twitter:description">
+<meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
+
+		
+	<link rel="stylesheet" href="/assets/6324ff10.a7b42444.css" />
+<link rel="stylesheet" href="/assets/6bc620f5.ecf6360b.css" /></head>
+
+	<body class="astro-52TQRVIM">
+		<header class="astro-2XB2HEM7">
+	<div style="display: flex; justify-content: space-between; align-items: center;" class="astro-2XB2HEM7">
+		<span style="font-size: 20px;" class="astro-2XB2HEM7">
+			<a href="/blog" style="text-decoration: none;" class="astro-2XB2HEM7">Nurul Uhkrowi</a>
+		</span>
+		<nav class="astro-2XB2HEM7">
+			<a href="/about" class="astro-2XB2HEM7 astro-F3FWBWT5">
+	About
+</a>
+
+			<a href="/projects" class="astro-2XB2HEM7 astro-F3FWBWT5">
+	Project
+</a>
+
+		</nav>
+	</div>
+	<div class="border astro-2XB2HEM7"></div>
+</header>
+
+		<main class="astro-52TQRVIM">
+			<!-- <article style="backdrop-filter: blur(8px);"> -->
+			<article class="astro-52TQRVIM">
+				
+				<span class="title astro-52TQRVIM">JS: Memoization</span>
+				
+				
+				<p>JavaScript memoization is a technique that allows you to optimize the performance of your code by caching the results of expensive function calls. In other words, instead of recalculating the result of a function every time it is called, you can store the result in a cache and return the cached value if the function is called with the same arguments again. This can significantly improve the performance of your code, especially if the function is called frequently or if it takes a long time to compute the result.</p>
+<p>To implement memoization in JavaScript, you can use a closure to create a cache that is stored within the function itself. For example, you could create a simple memoization function like this:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">memoize</span><span style="color: #C9D1D9">(</span><span style="color: #FFA657">fn</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">cache</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> {};</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9">(</span><span style="color: #FF7B72">...</span><span style="color: #FFA657">args</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> (cache[args]) {</span></span>
+<span class="line"><span style="color: #C9D1D9">      </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> cache[args];</span></span>
+<span class="line"><span style="color: #C9D1D9">    }</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">result</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> fn.</span><span style="color: #D2A8FF">apply</span><span style="color: #C9D1D9">(</span><span style="color: #79C0FF">this</span><span style="color: #C9D1D9">, args);</span></span>
+<span class="line"><span style="color: #C9D1D9">    cache[args] </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> result;</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> result;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span></code></pre>
+<p>You can then use this memoization function to optimize any other function by calling the memoize function and passing in the function you want to optimize as an argument. For example:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">slowFibonacci</span><span style="color: #C9D1D9">(</span><span style="color: #FFA657">n</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">if</span><span style="color: #C9D1D9"> (n </span><span style="color: #FF7B72">&#x3C;</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">) {</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> n;</span></span>
+<span class="line"><span style="color: #C9D1D9">  }</span></span>
+<span class="line"><span style="color: #C9D1D9">  </span><span style="color: #FF7B72">return</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">fibonacci</span><span style="color: #C9D1D9">(n </span><span style="color: #FF7B72">-</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">) </span><span style="color: #FF7B72">+</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">fibonacci</span><span style="color: #C9D1D9">(n </span><span style="color: #FF7B72">-</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">2</span><span style="color: #C9D1D9">);</span></span>
+<span class="line"><span style="color: #C9D1D9">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">fastFibonacci</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">memoize</span><span style="color: #C9D1D9">(slowFibonacci);</span></span>
+<span class="line"></span></code></pre>
+<p>Now, when you call the fastFibonacci function, it will use the cache to store the results of previous calls and return the cached values instead of recalculating them. This can significantly improve the performance of your code, especially if the fibonacci function is called with the same arguments multiple times.</p>
+<p>There are also a number of libraries and utility functions available that can help you implement memoization in JavaScript, including the popular lodash library. No matter which approach you choose, memoization is a powerful technique that can help you optimize the performance of your code and make it run more efficiently.</p>
+			</article>
+		</main>
+		<footer class="astro-BXMVPOOQ">
+	<span class="astro-BXMVPOOQ">&copy; Nurul Uhkrowi. 2022</span>
+</footer>
+
+	</body></html>
