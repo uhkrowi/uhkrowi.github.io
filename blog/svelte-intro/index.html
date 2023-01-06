@@ -95,8 +95,8 @@ Svelte manages a component in a single file, similiar to SFC of Vue, which is on
 <span class="line"><span style="color: #C9D1D9">{:else}</span></span>
 <span class="line"><span style="color: #C9D1D9">  &#x3C;</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">>We don't know yet.&#x3C;/</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">></span></span>
 <span class="line"><span style="color: #C9D1D9">{/if}</span></span></code></pre>
-<p>Symbol <code>#</code> is used to begin an expression.
-Symbol <code>:</code> is used to continue its expression block.
+<p>Symbol <code>#</code> is used to begin an expression.<br>
+Symbol <code>:</code> is used to continue its expression block.<br>
 And the last, symbol <code>/</code> is used to end an expression.</p>
 <p><strong>iterating</strong>:</p>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span>
@@ -110,7 +110,7 @@ And the last, symbol <code>/</code> is used to end an expression.</p>
 <span class="line"><span style="color: #C9D1D9">{#each members as {id, name}, i (i)}</span></span>
 <span class="line"><span style="color: #C9D1D9">  &#x3C;</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">>{i+1}. {name} has ID: {id}&#x3C;/</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">></span></span>
 <span class="line"><span style="color: #C9D1D9">{/each}</span></span></code></pre>
-<p>You can do destructuring the every object of <code>members</code> with <code>{id, name}</code>.
+<p>You can do destructuring the every object of <code>members</code> with <code>{id, name}</code>.<br>
 Notice there is <code>(i)</code>, it means you’re assigning the i (index) as the key of each DOM node that iterated in <code>each</code> expression.</p>
 <p><strong>nested component</strong><br>
 Child.svelte</p>
