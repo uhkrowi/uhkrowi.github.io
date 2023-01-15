@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" class="astro-BJPFAWT7">
+<!DOCTYPE html><html lang="en" class="astro-ZJLMA66W">
 	<head>
 		<!-- Global Metadata --><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -25,10 +25,10 @@
 <meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
 
 		
-	<link rel="stylesheet" href="/assets/c6ffba57.dd4eedf3.css" />
-<link rel="stylesheet" href="/assets/195a8f49.2454e32e.css" /></head>
+	<link rel="stylesheet" href="/assets/c6ffba57.04939538.css" />
+<link rel="stylesheet" href="/assets/195a8f49.b428e4ef.css" /></head>
 
-	<body class="astro-BJPFAWT7">
+	<body class="astro-ZJLMA66W">
 		<header class="astro-OWCHSNKL">
   <div style="display: flex; justify-content: space-between; align-items: center;" class="astro-OWCHSNKL">
     <a href="/blog" style="text-decoration: none; padding-bottom: 0px; margin-bottom: 0px;" class="astro-OWCHSNKL">
@@ -55,25 +55,25 @@
   <div class="border astro-OWCHSNKL"></div>
 </header>
 
-		<main class="astro-BJPFAWT7">
+		<main class="astro-ZJLMA66W">
 			<!-- <article style="backdrop-filter: blur(8px);"> -->
-			<article class="astro-BJPFAWT7">
+			<article class="astro-ZJLMA66W">
 				
-				<div style="background-color: white; padding: 5px 10px; width: fit-content;" class="astro-BJPFAWT7">
-					<span class="title astro-BJPFAWT7">101: Svelte</span>
+				<div style="background-color: white; padding: 5px 10px; width: fit-content;" class="astro-ZJLMA66W">
+					<span class="title astro-ZJLMA66W">101: Svelte</span>
 				</div>
-				
+				<!-- {pubDate && <span style="color: #848484;">
+					<span style="font-size: 14px">Posted at — </span>
+					<time style="font-size: 14px">{pubDate}</time>
+				</span>} -->
 				
 				<p>Svelte is a quite popular javascript framework, its documentation can be found at its <a href="https://svelte.dev/">official website</a>.<br>
 In the first impression, you’ll find it pretty simple to work with and easier than other popular frameworks/libraries out there such as React, Vue or Angular.<br>
 Svelte manages a component in a single file, similiar to SFC of Vue, which is one file of <code>.svelte</code> equals to one component, and each styling is scoped to its own component.</p>
 <p>These are some code examples with svelte.</p>
-<ol>
-<li><em>Reactivity</em></li>
-</ol>
+<p><strong>1. Reactivity</strong></p>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">let</span><span style="color: #C9D1D9"> count </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">let</span><span style="color: #C9D1D9"> count </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span><span style="color: #C9D1D9">  </span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">// every variable in this block changes, this expression will be invoked</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">// if you have multiple line of commands, wrap 'em into brackets</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FFA657">$</span><span style="color: #C9D1D9">: console.</span><span style="color: #D2A8FF">log</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'count is '</span><span style="color: #C9D1D9">, count)</span></span>
@@ -87,11 +87,9 @@ Svelte manages a component in a single file, similiar to SFC of Vue, which is on
 <span class="line"><span style="color: #C9D1D9">  Clicked {count} {count </span><span style="color: #FFA198">&#x3C;</span><span style="color: #C9D1D9">= 1 ? 'time' : 'times'}</span></span>
 <span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">button</span><span style="color: #C9D1D9">></span></span></code></pre>
 <p>Result:<br>
-<img src="/blog/svelte-intro/reactivity.png" alt="Reactivity"></p>
-<p>In case you curious about the <code>$:</code>, you can find out its explanation <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label">here</a>.</p>
-<ol start="2">
-<li><em>If, else if, else</em></li>
-</ol>
+<img src="/blog/svelte-intro/reactivity.png" alt="Reactivity"><br>
+In case you curious about the <code>$:</code>, you can find out its explanation <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label">here</a>.</p>
+<p><strong>2. If, else if, else</strong></p>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">gender</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'male'</span></span>
 <span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span>
@@ -106,9 +104,7 @@ Svelte manages a component in a single file, similiar to SFC of Vue, which is on
 <p>Symbol <code>#</code> is used to begin an expression.<br>
 Symbol <code>:</code> is used to continue its expression block.<br>
 And the last, symbol <code>/</code> is used to end an expression.</p>
-<ol start="3">
-<li><em>Iteration</em></li>
-</ol>
+<p><strong>3. Iteration</strong></p>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">members</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span></span>
 <span class="line"><span style="color: #C9D1D9">        {id: </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, name: </span><span style="color: #A5D6FF">'Arul'</span><span style="color: #C9D1D9">},</span></span>
@@ -121,19 +117,17 @@ And the last, symbol <code>/</code> is used to end an expression.</p>
 <span class="line"><span style="color: #C9D1D9">  &#x3C;</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">>{i+1}. {name} has ID: {id}&#x3C;/</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">></span></span>
 <span class="line"><span style="color: #C9D1D9">{/each}</span></span></code></pre>
 <p>Result:<br>
-<img src="/blog/svelte-intro/iteration.png" alt="Iteration"></p>
-<p>You can do destructuring the every object of <code>members</code> with <code>{id, name}</code>.<br>
+<img src="/blog/svelte-intro/iteration.png" alt="Iteration"><br>
+You can do destructuring the every object of <code>members</code> with <code>{id, name}</code>.<br>
 Notice there is <code>(i)</code>, it means you’re assigning the i (index) as the key of each DOM node that iterated in <code>each</code> expression.</p>
-<ol start="4">
-<li><em>Nested component</em></li>
-</ol>
-<p>Child.svelte</p>
+<p><strong>4. Nested component</strong><br>
+<em>Child.svelte</em></p>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">export</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">let</span><span style="color: #C9D1D9"> name </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'User'</span></span>
 <span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">>Hello {name}!&#x3C;/</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">></span></span></code></pre>
-<p>Parent.svelte</p>
+<p><em>Parent.svelte</em></p>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">import</span><span style="color: #C9D1D9"> Child </span><span style="color: #FF7B72">from</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'./Child.svelte'</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span></span>
@@ -145,11 +139,10 @@ Notice there is <code>(i)</code>, it means you’re assigning the i (index) as t
 <p>As we can see that <code>Child.svelte</code> component can retrieve the prop <code>name</code>, but it has a default value, so we can leave it not set in <code>Parent.svelte</code> component.</p>
 			</article>
 		</main>
-		<footer class="astro-BXMVPOOQ">
-	<span class="astro-BXMVPOOQ">&copy; Nurul Uhkrowi. 2023</span>
+		<footer class="astro-TZZ7T7JZ">
+	<span class="astro-TZZ7T7JZ">&copy; Nurul Uhkrowi. 2023</span>
 </footer>
-<!-- <div class="bgfooter"> -->
+<div class="bgfooter astro-TZZ7T7JZ"></div>
 
-<!-- </div> -->
 
 	</body></html>
