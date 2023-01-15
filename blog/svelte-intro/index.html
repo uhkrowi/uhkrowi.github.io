@@ -6,26 +6,26 @@
 <meta name="generator" content="Astro v1.1.5">
 
 <!-- Primary Meta Tags -->
-<title>Svelte, a promising javascript framework</title>
-<meta name="title" content="Svelte, a promising javascript framework">
+<title>101: Svelte</title>
+<meta name="title" content="101: Svelte">
 <meta name="description">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://example.com/blog/svelte-intro/">
-<meta property="og:title" content="Svelte, a promising javascript framework">
+<meta property="og:title" content="101: Svelte">
 <meta property="og:description">
 <meta property="og:image" content="https://example.com/placeholder-social.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://example.com/blog/svelte-intro/">
-<meta property="twitter:title" content="Svelte, a promising javascript framework">
+<meta property="twitter:title" content="101: Svelte">
 <meta property="twitter:description">
 <meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
 
 		
-	<link rel="stylesheet" href="/assets/c6ffba57.10e9e53d.css" />
+	<link rel="stylesheet" href="/assets/c6ffba57.dd4eedf3.css" />
 <link rel="stylesheet" href="/assets/195a8f49.2454e32e.css" /></head>
 
 	<body class="astro-BJPFAWT7">
@@ -60,37 +60,38 @@
 			<article class="astro-BJPFAWT7">
 				
 				<div style="background-color: white; padding: 5px 10px; width: fit-content;" class="astro-BJPFAWT7">
-					<span class="title astro-BJPFAWT7">Svelte, a promising javascript framework</span>
+					<span class="title astro-BJPFAWT7">101: Svelte</span>
 				</div>
 				
 				
-				<p>Svelte is a quite popular javascript framework, its documentation can be found at its <a href="https://svelte.dev/">official websites</a>.<br>
+				<p>Svelte is a quite popular javascript framework, its documentation can be found at its <a href="https://svelte.dev/">official website</a>.<br>
 In the first impression, you’ll find it pretty simple to work with and easier than other popular frameworks/libraries out there such as React, Vue or Angular.<br>
 Svelte manages a component in a single file, similiar to SFC of Vue, which is one file of <code>.svelte</code> equals to one component, and each styling is scoped to its own component.</p>
 <p>These are some code examples with svelte.</p>
-<p><strong>reactivity</strong></p>
+<ol>
+<li><em>Reactivity</em></li>
+</ol>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">let</span><span style="color: #C9D1D9"> count </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">0</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">// every variable in this block changes, this expression will be invoked</span></span>
+<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">// if you have multiple line of commands, wrap 'em into brackets</span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FFA657">$</span><span style="color: #C9D1D9">: console.</span><span style="color: #D2A8FF">log</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'count is '</span><span style="color: #C9D1D9">, count)</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #8B949E">// if you have multiple lines of block, just wrap 'em in brackets</span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">&#x3C;!--</span><span style="color: #FFA657">$</span><span style="color: #C9D1D9">: {</span><span style="color: #FF7B72">--></span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">&#x3C;!--</span><span style="color: #C9D1D9">    console.</span><span style="color: #D2A8FF">log</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'log: count is '</span><span style="color: #C9D1D9">, count)</span><span style="color: #FF7B72">--></span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">&#x3C;!--</span><span style="color: #C9D1D9">    console.</span><span style="color: #D2A8FF">log</span><span style="color: #C9D1D9">(</span><span style="color: #A5D6FF">'log: count is '</span><span style="color: #C9D1D9">, count)</span><span style="color: #FF7B72">--></span></span>
-<span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">&#x3C;!--</span><span style="color: #C9D1D9">}</span><span style="color: #FF7B72">--></span></span>
-<span class="line"><span style="color: #C9D1D9">    </span></span>
+<span class="line"></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">function</span><span style="color: #C9D1D9"> </span><span style="color: #D2A8FF">incrementCount</span><span style="color: #C9D1D9">() {</span></span>
 <span class="line"><span style="color: #C9D1D9">        count</span><span style="color: #FF7B72">++</span></span>
 <span class="line"><span style="color: #C9D1D9">    }</span></span>
 <span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">button</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">type</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">"button"</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">on:click</span><span style="color: #C9D1D9">=</span><span style="color: #A5D6FF">{incrementCount}</span><span style="color: #C9D1D9">></span></span>
-<span class="line"><span style="color: #C9D1D9">  Increment count</span></span>
+<span class="line"><span style="color: #C9D1D9">  Clicked {count} {count </span><span style="color: #FFA198">&#x3C;</span><span style="color: #C9D1D9">= 1 ? 'time' : 'times'}</span></span>
 <span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">button</span><span style="color: #C9D1D9">></span></span></code></pre>
+<p>Result:<br>
+<img src="/blog/svelte-intro/reactivity.png" alt="Reactivity"></p>
 <p>In case you curious about the <code>$:</code>, you can find out its explanation <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label">here</a>.</p>
-<p><strong>if, else if, else</strong></p>
+<ol start="2">
+<li><em>If, else if, else</em></li>
+</ol>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">gender</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'male'</span></span>
 <span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span>
@@ -105,7 +106,9 @@ Svelte manages a component in a single file, similiar to SFC of Vue, which is on
 <p>Symbol <code>#</code> is used to begin an expression.<br>
 Symbol <code>:</code> is used to continue its expression block.<br>
 And the last, symbol <code>/</code> is used to end an expression.</p>
-<p><strong>iterating</strong>:</p>
+<ol start="3">
+<li><em>Iteration</em></li>
+</ol>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">const</span><span style="color: #C9D1D9"> </span><span style="color: #79C0FF">members</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> [</span></span>
 <span class="line"><span style="color: #C9D1D9">        {id: </span><span style="color: #79C0FF">1</span><span style="color: #C9D1D9">, name: </span><span style="color: #A5D6FF">'Arul'</span><span style="color: #C9D1D9">},</span></span>
@@ -117,10 +120,14 @@ And the last, symbol <code>/</code> is used to end an expression.</p>
 <span class="line"><span style="color: #C9D1D9">{#each members as {id, name}, i (i)}</span></span>
 <span class="line"><span style="color: #C9D1D9">  &#x3C;</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">>{i+1}. {name} has ID: {id}&#x3C;/</span><span style="color: #7EE787">p</span><span style="color: #C9D1D9">></span></span>
 <span class="line"><span style="color: #C9D1D9">{/each}</span></span></code></pre>
+<p>Result:<br>
+<img src="/blog/svelte-intro/iteration.png" alt="Iteration"></p>
 <p>You can do destructuring the every object of <code>members</code> with <code>{id, name}</code>.<br>
 Notice there is <code>(i)</code>, it means you’re assigning the i (index) as the key of each DOM node that iterated in <code>each</code> expression.</p>
-<p><strong>nested component</strong><br>
-Child.svelte</p>
+<ol start="4">
+<li><em>Nested component</em></li>
+</ol>
+<p>Child.svelte</p>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">&#x3C;</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span>
 <span class="line"><span style="color: #C9D1D9">    </span><span style="color: #FF7B72">export</span><span style="color: #C9D1D9"> </span><span style="color: #FF7B72">let</span><span style="color: #C9D1D9"> name </span><span style="color: #FF7B72">=</span><span style="color: #C9D1D9"> </span><span style="color: #A5D6FF">'User'</span></span>
 <span class="line"><span style="color: #C9D1D9">&#x3C;/</span><span style="color: #7EE787">script</span><span style="color: #C9D1D9">></span></span>
@@ -141,5 +148,8 @@ Child.svelte</p>
 		<footer class="astro-BXMVPOOQ">
 	<span class="astro-BXMVPOOQ">&copy; Nurul Uhkrowi. 2023</span>
 </footer>
+<!-- <div class="bgfooter"> -->
+
+<!-- </div> -->
 
 	</body></html>
