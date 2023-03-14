@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" class="astro-ZMDESFYS">
+<!DOCTYPE html><html lang="en" class="astro-LDA4V2MF">
   <head>
     <!-- Global Metadata --><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -6,29 +6,29 @@
 <meta name="generator" content="Astro v1.1.5">
 
 <!-- Primary Meta Tags -->
-<title>Ship Rental Management</title>
-<meta name="title" content="Ship Rental Management">
+<title>Setting Timezone in Dockerfile</title>
+<meta name="title" content="Setting Timezone in Dockerfile">
 <meta name="description">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://example.com/project/ship-rental-management/">
-<meta property="og:title" content="Ship Rental Management">
+<meta property="og:url" content="https://example.com/blog/setting-timezone-in-dockerfile/">
+<meta property="og:title" content="Setting Timezone in Dockerfile">
 <meta property="og:description">
 <meta property="og:image" content="https://example.com/placeholder-social.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://example.com/project/ship-rental-management/">
-<meta property="twitter:title" content="Ship Rental Management">
+<meta property="twitter:url" content="https://example.com/blog/setting-timezone-in-dockerfile/">
+<meta property="twitter:title" content="Setting Timezone in Dockerfile">
 <meta property="twitter:description">
 <meta property="twitter:image" content="https://example.com/placeholder-social.jpg">
 
     
   <link rel="stylesheet" href="/assets/da13d936.91dce30e.css" />
-<link rel="stylesheet" href="/assets/b8b58553.463fefe1.css" /></head>
+<link rel="stylesheet" href="/assets/c28824ce.ea5537a5.css" /></head>
 
-  <body class="astro-ZMDESFYS">
+  <body class="astro-LDA4V2MF">
     <header class="astro-XHD7DAE4">
   <div style="display: flex; justify-content: space-between; align-items: end;" class="astro-XHD7DAE4">
     <a href="/blog" style="text-decoration: none; position: relative;" class="astro-XHD7DAE4">
@@ -55,21 +55,25 @@
   <div class="border astro-XHD7DAE4"></div>
 </header>
 
-    <main class="astro-ZMDESFYS">
-      <article class="astro-ZMDESFYS">
+    <main class="astro-LDA4V2MF">
+      <!-- <article style="backdrop-filter: blur(8px);"> -->
+      <article class="astro-LDA4V2MF">
         
-        <div class="title astro-ZMDESFYS">
-          <span class="astro-ZMDESFYS">Ship Rental Management</span>
+        <div class="title astro-LDA4V2MF">
+          <span class="astro-LDA4V2MF">Setting Timezone in Dockerfile</span>
         </div>
-        <p>Ship rent management aim to ease fishermen to rent ships, including picking type of ship, setting rental period, extending the period, monitoring their payment. the application also helps the owners of rental to manage information about ships, their customers, payments and reports.</p>
-<p><strong>Tech stacks</strong>:</p>
-<ul>
-<li><code>Laravel</code></li>
-<li><code>MySQL</code></li>
-<li><code>Vue.js</code></li>
-<li><code>Vuetify</code></li>
-</ul>
-<p><img src="/project/ship-rental-management/image.png" alt="screenshot"></p>
+        <!-- {pubDate && <span style="color: #848484;">
+					<span style="font-size: 14px">Posted at — </span>
+					<time style="font-size: 14px">{pubDate}</time>
+				</span>} -->
+        
+        <p>Sometimes you need to set timezone to the right one to adjust your application’s zone timing.</p>
+<p>If you use Docker to containeraize your application, you can simply use dockerfile and put this command to set the timezone.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">...  </span></span>
+<span class="line"><span style="color: #c9d1d9">ENV TZ="Asia/Jakarta"</span></span>
+<span class="line"><span style="color: #c9d1d9">...</span></span>
+<span class="line"><span style="color: #c9d1d9"></span></span></code></pre>
+<p>In the code above we set the timezone with ENV instruction by assign the <strong>TZ</strong> (which means timezone) to Asia/Jakarta.</p>
       </article>
     </main>
     <footer class="astro-SAXYBOPL">
