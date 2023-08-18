@@ -77,7 +77,7 @@
           
           <p>
             </p><h1 class="font-zillaslab text-center my-12">Waiting goroutines in go with sync.WaitGroup</h1>
-            <p>When we need to invoke some functions asynchronousely, we can use goroutine to reach the the goal</p>
+            <p>When we need to invoke some functions asynchronousely, we can use goroutine to achive the the goal.</p>
 <pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #6A737D">// first</span></span>
 <span class="line"><span style="color: #F97583">go</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">func</span><span style="color: #E1E4E8"> () {</span></span>
 <span class="line"><span style="color: #E1E4E8">  </span><span style="color: #6A737D">// do something here</span></span>
@@ -94,10 +94,10 @@
 <span class="line"><span style="color: #E1E4E8">}()</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #6A737D">// other codes here will immediately executed</span></span></code></pre>
-<p>All the functions above will be invoked almost at the same time, no waiting each other to complete.
-But how if we want to wait all of it berfore going to other next codes?</p>
+<p>All the functions above will be invoked almost at the same time, no waiting any previous function to complete.</p>
+<p>But how if we want to wait all of it berfore going to other next codes?</p>
 <p>There’s why <code>sync.WaitGroup</code> exists for!</p>
-<p>We can use <code>sync.WaitGroup</code> to wait some group of goroutines to complete first before we move to next code line.</p>
+<p>We can use <code>sync.WaitGroup</code> to wait some group of goroutines to complete first before we move to next code lines.</p>
 <pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">import</span><span style="color: #E1E4E8"> (</span></span>
 <span class="line"><span style="color: #E1E4E8">  </span><span style="color: #9ECBFF">"</span><span style="color: #B392F0">sync</span><span style="color: #9ECBFF">"</span></span>
 <span class="line"><span style="color: #E1E4E8">)</span></span>
@@ -126,7 +126,7 @@ But how if we want to wait all of it berfore going to other next codes?</p>
 <span class="line"><span style="color: #E1E4E8">wg.</span><span style="color: #79B8FF">Wait</span><span style="color: #E1E4E8">()</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #6A737D">// other lines of code...</span></span></code></pre>
-<p><code>wg.Wait()</code> waits the 3 goroutines to be done, then move to next lines.</p>
+<p><code>wg.Wait()</code> waits the 3 goroutines to be done, then move to the next lines.</p>
           
         </article>
       </div>
