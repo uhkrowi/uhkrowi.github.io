@@ -7,22 +7,22 @@
 <meta name="generator" content="Astro v2.8.3">
 
 <!-- Primary Meta Tags -->
-<title>Data Structure Intro</title>
-<meta name="title" content="Data Structure Intro">
-<meta name="description">
+<title></title>
+<meta name="title" content="">
+<meta name="description" content="">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://localhost:3000/blog/ds-intro/">
-<meta property="og:title" content="Data Structure Intro">
-<meta property="og:description">
+<meta property="og:url" content="http://localhost:3000/project/general/">
+<meta property="og:title" content="">
+<meta property="og:description" content="">
 <meta property="og:image" content="http://localhost:3000/placeholder-social.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="http://localhost:3000/blog/ds-intro/">
-<meta property="twitter:title" content="Data Structure Intro">
-<meta property="twitter:description">
+<meta property="twitter:url" content="http://localhost:3000/project/general/">
+<meta property="twitter:title" content="">
+<meta property="twitter:description" content="">
 <meta property="twitter:image" content="http://localhost:3000/placeholder-social.jpg">
   <link rel="stylesheet" href="/_astro/about.1b39b249.css" />
 <link rel="stylesheet" href="/_astro/cicd-intro.1396cb78.css" /></head>
@@ -40,12 +40,12 @@
             </button>
           </a>
           <a href="/works" aria-label="Some projects I've done">
-            <button class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 rounded-full false" title="Projects">
+            <button class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 rounded-full bg-[#f1f5f9]" title="Projects">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-[25px] w-[25px] text-muted-foreground"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"></path></svg>
             </button>
           </a>
           <a href="/blog" aria-label="Articles">
-            <button class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 rounded-full bg-[#f1f5f9]" title="Blog">
+            <button class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 rounded-full false" title="Blog">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-[25px] w-[25px] text-muted-foreground"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 8h7"></path><path d="M8 12h6"></path><path d="M11 16h5"></path></svg>
             </button>
           </a>
@@ -64,29 +64,33 @@
   <main class="main">
     <div class="border bg-card text-card-foreground rounded-none md:rounded-xl shadow-none border-none md:shadow">
       
-    <div class="py-6 px-6">
-      <div class="flex flex-col">
-        <article>
-          <div class="flex items-center justify-between text-muted-foreground text-xs">
-            Mar 16, 2022
-            <span class="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-1"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> 
-              <span>2 min read</span>
-            </span>
-          </div>
-          
-          <p>
-            </p><h1 class="font-zillaslab text-center my-12">Data Structure Intro</h1>
-            <p>Data structure is a systematic way to store and organize data in order to use it efficiently in time (how long the time it takes) and/or space (memory allocation), in other words it a way how you manage data with usage of memory as small as possible and with execution time as little as possible.</p>
-<p>Data structure is agnostic or independent from programming languages, so you can implement the idea in any language you want, it’s also provides operations to organize the data easily. Some data structures you have probably heard are array, linked list, stack, queue and graph.</p>
-<p>Data structure can be used to implement another data structures, e.g you can use array or linked list to implement stack or queue.</p>
-<p>When you want to implement the concept of a data structure, you need to know how the algorithm of the data structure works.</p>
-<p>In case you want to implement data structure stack, you have to find out what are its behaviors. In a nutshell, stack is a data structure that performs LIFO (Last In First Out), it adds and removes items on the same place called TOP, think of pile of books, you add to the top of the pile and you take a book from the top of the pile.</p>
-<p><img src="/blog/ds-intro/image.png" alt=""></p>
-<p>In stack the operation of adding is called push, and the operation of deletion is called pop.</p>
-          
-        </article>
+    <div class="w-full p-2 text-sm">
+      <div class="py-3 px-5 grid grid-cols-3 gap-1 rounded-xl bg-[#f6f8fa]">
+        <span class="text-muted-foreground">Client</span>
+        <span class="col-span-2"></span>
+        <!-- <span class="text-muted-foreground">Company</span>
+        <span class="col-span-2">{data?.company}</span> -->
+        <span class="text-muted-foreground">Project Type</span>
+        <span class="col-span-2"></span>
+        <span class="text-muted-foreground">Year</span>
+        <span class="col-span-2"></span>
       </div>
+    </div>
+    <div class="px-5 py-5 space-y-5">
+      <h1 class="font-zillaslab text-center"></h1>
+      <p class="text-muted-foreground"></p>
+      <div class="flex flex-wrap">
+        
+      </div>
+      <div>
+        <a target="_blank" class="pointer-events-none">
+          <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 bg-[#0d0d12] space-x-2" disabled="">
+            <span>Visit Website</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </button>
+        </a>
+      </div>
+      
     </div>
   
     </div>

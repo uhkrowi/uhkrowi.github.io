@@ -1,37 +1,32 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
-  <head>
-    <!-- <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} /> -->
-    <!-- Global Metadata --><meta charset="utf-8">
+  <!-- Global Metadata --><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <meta name="generator" content="Astro v2.8.3">
 
 <!-- Primary Meta Tags -->
-<title>About</title>
-<meta name="title" content="About">
+<title>Send Inquiry</title>
+<meta name="title" content="Send Inquiry">
 <meta name="description" content="Welcome to my website!">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://localhost:3000/about/">
-<meta property="og:title" content="About">
+<meta property="og:url" content="http://localhost:3000/sendmail/">
+<meta property="og:title" content="Send Inquiry">
 <meta property="og:description" content="Welcome to my website!">
 <meta property="og:image" content="http://localhost:3000/placeholder-social.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="http://localhost:3000/about/">
-<meta property="twitter:title" content="About">
+<meta property="twitter:url" content="http://localhost:3000/sendmail/">
+<meta property="twitter:title" content="Send Inquiry">
 <meta property="twitter:description" content="Welcome to my website!">
 <meta property="twitter:image" content="http://localhost:3000/placeholder-social.jpg">
-  <link rel="stylesheet" href="/_astro/about.1b39b249.css" />
-<link rel="stylesheet" href="/_astro/cicd-intro.1396cb78.css" /><script type="module">const e=document.getElementById("copied-label"),t=document.getElementById("copy-email");t?.addEventListener("click",()=>{navigator.clipboard.writeText("uhkrowi@gmail.com"),e?.classList.add("hidden"),setTimeout(()=>{e?.classList.remove("hidden")},100)});
-</script></head>
 
-  <body class="body">
+  <link rel="stylesheet" href="/_astro/about.1b39b249.css" />
+<link rel="stylesheet" href="/_astro/cicd-intro.1396cb78.css" /><script type="module">const e=document.getElementById("submit-inquiry"),t=document.getElementById("loader");e?.addEventListener("click",()=>{t?.classList.remove("hidden"),setTimeout(()=>{alert("The form just successfully submitted!"),window.location.href="/sendmail"},1e3)});
+</script><body class="body">
   <div class="md:pb-6 w-full">
     <header>
   <div class="flex justify-center">
@@ -39,7 +34,7 @@
       <div class="py-3 px-4 flex justify-between items-center">
         <div class="grid grid-cols-3 gap-3">
           <a href="/about" aria-label="Seek about me">
-            <button class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 rounded-full bg-[#f1f5f9]" title="Profile">
+            <button class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 rounded-full false" title="Profile">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-[25px] w-[25px] text-muted-foreground"><path d="M18 20a6 6 0 0 0-12 0"></path><circle cx="12" cy="10" r="4"></circle><circle cx="12" cy="12" r="10"></circle></svg>
             </button>
           </a>
@@ -70,54 +65,33 @@
       
     <div class="py-6 px-6 space-y-5">
       <div class="space-y-8">
-        <div class="grid grid-cols-[max-content_1fr] lg:grid-cols-2 gap-y-2">
+        <div class="flex justify-between">
           <span class="flex items-center space-x-2 font-bold">
             <span class="text-muted-foreground">&bull;</span>
-            <span>Web Developer</span>
+            <span>Hire Me</span>
           </span>
-          <div class="flex justify-end md:justify-end">
-            <span class="flex items-center space-x-2 bg-green-200 text-green-700 px-3 py-1 text-xs rounded-full font-bold">
-              <span class="hidden lg:block">&bull;</span>
-              <span class="tracking-widest">AVAILABLE FOR WORK</span>
-            </span>
-          </div>
+          <span class="flex items-center space-x-2 bg-green-200 text-green-700 px-3 text-xs rounded-full font-bold">
+            <span>&bull;</span>
+            <span class="tracking-widest">AVAILABLE FOR WORK</span>
+          </span>
         </div>
-        <div class="grid grid-cols-5 gap-5">
-          <div class="col-span-3 space-y-5">
-            <div class="space-y-4">
-              <p class="text-muted-foreground">
-                <span class="text-3xl">👋</span> Hola!
-              </p>
-              <p class="text-3xl font-semibold">I'm Uhkrowi</p>
-              <p class="text-muted-foreground">
-                A freelance full-stack web developer from Bogor, ID.
-              </p>
-            </div>
-            <div class="space-y-2 md:space-y-0 md:grid md:grid-cols-[max-content_1fr] md:gap-3 pt-3">
-              <a href="mailto:uhkrowi@gmail.com" style="text-decoration: none">
-                <button class="justify-center text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 bg-[#0d0d12] flex items-center space-x-2">
-                  <span>🤙</span>
-                  <span>Send a "Hi"</span>
-                </button>
-              </a>
-              <div class="flex space-x-2">
-                <button class="inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 font-bold space-x-2" id="copy-email" type="button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
-                  <span>Copy Email</span>
-                </button>
-                <div id="copied-label" class="flex items-center hidden">
-                  <span class="text-sm text-green-600">Copied!</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="flex items-center justify-center col-span-2">
-            <div class="p-1 rounded-full border-2 shadow">
-              <div class="w-[130px] h-[130px] bg-cover rounded-full" style="background-image: url(/profile-picture.jpeg)">
-              </div>
-            </div>
-          </div>
-        </div>
+        
+
+<div>
+  <h1>Inquiry</h1>
+  <p class="text-muted-foreground">
+    Got an idea and need help at the implementation? Let's talk!
+  </p>
+  <div class="grid grid-cols-2 gap-3">
+    <input type="text" class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-[#f6f8fa]" placeholder="Name"/>
+    <input type="email" class="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 bg-[#f6f8fa]" placeholder="Email"/>
+    <textarea class="flex min-h-[80px] w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 col-span-2 bg-[#f6f8fa]" placeholder="Message"></textarea>
+    <button class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 bg-[#0d0d12] col-span-2 space-x-2" id="submit-inquiry">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-spin hidden" id="loader"><path d="M21 12a9 9 0 1 1-6.219-8.56"></path></svg>
+      <span>Submit Inquiry</span>
+    </button>
+  </div>
+</div>
       </div>
 
       <div class="pt-8">

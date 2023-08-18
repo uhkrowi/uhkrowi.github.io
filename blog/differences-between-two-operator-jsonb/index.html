@@ -7,21 +7,21 @@
 <meta name="generator" content="Astro v2.8.3">
 
 <!-- Primary Meta Tags -->
-<title>Data Structure Intro</title>
-<meta name="title" content="Data Structure Intro">
+<title>Two operators on accesing property in jsonb in PostgreSQL</title>
+<meta name="title" content="Two operators on accesing property in jsonb in PostgreSQL">
 <meta name="description">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://localhost:3000/blog/ds-intro/">
-<meta property="og:title" content="Data Structure Intro">
+<meta property="og:url" content="http://localhost:3000/blog/differences-between-two-operator-jsonb/">
+<meta property="og:title" content="Two operators on accesing property in jsonb in PostgreSQL">
 <meta property="og:description">
 <meta property="og:image" content="http://localhost:3000/placeholder-social.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="http://localhost:3000/blog/ds-intro/">
-<meta property="twitter:title" content="Data Structure Intro">
+<meta property="twitter:url" content="http://localhost:3000/blog/differences-between-two-operator-jsonb/">
+<meta property="twitter:title" content="Two operators on accesing property in jsonb in PostgreSQL">
 <meta property="twitter:description">
 <meta property="twitter:image" content="http://localhost:3000/placeholder-social.jpg">
   <link rel="stylesheet" href="/_astro/about.1b39b249.css" />
@@ -68,7 +68,7 @@
       <div class="flex flex-col">
         <article>
           <div class="flex items-center justify-between text-muted-foreground text-xs">
-            Mar 16, 2022
+            Jul 6, 2023
             <span class="flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-1"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> 
               <span>2 min read</span>
@@ -76,14 +76,47 @@
           </div>
           
           <p>
-            </p><h1 class="font-zillaslab text-center my-12">Data Structure Intro</h1>
-            <p>Data structure is a systematic way to store and organize data in order to use it efficiently in time (how long the time it takes) and/or space (memory allocation), in other words it a way how you manage data with usage of memory as small as possible and with execution time as little as possible.</p>
-<p>Data structure is agnostic or independent from programming languages, so you can implement the idea in any language you want, it’s also provides operations to organize the data easily. Some data structures you have probably heard are array, linked list, stack, queue and graph.</p>
-<p>Data structure can be used to implement another data structures, e.g you can use array or linked list to implement stack or queue.</p>
-<p>When you want to implement the concept of a data structure, you need to know how the algorithm of the data structure works.</p>
-<p>In case you want to implement data structure stack, you have to find out what are its behaviors. In a nutshell, stack is a data structure that performs LIFO (Last In First Out), it adds and removes items on the same place called TOP, think of pile of books, you add to the top of the pile and you take a book from the top of the pile.</p>
-<p><img src="/blog/ds-intro/image.png" alt=""></p>
-<p>In stack the operation of adding is called push, and the operation of deletion is called pop.</p>
+            </p><h1 class="font-zillaslab text-center my-12">Two operators on accesing property in jsonb in PostgreSQL</h1>
+            <p>In PostgreSQL, the jsonb data type allows you to store and manipulate JSON data. When working with jsonb columns, you can use the <code>-></code> and <code>->></code> operators to extract values from JSON objects.</p>
+<p>Here are the differences between these two JSON object access operators:</p>
+<ol>
+<li><code>-></code></li>
+</ol>
+<ul>
+<li>This operator returns the value as jsonb.</li>
+<li>It extracts the value of a specified property from the JSON object and returns it as a JSON object (in jsonb format).</li>
+<li>You can further access properties within the returned JSON object using additional <code>-></code> operators.</li>
+</ul>
+<ol start="2">
+<li><code>->></code></li>
+</ol>
+<ul>
+<li>This operator returns the value as text.</li>
+<li>It extracts the value of a specified property from the JSON object and returns it as text.</li>
+<li>The returned value is not in JSON format but as a plain text representation of the value.</li>
+</ul>
+<p>To illustrate the difference, consider the following example:</p>
+<p>Suppose you have a jsonb column named data with the following JSON object stored in it:</p>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #E1E4E8">{</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #79B8FF">"name"</span><span style="color: #E1E4E8">: </span><span style="color: #9ECBFF">"John"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #79B8FF">"age"</span><span style="color: #E1E4E8">: </span><span style="color: #79B8FF">30</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #79B8FF">"address"</span><span style="color: #E1E4E8">: {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">"street"</span><span style="color: #E1E4E8">: </span><span style="color: #9ECBFF">"123 Main St"</span><span style="color: #E1E4E8">,</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #79B8FF">"city"</span><span style="color: #E1E4E8">: </span><span style="color: #9ECBFF">"New York"</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<p>Using the <code>-></code> operator:</p>
+<ul>
+<li><code>data->'name'</code> would return <strong>{“name”: “John”}</strong> (as jsonb).</li>
+<li><code>data->'name'->>'name'</code> would return <strong>“John”</strong> (as text).</li>
+</ul>
+<p>Using the <code>->></code> operator:</p>
+<ul>
+<li><code>data->>'name'</code> would directly return <strong>“John”</strong> (as text).</li>
+</ul>
+<p>So, the <code>-></code> operator returns a JSON object, while the <code>->></code> operator returns the value as text without the surrounding JSON object structure.</p>
+<p>Choose the appropriate operator based on whether you need the value as jsonb or text in your specific use case.</p>
           
         </article>
       </div>
