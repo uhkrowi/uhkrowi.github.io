@@ -24,11 +24,11 @@
 <meta property="twitter:title" content="Memoization in Javascript">
 <meta property="twitter:description">
 <meta property="twitter:image" content="http://localhost:3000/placeholder-social.jpg">
-  <link rel="stylesheet" href="/_astro/about.8b0e814d.css" />
-<link rel="stylesheet" href="/_astro/cicd-intro.b710e8e2.css" /></head>
+  <link rel="stylesheet" href="/_astro/about.152d6467.css" />
+<link rel="stylesheet" href="/_astro/cicd-intro.5d9aa632.css" /></head>
 
   <body class="body">
-  <div class="px-5 md:px-0 md:flex md:justify-center space-y-12 md:space-y-0">
+  <div class="px-3 md:px-0 md:flex md:justify-center space-y-12 md:space-y-0">
     <div class="md:hidden py-6 border-b border-gray-700">
       <div class="flex space-x-1">
   <a href="/about" style="text-decoration: none" class="max-w-max" title="About">
@@ -42,6 +42,10 @@
           </a><a href="/blog" style="text-decoration: none" class="max-w-max" title="Blog">
             <div class="flex items-center space-x-2 py-1 nav-btn border border-[#3a10e5] text-[#3a10e5] hover:text-gray-700 font-bold">
               <span>Blog</span>
+            </div>
+          </a><a href="/cv" style="text-decoration: none" class="max-w-max" title="CV">
+            <div class="flex items-center space-x-2 py-1 nav-btn border border-transparent hover:border-gray-700">
+              <span>CV</span>
             </div>
           </a>
 </div>
@@ -71,6 +75,11 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
             <span>Hire Me</span>
           </div>
+        </a><a href="/cv" style="text-decoration: none" class="max-w-max" title="CV">
+          <div class="flex items-center space-x-2 py-1 nav-btn border border-transparent hover:border-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line><line x1="10" x2="8" y1="9" y2="9"></line></svg>
+            <span>CV</span>
+          </div>
         </a>
 </div>
         </div>
@@ -87,7 +96,7 @@
       </div>
       
       <p>
-        </p><h1 class="font-zillaslab text-center">Memoization in Javascript</h1>
+        </p><h1 class="font-ubuntu-mono text-center">Memoization in Javascript</h1>
         <p>JavaScript memoization is a technique that allows you to optimize the performance of your code by caching the results of expensive function calls. In other words, instead of recalculating the result of a function every time it is called, you can store the result in a cache and return the cached value if the function is called with the same arguments again. This can significantly improve the performance of your code, especially if the function is called frequently or if it takes a long time to compute the result.</p>
 <p>To implement memoization in JavaScript, you can use a closure to create a cache that is stored within the function itself. For example, you could create a simple memoization function like this:</p>
 <pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">memoize</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">fn</span><span style="color: #E1E4E8">) {</span></span>
