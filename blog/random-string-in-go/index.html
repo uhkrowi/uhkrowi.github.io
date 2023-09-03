@@ -7,22 +7,22 @@
 <meta name="generator" content="Astro v2.8.3">
 
 <!-- Primary Meta Tags -->
-<title>Working Experiences</title>
-<meta name="title" content="Working Experiences">
-<meta name="description" content="Nurul Uhkrowi's working experiences">
+<title>Get random string in Go</title>
+<meta name="title" content="Get random string in Go">
+<meta name="description">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://localhost:3000/experience/">
-<meta property="og:title" content="Working Experiences">
-<meta property="og:description" content="Nurul Uhkrowi's working experiences">
+<meta property="og:url" content="http://localhost:3000/blog/random-string-in-go/">
+<meta property="og:title" content="Get random string in Go">
+<meta property="og:description">
 <meta property="og:image" content="http://localhost:3000/placeholder-social.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="http://localhost:3000/experience/">
-<meta property="twitter:title" content="Working Experiences">
-<meta property="twitter:description" content="Nurul Uhkrowi's working experiences">
+<meta property="twitter:url" content="http://localhost:3000/blog/random-string-in-go/">
+<meta property="twitter:title" content="Get random string in Go">
+<meta property="twitter:description">
 <meta property="twitter:image" content="http://localhost:3000/placeholder-social.jpg">
   <link rel="stylesheet" href="/_astro/about.82351431.css" />
 <link rel="stylesheet" href="/_astro/blog.7244fa1a.css" /></head>
@@ -40,7 +40,7 @@
               <span>Project</span>
             </div>
           </a><a href="/blog" style="text-decoration: none" class="max-w-max" title="Blog">
-            <div class="flex items-center space-x-2 py-1 nav-btn border border-transparent hover:border-gray-700">
+            <div class="flex items-center space-x-2 py-1 nav-btn border border-[#3a10e5] text-[#3a10e5] hover:text-gray-700 font-bold">
               <span>Blog</span>
             </div>
           </a><a href="/cv" style="text-decoration: none" class="max-w-max" title="CV">
@@ -66,7 +66,7 @@
             <span>Project</span>
           </div>
         </a><a href="/blog" style="text-decoration: none" class="max-w-max" title="Blog">
-          <div class="flex items-center space-x-2 py-1 nav-btn border border-transparent hover:border-gray-700">
+          <div class="flex items-center space-x-2 py-1 nav-btn border border-[#3a10e5] text-[#3a10e5] hover:text-gray-700 font-bold">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-atom"><circle cx="12" cy="12" r="1"></circle><path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z"></path><path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z"></path></svg>
             <span>Blog</span>
           </div>
@@ -85,7 +85,40 @@
         </div>
       </div>
       <div class="sticky top-[150px] pb-[50px]">
-        Hola
+        
+    <article>
+      <div class="flex items-center space-x-3 text-xs">
+        <span>Sep 3, 2023</span>
+        <span class="flex items-center p-1 bg-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-1"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> 
+          <span>2 minutes</span>
+        </span>
+      </div>
+      
+      <p>
+        </p><h1 class="font-ubuntu-mono text-center">Get random string in Go</h1>
+        <pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">import</span><span style="color: #E1E4E8"> (</span></span>
+<span class="line"><span style="color: #E1E4E8">	</span><span style="color: #9ECBFF">"</span><span style="color: #B392F0">fmt</span><span style="color: #9ECBFF">"</span></span>
+<span class="line"><span style="color: #E1E4E8">	</span><span style="color: #9ECBFF">"</span><span style="color: #B392F0">math/rand</span><span style="color: #9ECBFF">"</span></span>
+<span class="line"><span style="color: #E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> probLetters </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> []</span><span style="color: #79B8FF">rune</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&#x26;*1234567890"</span><span style="color: #E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">func</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">randString</span><span style="color: #E1E4E8">(length </span><span style="color: #F97583">int</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">string</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  b </span><span style="color: #F97583">:=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">make</span><span style="color: #E1E4E8">([]</span><span style="color: #F97583">rune</span><span style="color: #E1E4E8">, length)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> i </span><span style="color: #F97583">:=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">range</span><span style="color: #E1E4E8"> b {</span></span>
+<span class="line"><span style="color: #E1E4E8">    b[i] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> probLetters[rand.</span><span style="color: #79B8FF">Intn</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">len</span><span style="color: #E1E4E8">(probLetters) </span><span style="color: #F97583">-</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">)]</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">string</span><span style="color: #E1E4E8">(b)</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">fmt.</span><span style="color: #79B8FF">Println</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">randString</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">10</span><span style="color: #E1E4E8">))</span></span></code></pre>
+<p>You can try it in this <a href="%22https://go.dev/play/p/PAcRVNDPDYr%22">Go playground</a></p>
+      
+    </article>
+  
       </div>
     </div>
   </div>
