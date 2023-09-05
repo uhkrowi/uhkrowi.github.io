@@ -7,21 +7,21 @@
 <meta name="generator" content="Astro v2.8.3">
 
 <!-- Primary Meta Tags -->
-<title>Setting Timezone in Dockerfile</title>
-<meta name="title" content="Setting Timezone in Dockerfile">
+<title>Javascript snippets</title>
+<meta name="title" content="Javascript snippets">
 <meta name="description">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://localhost:3000/blog/setting-timezone-in-dockerfile/">
-<meta property="og:title" content="Setting Timezone in Dockerfile">
+<meta property="og:url" content="http://localhost:3000/blog/javascript-snippets/">
+<meta property="og:title" content="Javascript snippets">
 <meta property="og:description">
 <meta property="og:image" content="http://localhost:3000/placeholder-social.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="http://localhost:3000/blog/setting-timezone-in-dockerfile/">
-<meta property="twitter:title" content="Setting Timezone in Dockerfile">
+<meta property="twitter:url" content="http://localhost:3000/blog/javascript-snippets/">
+<meta property="twitter:title" content="Javascript snippets">
 <meta property="twitter:description">
 <meta property="twitter:image" content="http://localhost:3000/placeholder-social.jpg">
   <link rel="stylesheet" href="/_astro/about.cc2a19ec.css" />
@@ -89,13 +89,13 @@
     <article>
       <div class="flex items-center justify-between space-x-3 text-xs">
         <span class="space-x-2">
-          <span>Mar 14, 2023</span>
+          <span>Jul 22, 2022</span>
           <span>|</span>
-          <span class="space-x-2"><a href="/tag/tidbit">#tidbit</a></span>
+          <span class="space-x-2"><a href="/tag/tidbit">#tidbit</a><a href="/tag/javascript">#javascript</a></span>
         </span>
         <span class="flex items-center p-1 bg-white">
           <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-1"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> 
-          <span>1 minute</span>
+          <span>2 minutes</span>
         </span>
       </div>
       <div class="flex flex-col">
@@ -103,14 +103,20 @@
         
       </div>
       <p>
-        </p><h1 class="font-ubuntu-mono text-center">Setting Timezone in Dockerfile</h1>
-        <p>Sometimes you need to set timezone to the right one to adjust your application’s zone timing.</p>
-<p>If you use Docker to containeraize your application, you can simply use dockerfile and put this command to set the timezone.</p>
-<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #e1e4e8">...  </span></span>
-<span class="line"><span style="color: #e1e4e8">ENV TZ="Asia/Jakarta"</span></span>
-<span class="line"><span style="color: #e1e4e8">...</span></span>
-<span class="line"><span style="color: #e1e4e8"></span></span></code></pre>
-<p>In the code above we set the timezone with ENV instruction by assign the <strong>TZ</strong> (which means timezone) to Asia/Jakarta.</p>
+        </p><h1 class="font-ubuntu-mono text-center">Javascript snippets</h1>
+        <h3 id="1-get-base64-from-url">1. Get base64 from URL</h3>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">async</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">function</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">getBase64FromUrl</span><span style="color: #E1E4E8">(</span><span style="color: #FFAB70">URL</span><span style="color: #E1E4E8">) {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">data</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">fetch</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">URL</span><span style="color: #E1E4E8">);</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">blob</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">await</span><span style="color: #E1E4E8"> data.</span><span style="color: #B392F0">blob</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">Promise</span><span style="color: #E1E4E8">((</span><span style="color: #FFAB70">resolve</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">    </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">reader</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">new</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">FileReader</span><span style="color: #E1E4E8">();</span></span>
+<span class="line"><span style="color: #E1E4E8">    reader.</span><span style="color: #B392F0">readAsDataURL</span><span style="color: #E1E4E8">(blob);</span></span>
+<span class="line"><span style="color: #E1E4E8">    reader.</span><span style="color: #B392F0">onloadend</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> () </span><span style="color: #F97583">=></span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #F97583">const</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">base64data</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> reader.result;</span></span>
+<span class="line"><span style="color: #E1E4E8">      </span><span style="color: #B392F0">resolve</span><span style="color: #E1E4E8">(base64data);</span></span>
+<span class="line"><span style="color: #E1E4E8">    };</span></span>
+<span class="line"><span style="color: #E1E4E8">  });</span></span>
+<span class="line"><span style="color: #E1E4E8">};</span></span></code></pre>
       
     </article>
   

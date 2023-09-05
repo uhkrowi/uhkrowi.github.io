@@ -7,21 +7,21 @@
 <meta name="generator" content="Astro v2.8.3">
 
 <!-- Primary Meta Tags -->
-<title>Setting Timezone in Dockerfile</title>
-<meta name="title" content="Setting Timezone in Dockerfile">
+<title>Go snippets</title>
+<meta name="title" content="Go snippets">
 <meta name="description">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="http://localhost:3000/blog/setting-timezone-in-dockerfile/">
-<meta property="og:title" content="Setting Timezone in Dockerfile">
+<meta property="og:url" content="http://localhost:3000/blog/go-snippets/">
+<meta property="og:title" content="Go snippets">
 <meta property="og:description">
 <meta property="og:image" content="http://localhost:3000/placeholder-social.jpg">
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="http://localhost:3000/blog/setting-timezone-in-dockerfile/">
-<meta property="twitter:title" content="Setting Timezone in Dockerfile">
+<meta property="twitter:url" content="http://localhost:3000/blog/go-snippets/">
+<meta property="twitter:title" content="Go snippets">
 <meta property="twitter:description">
 <meta property="twitter:image" content="http://localhost:3000/placeholder-social.jpg">
   <link rel="stylesheet" href="/_astro/about.cc2a19ec.css" />
@@ -89,13 +89,13 @@
     <article>
       <div class="flex items-center justify-between space-x-3 text-xs">
         <span class="space-x-2">
-          <span>Mar 14, 2023</span>
+          <span>Sep 3, 2023</span>
           <span>|</span>
-          <span class="space-x-2"><a href="/tag/tidbit">#tidbit</a></span>
+          <span class="space-x-2"><a href="/tag/go">#go</a><a href="/tag/tidbit">#tidbit</a></span>
         </span>
         <span class="flex items-center p-1 bg-white">
           <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-1"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> 
-          <span>1 minute</span>
+          <span>2 minutes</span>
         </span>
       </div>
       <div class="flex flex-col">
@@ -103,14 +103,39 @@
         
       </div>
       <p>
-        </p><h1 class="font-ubuntu-mono text-center">Setting Timezone in Dockerfile</h1>
-        <p>Sometimes you need to set timezone to the right one to adjust your application’s zone timing.</p>
-<p>If you use Docker to containeraize your application, you can simply use dockerfile and put this command to set the timezone.</p>
-<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #e1e4e8">...  </span></span>
-<span class="line"><span style="color: #e1e4e8">ENV TZ="Asia/Jakarta"</span></span>
-<span class="line"><span style="color: #e1e4e8">...</span></span>
-<span class="line"><span style="color: #e1e4e8"></span></span></code></pre>
-<p>In the code above we set the timezone with ENV instruction by assign the <strong>TZ</strong> (which means timezone) to Asia/Jakarta.</p>
+        </p><h1 class="font-ubuntu-mono text-center">Go snippets</h1>
+        <h3 id="1-get-random-string-in-go">1. Get random string in Go</h3>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">import</span><span style="color: #E1E4E8"> (</span></span>
+<span class="line"><span style="color: #E1E4E8">	</span><span style="color: #9ECBFF">"</span><span style="color: #B392F0">fmt</span><span style="color: #9ECBFF">"</span></span>
+<span class="line"><span style="color: #E1E4E8">	</span><span style="color: #9ECBFF">"</span><span style="color: #B392F0">math/rand</span><span style="color: #9ECBFF">"</span></span>
+<span class="line"><span style="color: #E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">var</span><span style="color: #E1E4E8"> probLetters </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> []</span><span style="color: #79B8FF">rune</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&#x26;*1234567890"</span><span style="color: #E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">func</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">randString</span><span style="color: #E1E4E8">(length </span><span style="color: #F97583">int</span><span style="color: #E1E4E8">) </span><span style="color: #F97583">string</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  b </span><span style="color: #F97583">:=</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">make</span><span style="color: #E1E4E8">([]</span><span style="color: #F97583">rune</span><span style="color: #E1E4E8">, length)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">for</span><span style="color: #E1E4E8"> i </span><span style="color: #F97583">:=</span><span style="color: #E1E4E8"> </span><span style="color: #F97583">range</span><span style="color: #E1E4E8"> b {</span></span>
+<span class="line"><span style="color: #E1E4E8">    b[i] </span><span style="color: #F97583">=</span><span style="color: #E1E4E8"> probLetters[rand.</span><span style="color: #79B8FF">Intn</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">len</span><span style="color: #E1E4E8">(probLetters) </span><span style="color: #F97583">-</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">1</span><span style="color: #E1E4E8">)]</span></span>
+<span class="line"><span style="color: #E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #F97583">return</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">string</span><span style="color: #E1E4E8">(b)</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #E1E4E8">fmt.</span><span style="color: #79B8FF">Println</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">randString</span><span style="color: #E1E4E8">(</span><span style="color: #79B8FF">10</span><span style="color: #E1E4E8">))</span></span></code></pre>
+<p>You can try <a href="https://go.dev/play/p/PAcRVNDPDYr">here</a>.</p>
+<h3 id="2-scheduling-with-timesleep">2. Scheduling with time.Sleep()</h3>
+<pre is:raw="" class="astro-code github-dark" style="background-color: #24292e; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #F97583">import</span><span style="color: #E1E4E8"> (</span></span>
+<span class="line"><span style="color: #E1E4E8">	</span><span style="color: #9ECBFF">"</span><span style="color: #B392F0">time</span><span style="color: #9ECBFF">"</span></span>
+<span class="line"><span style="color: #E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">func</span><span style="color: #E1E4E8"> </span><span style="color: #B392F0">doSomething</span><span style="color: #E1E4E8">() {}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #F97583">for</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">true</span><span style="color: #E1E4E8"> {</span></span>
+<span class="line"><span style="color: #E1E4E8">  </span><span style="color: #79B8FF">doSomething</span><span style="color: #E1E4E8">()</span></span>
+<span class="line"><span style="color: #E1E4E8">  time.</span><span style="color: #79B8FF">Sleep</span><span style="color: #E1E4E8">(time.Second </span><span style="color: #F97583">*</span><span style="color: #E1E4E8"> </span><span style="color: #79B8FF">10</span><span style="color: #E1E4E8">)</span></span>
+<span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
+<p>The <code>doSomething()</code> will be invoked every 10 seconds.</p>
       
     </article>
   
