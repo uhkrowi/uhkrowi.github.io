@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en"><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="/favicon.ico"><meta name="generator" content="Astro v3.2.3"><!-- Primary Meta Tags --><title>Kafka (part: 1)</title><meta name="title" content="Kafka (part: 1)"><meta name="description" content=""><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="http://localhost:4321/blog/kafka-part-1/"><meta property="og:title" content="Kafka (part: 1)"><meta property="og:description" content=""><meta property="og:image" content="http://localhost:4321/placeholder-social.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:4321/blog/kafka-part-1/"><meta property="twitter:title" content="Kafka (part: 1)"><meta property="twitter:description" content=""><meta property="twitter:image" content="http://localhost:4321/placeholder-social.jpg"><!-- <ViewTransitions /> --><link rel="stylesheet" href="/_astro/about.7a869aa5.css" />
+<style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0}}@keyframes astroFadeOut{to{opacity:0}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/cicd-intro.56c26a10.css" />
+<style>/*!
+  Theme: Default
+  Description: Original highlight.js style
+  Author: (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+  Maintainer: @highlightjs/core-team
+  Website: https://highlightjs.org/
+  License: see project LICENSE
+  Touched: 2021
+*/pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{background:#f3f3f3;color:#444}.hljs-comment{color:#697070}.hljs-punctuation,.hljs-tag{color:#444a}.hljs-tag .hljs-attr,.hljs-tag .hljs-name{color:#444}.hljs-attribute,.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-name,.hljs-selector-tag{font-weight:700}.hljs-deletion,.hljs-number,.hljs-quote,.hljs-selector-class,.hljs-selector-id,.hljs-string,.hljs-template-tag,.hljs-type{color:#800}.hljs-section,.hljs-title{color:#800;font-weight:700}.hljs-link,.hljs-operator,.hljs-regexp,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#ab5656}.hljs-literal{color:#695}.hljs-addition,.hljs-built_in,.hljs-bullet,.hljs-code{color:#397300}.hljs-meta{color:#1f7199}.hljs-meta .hljs-string{color:#38a}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
+</style><style>[data-astro-transition-scope="astro-qf4hgxyw-1"] { view-transition-name: astro-qf4hgxyw-1; }@layer astro { ::view-transition-old(astro-qf4hgxyw-1) { 
+	animation-duration: 90ms, 220ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1), cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both, both;
+	animation-name: astroFadeOut, astroSlideToLeft; }::view-transition-new(astro-qf4hgxyw-1) { 
+	animation-duration: 210ms, 220ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1), cubic-bezier(0.76, 0, 0.24, 1);
+	animation-delay: 30ms;
+	animation-fill-mode: both, both;
+	animation-name: astroFadeIn, astroSlideFromRight; }[data-astro-transition=back]::view-transition-old(astro-qf4hgxyw-1) { 
+	animation-name: astroFadeOut, astroSlideToRight; }[data-astro-transition=back]::view-transition-new(astro-qf4hgxyw-1) { 
+	animation-name: astroFadeIn, astroSlideFromLeft; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-qf4hgxyw-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-qf4hgxyw-1"] { 
+	animation-duration: 90ms, 220ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1), cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both, both;
+	animation-name: astroFadeOut, astroSlideToLeft; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-qf4hgxyw-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-qf4hgxyw-1"] { 
+	animation-duration: 210ms, 220ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1), cubic-bezier(0.76, 0, 0.24, 1);
+	animation-delay: 30ms;
+	animation-fill-mode: both, both;
+	animation-name: astroFadeIn, astroSlideFromRight; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-qf4hgxyw-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-qf4hgxyw-1"] { 
+	animation-name: astroFadeOut, astroSlideToRight; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-qf4hgxyw-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-qf4hgxyw-1"] { 
+	animation-name: astroFadeIn, astroSlideFromLeft; }</style></head><body class="body"><div class="px-8 pt-4 md:pt-0 md:px-0 md:flex md:justify-center space-y-12 md:space-y-0"><!-- <div class="md:hidden py-6 border-b border-gray-400">
+        <MobileNavMenu />
+      </div> --><div class="main lg:space-y-24"><div class="flex justify-center mb-12"><!-- class="grid grid-cols-5 gap-2 divide-x divide-black" --><div class="py-2 px-6 bg-white border border-gray-500 rounded-full space-x-6 shadow-xl text-md"><a href="/about" style="text-decoration: none" title="About" class="text-gray-800 text-center"><span class=" text-gray-800 hover:text-[#D92063]"><span>About</span></span></a><a href="/project" style="text-decoration: none" title="Project" class="text-gray-800 text-center"><span class=" text-gray-800 hover:text-[#D92063]"><span>Project</span></span></a><a href="/blog" style="text-decoration: none" title="Notes" class="text-gray-800 text-center"><span class=" text-gray-800 font-bold"><span>Notes</span></span></a><a href="/contact" style="text-decoration: none" title="Contact" class="text-gray-800 text-center"><span class=" text-gray-800 hover:text-[#D92063]"><span>Contact</span></span></a><a href="/cv" style="text-decoration: none" title="CV" class="text-gray-800 text-center"><span class=" text-gray-800 hover:text-[#D92063]"><span>CV</span></span></a></div></div><div class="sticky top-[150px] pb-[50px]"><article class="md:text-lg" data-astro-transition-scope="astro-qf4hgxyw-1"><div class="pb-10 text-center text-3xl md:text-4xl font-extrabold font-inter">Kafka (part: 1)</div><div class="flex items-center justify-center space-x-3 text-xs md:text-sm"><span class="space-x-1"><span>Feb 16, 2024</span><!-- <span>&nbsp;·&nbsp;</span>
+        <span>4 min read</span> --><span>&nbsp;·&nbsp;</span><a href="/tag/just learned" class="border border-gray-300 bg-white hover:bg-gray-100 rounded-md px-2 py-1 no-underline" style="text-decoration: none;"><span class="">just learned</span></a></span><!-- <span class="flex items-center p-1 bg-white">
+        <BookOpen size={10} className="mx-1" />{" "}
+        <span>{minuteRead} minute{minuteRead > 1 && "s"}</span>
+      </span> --></div><div class="flex flex-col"><img class="w-full" src="/blog/kafka-part-1/hero.jpeg" alt=""><div class="text-center text-sm text-gray-500">Photo by cottonbro studio from Pexels</div></div><div class="pt-8"><h2 id="knowing-about-publish-and-subscribe">Knowing about Publish and Subscribe</h2>
+<p>Communication methods among services can be achieved directly or indirectly.</p>
+<ul>
+<li>Direct communication commonly using RPC (Remote Procedure Call) with RESTful API as the most popular choice nowadays. Take a look about RESTful API <a href="https://en.wikipedia.org/wiki/Overview_of_RESTful_API_Description_Languages" target="_blank">here</a>.</li>
+<li>On the other hand, we can do indirect communication using messaging or publisher/subscriber method. This method needs an application called “Message Broker” to be the mediator to hold informations about what to be processed by its subscribers (publisher is the sender of the data, and subscriber is the consumer of the data).</li>
+</ul>
+<p>Using <strong>Pub/Sub</strong> has an advantage below:</p>
+<p>The publisher services don’t need to have any complexity about how the informations they sent used, they just have to know that the data is successfully stored in the Message Broker.</p>
+<div class="flex flex-col justify-center items-center text-sm text-gray-500"><span></span><img src="/blog/kafka-part-1/pubsub-rpc.png" alt="RPC Diagram" width="500" height="500" loading="lazy" decoding="async">RPC Diagram</div>
+<p>If we’re using direct communication, when we got new applications or services that have to work with the related data, the producer of the resource has to adjust about sending the data, it has to think who has gonna receive the information, and this process of adjustment will happen every any brand new service that needs the data.</p>
+<div class="flex flex-col justify-center items-center text-sm text-gray-500"><span></span><img src="/blog/kafka-part-1/pubsub-mb.png" alt="Pub/Sub Diagram" width="500" height="500" loading="lazy" decoding="async">Pub/Sub Diagram</div>
+<p>Otherwise, with messaging communication method we can make sure when there’s any new brand service comes to consume the related data, the producer of the data doesn’t need take extra action, it will be as it is, just let the data sent into the Message Broker.</p>
+<p>Therefore, besides the advantage of reducing complexity above, we have to consider about the <strong>Pub/Sub</strong> disadvantages:</p>
+<ul>
+<li><strong>Delay</strong>. Because of doing indirect communication and using a mediator, there’s a chance our informations that come into the Message Broker will be postponed and delayed to be processed in a duration we probably difficult to predict, it can be happened when the subscriber is quite slow on processing the data it consumes, or the Message Broker server is down or has low specs.</li>
+<li><strong>Consistency of status</strong>. If somehow any subscriber fail to process the data, our publisher will not know about it in default, so the subscriber should has a capability of retrying on getting and processing the data.</li>
+</ul>
+<div class="pt-12 text-right"><a href="/blog/kafka-part-2" target="_self">Next: Kafka (Part: 2) &#8594;</a></div></div></article><footer class="w-full mt-16 flex items-center justify-center border-t border-gray-300 pt-12 text-gray-500 text-sm md:text-lg"><span>&copy; Nurul Uhkrowi 2024</span><!-- <div class="flex items-center space-x-4">
+    <a href="mailto:uhkrowi@gmail.com" target="_blank">
+      <Mail size={18} strokeWidth={1.5} fill="#9ca3af" className="text-white" />
+    </a>
+    <a href="https://t.me/uhkrowi" target="_blank">
+      <Send size={18} strokeWidth={1.5} fill="#9ca3af" className="text-white" />
+    </a>
+    <a href="https://linkedin.com/in/uhkrowi" target="_blank">
+      <Linkedin
+        size={18}
+        strokeWidth={1.5}
+        fill="#9ca3af"
+        className="text-white"
+      />
+    </a>
+  </div> --></footer></div></div><!-- <div class="relative main">
+        <div class="hidden md:block sticky top-0 h-[150px]"></div>
+        <div class="hidden md:block sticky top-[150px]">
+          <div class="absolute left-[-200px]">
+            <NavMenu />
+          </div>
+        </div>
+        <div class="sticky top-[150px] pb-[50px]">
+          <slot />
+        </div>
+      </div> --></div></body></html><!-- <script src=""/hljs/highlight.min.js"" defer></script> -->

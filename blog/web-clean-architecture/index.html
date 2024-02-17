@@ -1,7 +1,17 @@
-<!DOCTYPE html><html lang="en"><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="/favicon.ico"><meta name="generator" content="Astro v3.2.3"><!-- Primary Meta Tags --><title>What is Clean Architecture?</title><meta name="title" content="What is Clean Architecture?"><meta name="description" content=""><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="http://localhost:4321/blog/web-clean-architecture/"><meta property="og:title" content="What is Clean Architecture?"><meta property="og:description" content=""><meta property="og:image" content="http://localhost:4321/placeholder-social.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:4321/blog/web-clean-architecture/"><meta property="twitter:title" content="What is Clean Architecture?"><meta property="twitter:description" content=""><meta property="twitter:image" content="http://localhost:4321/placeholder-social.jpg"><!-- <ViewTransitions /> --><link rel="stylesheet" href="/_astro/about.750eb44c.css" />
+<!DOCTYPE html><html lang="en"><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="/favicon.ico"><meta name="generator" content="Astro v3.2.3"><!-- Primary Meta Tags --><title>What is Clean Architecture?</title><meta name="title" content="What is Clean Architecture?"><meta name="description" content=""><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="http://localhost:4321/blog/web-clean-architecture/"><meta property="og:title" content="What is Clean Architecture?"><meta property="og:description" content=""><meta property="og:image" content="http://localhost:4321/placeholder-social.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:4321/blog/web-clean-architecture/"><meta property="twitter:title" content="What is Clean Architecture?"><meta property="twitter:description" content=""><meta property="twitter:image" content="http://localhost:4321/placeholder-social.jpg"><!-- <ViewTransitions /> --><link rel="stylesheet" href="/_astro/about.7a869aa5.css" />
 <style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0}}@keyframes astroFadeOut{to{opacity:0}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
 </style>
-<link rel="stylesheet" href="/_astro/cicd-intro.033a0beb.css" /><style>[data-astro-transition-scope="astro-qf4hgxyw-1"] { view-transition-name: astro-qf4hgxyw-1; }@layer astro { ::view-transition-old(astro-qf4hgxyw-1) { 
+<link rel="stylesheet" href="/_astro/cicd-intro.56c26a10.css" />
+<style>/*!
+  Theme: Default
+  Description: Original highlight.js style
+  Author: (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+  Maintainer: @highlightjs/core-team
+  Website: https://highlightjs.org/
+  License: see project LICENSE
+  Touched: 2021
+*/pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{background:#f3f3f3;color:#444}.hljs-comment{color:#697070}.hljs-punctuation,.hljs-tag{color:#444a}.hljs-tag .hljs-attr,.hljs-tag .hljs-name{color:#444}.hljs-attribute,.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-name,.hljs-selector-tag{font-weight:700}.hljs-deletion,.hljs-number,.hljs-quote,.hljs-selector-class,.hljs-selector-id,.hljs-string,.hljs-template-tag,.hljs-type{color:#800}.hljs-section,.hljs-title{color:#800;font-weight:700}.hljs-link,.hljs-operator,.hljs-regexp,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#ab5656}.hljs-literal{color:#695}.hljs-addition,.hljs-built_in,.hljs-bullet,.hljs-code{color:#397300}.hljs-meta{color:#1f7199}.hljs-meta .hljs-string{color:#38a}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
+</style><style>[data-astro-transition-scope="astro-qf4hgxyw-1"] { view-transition-name: astro-qf4hgxyw-1; }@layer astro { ::view-transition-old(astro-qf4hgxyw-1) { 
 	animation-duration: 90ms, 220ms;
 	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1), cubic-bezier(0.76, 0, 0.24, 1);
 	animation-fill-mode: both, both;
@@ -27,37 +37,9 @@
 			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-qf4hgxyw-1"] { 
 	animation-name: astroFadeOut, astroSlideToRight; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-qf4hgxyw-1"],
 			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-qf4hgxyw-1"] { 
-	animation-name: astroFadeIn, astroSlideFromLeft; }</style></head><body class="body"><div class="px-5 pt-4 md:pt-0 md:px-0 md:flex md:justify-center space-y-12 md:space-y-0"><!-- <div class="md:hidden py-6 border-b border-gray-400">
+	animation-name: astroFadeIn, astroSlideFromLeft; }</style></head><body class="body"><div class="px-8 pt-4 md:pt-0 md:px-0 md:flex md:justify-center space-y-12 md:space-y-0"><!-- <div class="md:hidden py-6 border-b border-gray-400">
         <MobileNavMenu />
-      </div> --><div class="main lg:space-y-24"><div class="flex justify-center mb-12"><div class="py-2 px-6 bg-white border border-gray-500 rounded-full space-x-6 shadow-xl"><a href="/about" style="text-decoration: none" title="About" class="text-gray-800"><span class=" text-gray-800 hover:text-[#D92063]"><span>About</span></span></a><a href="/project" style="text-decoration: none" title="Project" class="text-gray-800"><span class=" text-gray-800 hover:text-[#D92063]"><span>Project</span></span></a><a href="/blog" style="text-decoration: none" title="Notes" class="text-gray-800"><span class=" text-gray-800 font-bold"><span>Notes</span></span></a><a href="/contact" style="text-decoration: none" title="Contact" class="text-gray-800"><span class=" text-gray-800 hover:text-[#D92063]"><span>Contact</span></span></a><a href="/cv" style="text-decoration: none" title="CV" class="text-gray-800"><span class=" text-gray-800 hover:text-[#D92063]"><span>CV</span></span></a><!-- <button class="rounded-full hover:text-[#fb2576]">About</button>
-    <button class="rounded-full hover:text-[#fb2576]">Projects</button>
-    <button class="rounded-full hover:text-[#fb2576]">Notes</button>
-    <button class="rounded-full hover:text-[#fb2576]">Contact</button>
-    <button class="rounded-full hover:text-[#fb2576]">CV</button> --></div></div><!-- <div class="flex justify-end space-x-5">
-  {
-    menus.map((menu) => {
-      return (
-        <a
-          href={menu.link}
-          style="text-decoration: none"
-          class="max-w-max"
-          title={menu.label}
-        >
-          <div
-            class={`flex items-center space-x-2 py-1 text-gray-800 ${
-              isPathActive(menu.link)
-                // ? "border border-sky-700 text-sky-700 hover:text-gray-700 font-bold"
-                ? "hover:text-gray-700 font-bold border-b-2 border-gray-700"
-                : "hover:text-gray-700 border:font-bold hover:border-b-2 hover:border-gray-700"
-            }`}
-          >
-            <span>{menu.label}</span>
-          </div>
-        </a>
-      );
-    })
-  }
-</div> --><div class="sticky top-[150px] pb-[50px]"><article data-astro-transition-scope="astro-qf4hgxyw-1"><div class="pb-10 text-center text-4xl font-extrabold">What is Clean Architecture?</div><div class="flex items-center justify-center space-x-3 text-xs"><span class="space-x-1"><span>Dec 12, 2022</span><!-- <span>&nbsp;·&nbsp;</span>
+      </div> --><div class="main lg:space-y-24"><div class="flex justify-center mb-12"><!-- class="grid grid-cols-5 gap-2 divide-x divide-black" --><div class="py-2 px-6 bg-white border border-gray-500 rounded-full space-x-6 shadow-xl text-md"><a href="/about" style="text-decoration: none" title="About" class="text-gray-800 text-center"><span class=" text-gray-800 hover:text-[#D92063]"><span>About</span></span></a><a href="/project" style="text-decoration: none" title="Project" class="text-gray-800 text-center"><span class=" text-gray-800 hover:text-[#D92063]"><span>Project</span></span></a><a href="/blog" style="text-decoration: none" title="Notes" class="text-gray-800 text-center"><span class=" text-gray-800 font-bold"><span>Notes</span></span></a><a href="/contact" style="text-decoration: none" title="Contact" class="text-gray-800 text-center"><span class=" text-gray-800 hover:text-[#D92063]"><span>Contact</span></span></a><a href="/cv" style="text-decoration: none" title="CV" class="text-gray-800 text-center"><span class=" text-gray-800 hover:text-[#D92063]"><span>CV</span></span></a></div></div><div class="sticky top-[150px] pb-[50px]"><article class="md:text-lg" data-astro-transition-scope="astro-qf4hgxyw-1"><div class="pb-10 text-center text-3xl md:text-4xl font-extrabold font-inter">What is Clean Architecture?</div><div class="flex items-center justify-center space-x-3 text-xs md:text-sm"><span class="space-x-1"><span>Dec 12, 2022</span><!-- <span>&nbsp;·&nbsp;</span>
         <span>4 min read</span> --></span><!-- <span class="flex items-center p-1 bg-white">
         <BookOpen size={10} className="mx-1" />{" "}
         <span>{minuteRead} minute{minuteRead > 1 && "s"}</span>
@@ -122,7 +104,22 @@ The frameworks and drivers layer contains the code that interfaces with the oper
 <span class="line"></span>
 <span class="line"><span style="color: #E1E4E8">	w.</span><span style="color: #79B8FF">Write</span><span style="color: #E1E4E8">([]</span><span style="color: #79B8FF">byte</span><span style="color: #E1E4E8">(fmt.</span><span style="color: #79B8FF">Sprintf</span><span style="color: #E1E4E8">(</span><span style="color: #9ECBFF">"Hello, </span><span style="color: #79B8FF">%s</span><span style="color: #9ECBFF">!"</span><span style="color: #E1E4E8">, user.Name)))</span></span>
 <span class="line"><span style="color: #E1E4E8">}</span></span></code></pre>
-<p>In this example, the <code>User</code> struct is part of the domain layer, the <code>UserRepository</code> interface is part of the interface adapters layer, and the <code>HTTPHandler</code> struct is part of the frameworks and drivers layer and depends on the <code>UserRepository</code> interface, which is part of the interface adapters layer, but not on the implementation of the repository, which allows the application to be more flexible and maintainable.</p></div></article><footer class="w-full mt-16 flex items-center justify-between border-t border-gray-300 pt-12 text-gray-500 text-sm"><span>&copy; Nurul Uhkrowi 2024</span><div class="flex items-center space-x-4"><a href="mailto:uhkrowi@gmail.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#9ca3af" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-white"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></a><a href="https://t.me/uhkrowi" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#9ca3af" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-white"><line x1="22" x2="11" y1="2" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></a><a href="https://linkedin.com/in/uhkrowi" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#9ca3af" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></div></footer></div></div><!-- <div class="relative main">
+<p>In this example, the <code>User</code> struct is part of the domain layer, the <code>UserRepository</code> interface is part of the interface adapters layer, and the <code>HTTPHandler</code> struct is part of the frameworks and drivers layer and depends on the <code>UserRepository</code> interface, which is part of the interface adapters layer, but not on the implementation of the repository, which allows the application to be more flexible and maintainable.</p></div></article><footer class="w-full mt-16 flex items-center justify-center border-t border-gray-300 pt-12 text-gray-500 text-sm md:text-lg"><span>&copy; Nurul Uhkrowi 2024</span><!-- <div class="flex items-center space-x-4">
+    <a href="mailto:uhkrowi@gmail.com" target="_blank">
+      <Mail size={18} strokeWidth={1.5} fill="#9ca3af" className="text-white" />
+    </a>
+    <a href="https://t.me/uhkrowi" target="_blank">
+      <Send size={18} strokeWidth={1.5} fill="#9ca3af" className="text-white" />
+    </a>
+    <a href="https://linkedin.com/in/uhkrowi" target="_blank">
+      <Linkedin
+        size={18}
+        strokeWidth={1.5}
+        fill="#9ca3af"
+        className="text-white"
+      />
+    </a>
+  </div> --></footer></div></div><!-- <div class="relative main">
         <div class="hidden md:block sticky top-0 h-[150px]"></div>
         <div class="hidden md:block sticky top-[150px]">
           <div class="absolute left-[-200px]">
@@ -132,4 +129,4 @@ The frameworks and drivers layer contains the code that interfaces with the oper
         <div class="sticky top-[150px] pb-[50px]">
           <slot />
         </div>
-      </div> --></div></body></html>
+      </div> --></div></body></html><!-- <script src=""/hljs/highlight.min.js"" defer></script> -->
