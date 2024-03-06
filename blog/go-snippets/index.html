@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="/favicon.ico"><meta name="generator" content="Astro v3.2.3"><!-- Primary Meta Tags --><title>Go snippets</title><meta name="title" content="Go snippets"><meta name="description" content=""><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://uhkrowi.com/blog/go-snippets/"><meta property="og:title" content="Go snippets"><meta property="og:description" content=""><meta property="og:image" content="https://uhkrowi.com/placeholder-social.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://uhkrowi.com/blog/go-snippets/"><meta property="twitter:title" content="Go snippets"><meta property="twitter:description" content=""><meta property="twitter:image" content="https://uhkrowi.com/placeholder-social.jpg"><!-- <ViewTransitions /> --><link rel="stylesheet" href="/_astro/about.b36def02.css" />
 <style>@keyframes astroFadeInOut{0%{opacity:1}to{opacity:0}}@keyframes astroFadeIn{0%{opacity:0}}@keyframes astroFadeOut{to{opacity:0}}@keyframes astroSlideFromRight{0%{transform:translate(100%)}}@keyframes astroSlideFromLeft{0%{transform:translate(-100%)}}@keyframes astroSlideToRight{to{transform:translate(100%)}}@keyframes astroSlideToLeft{to{transform:translate(-100%)}}@media (prefers-reduced-motion){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}[data-astro-transition-scope]{animation:none!important}}
 </style>
-<link rel="stylesheet" href="/_astro/cicd-intro.d7e0f5ed.css" /><style>[data-astro-transition-scope="astro-qf4hgxyw-1"] { view-transition-name: astro-qf4hgxyw-1; }@layer astro { ::view-transition-old(astro-qf4hgxyw-1) { 
+<link rel="stylesheet" href="/_astro/cicd-intro.6be30c67.css" /><style>[data-astro-transition-scope="astro-qf4hgxyw-1"] { view-transition-name: astro-qf4hgxyw-1; }@layer astro { ::view-transition-old(astro-qf4hgxyw-1) { 
 	animation-duration: 90ms, 220ms;
 	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1), cubic-bezier(0.76, 0, 0.24, 1);
 	animation-fill-mode: both, both;
@@ -33,7 +33,7 @@
         <span>4 min read</span> --><span>&nbsp;·&nbsp;</span><a href="/tag/go" class="border border-neutral-200 bg-white hover:bg-neutral-100 rounded-md px-2 py-1 no-underline" style="text-decoration: none; font-weight: lighter;"><span class="">Go</span></a><a href="/tag/tidbit" class="border border-neutral-200 bg-white hover:bg-neutral-100 rounded-md px-2 py-1 no-underline" style="text-decoration: none; font-weight: lighter;"><span class="">Tidbit</span></a></span><!-- <span class="flex items-center p-1 bg-white">
         <BookOpen size={10} className="mx-1" />{" "}
         <span>{minuteRead} minute{minuteRead > 1 && "s"}</span>
-      </span> --></div><div class="flex flex-col"></div><div><h4 id="1-get-random-string-in-go">1. Get random string in Go</h4>
+      </span> --></div><div class="flex flex-col"></div><div class="font-light"><h4 id="1-get-random-string-in-go">1. Get random string in Go</h4>
 <pre class="astro-code dark-plus" style="background-color: #1E1E1E; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #569CD6">import</span><span style="color: #D4D4D4"> (</span></span>
 <span class="line"><span style="color: #D4D4D4">	</span><span style="color: #CE9178">"fmt"</span></span>
 <span class="line"><span style="color: #D4D4D4">	</span><span style="color: #CE9178">"math/rand"</span></span>
@@ -101,6 +101,39 @@
 <span class="line"><span style="color: #D4D4D4">	}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #D4D4D4">	fmt.</span><span style="color: #DCDCAA">Print</span><span style="color: #D4D4D4">(</span><span style="color: #DCDCAA">string</span><span style="color: #D4D4D4">(data))</span></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span></code></pre>
+<h4 id="5-padding-string-with-certain-character">5. Padding string with certain character</h4>
+<pre class="astro-code dark-plus" style="background-color: #1E1E1E; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #569CD6">func</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">formatString</span><span style="color: #D4D4D4">(num </span><span style="color: #4EC9B0">int</span><span style="color: #D4D4D4">) </span><span style="color: #4EC9B0">string</span><span style="color: #D4D4D4"> {</span></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #9CDCFE">formatted</span><span style="color: #D4D4D4"> := fmt.</span><span style="color: #DCDCAA">Sprintf</span><span style="color: #D4D4D4">(</span><span style="color: #CE9178">"</span><span style="color: #9CDCFE">%04d</span><span style="color: #CE9178">"</span><span style="color: #D4D4D4">, num)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">  </span><span style="color: #C586C0">return</span><span style="color: #D4D4D4"> formatted</span></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #D4D4D4">fmt.</span><span style="color: #DCDCAA">Println</span><span style="color: #D4D4D4">(</span><span style="color: #DCDCAA">formatString</span><span style="color: #D4D4D4">(</span><span style="color: #B5CEA8">5</span><span style="color: #D4D4D4">)) </span><span style="color: #6A9955">// Output: 0005</span></span></code></pre>
+<p>In the format string “%04d”, 0 specifies zero padding, and 4 specifies the width of the resulting string. So, %04d means format the number as a decimal integer (d) with a width of 4 characters, padded with zeros if necessary.</p>
+<h4 id="6-prevent-many-goroutines-access-shared-resources-simultaneously">6. Prevent many goroutines access shared resources simultaneously</h4>
+<pre class="astro-code dark-plus" style="background-color: #1E1E1E; overflow-x: auto;" tabindex="0"><code><span class="line"><span style="color: #569CD6">import</span><span style="color: #D4D4D4"> (</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #CE9178">"sync"</span></span>
+<span class="line"><span style="color: #D4D4D4">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #569CD6">var</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">mu</span><span style="color: #D4D4D4"> sync.Mutex</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #569CD6">func</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">processFunction</span><span style="color: #D4D4D4">() {</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #6A9955">// Lock the mutex before executing the function</span></span>
+<span class="line"><span style="color: #D4D4D4">    mu.</span><span style="color: #DCDCAA">Lock</span><span style="color: #D4D4D4">()</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #C586C0">defer</span><span style="color: #D4D4D4"> mu.</span><span style="color: #DCDCAA">Unlock</span><span style="color: #D4D4D4">()</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #6A9955">// Simulate some work</span></span>
+<span class="line"><span style="color: #D4D4D4">    </span><span style="color: #C586C0">for</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">i</span><span style="color: #D4D4D4"> := </span><span style="color: #B5CEA8">0</span><span style="color: #D4D4D4">; i &#x3C; </span><span style="color: #B5CEA8">5</span><span style="color: #D4D4D4">; i++ {</span></span>
+<span class="line"><span style="color: #D4D4D4">        fmt.</span><span style="color: #DCDCAA">Println</span><span style="color: #D4D4D4">(i)</span></span>
+<span class="line"><span style="color: #D4D4D4">    }</span></span>
+<span class="line"><span style="color: #D4D4D4">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #569CD6">func</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">main</span><span style="color: #D4D4D4">() {</span></span>
+<span class="line"><span style="color: #D4D4D4">	</span><span style="color: #6A9955">// Launch several goroutines to invoke the function</span></span>
+<span class="line"><span style="color: #D4D4D4">	</span><span style="color: #C586C0">for</span><span style="color: #D4D4D4"> </span><span style="color: #9CDCFE">i</span><span style="color: #D4D4D4"> := </span><span style="color: #B5CEA8">0</span><span style="color: #D4D4D4">; i &#x3C; </span><span style="color: #B5CEA8">3</span><span style="color: #D4D4D4">; i++ {</span></span>
+<span class="line"><span style="color: #D4D4D4">		</span><span style="color: #C586C0">go</span><span style="color: #D4D4D4"> </span><span style="color: #DCDCAA">processFunction</span><span style="color: #D4D4D4">()</span></span>
+<span class="line"><span style="color: #D4D4D4">	}</span></span>
 <span class="line"><span style="color: #D4D4D4">}</span></span></code></pre></div></article><footer class="w-full py-8 mt-16 flex items-center justify-center border-t border-neutral-300 pt-12 text-neutral-500 text-sm"><span>&copy; Nurul Uhkrowi 2024</span><!-- <div class="flex items-center space-x-4">
     <a href="mailto:uhkrowi@gmail.com" target="_blank">
       <Mail size={18} strokeWidth={1.5} fill="#9ca3af" className="text-white" />
