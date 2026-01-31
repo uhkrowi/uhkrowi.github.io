@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Nurul Uhkrowi's personal website"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.ico"><meta name="generator" content="Astro v5.17.0"><title>Sending email using Go and Gmail - Uhkrowi</title><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://uhkrowi.com/note/sending-email-using-go-gmail/"><meta property="og:title" content="Sending email using Go and Gmail - Uhkrowi"><meta property="og:description" content="Nurul Uhkrowi's personal website"><meta property="og:image" content="https://uhkrowi.com/placeholder-social.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://uhkrowi.com/note/sending-email-using-go-gmail/"><meta property="twitter:title" content="Sending email using Go and Gmail - Uhkrowi"><meta property="twitter:description" content="Nurul Uhkrowi's personal website"><meta property="twitter:image" content="https://uhkrowi.com/placeholder-social.jpg"><script>
+      const theme = (() => {
+        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+    
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+      window.localStorage.setItem("theme", theme);
+    </script><link rel="stylesheet" href="/_astro/about.Csnh4uPE.css"></head> <body class="bg-gray-50 text-gray-900 dark:bg-[#232323] dark:text-white font-sans antialiased transition-colors duration-300">  <main class="min-h-screen flex flex-col p-8 md:p-16 max-w-3xl mx-auto"> <!-- Header --> <header class="flex flex-col gap-6 mb-12"> <a href="/notes" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-2 w-fit"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path> </svg>
+Back to Notes
+</a> <div> <span class="text-sm text-gray-600 dark:text-gray-400 block mb-6 text-right">October 28, 2023</span> <h1 class="text-3xl lg:text-4xl font-serif mb-4 leading-tight text-center">Sending email using Go and Gmail</h1> <h3> <span class="text-gray-600 dark:text-gray-400"> A simple guide on how to integrate Gmail SMTP with Go (Golang) to send emails. </span> </h3> <hr class="border-gray-300 dark:border-gray-700 my-8"> </div> </header> <!-- Content --> <article class="prose dark:prose-invert max-w-none text-gray-800 dark:text-gray-300 font-sans lg:prose-lg prose-img:border prose-img:border-zinc-200 dark:prose-img:border-zinc-700 prose-img:rounded-lg prose-img:mx-auto"> <p><img src="/files/notes/sending-email-using-go-gmail/hero.webp" alt=""></p>
+<p>If you’re going to build an email service/feature in your app to send emails to your audiences, you can use Gmail to be a SMTP email sender. This approach is quite simple, we will try to do it with Go.</p>
+<p>To use Gmail as sender of your mailer, you need to setup an app password of your google account first. You can do it <a href="https://myaccount.google.com/apppasswords">here</a>.</p>
+<p>Once you access the page, you’ll be served a tiny form to generate app passwords of your account.</p>
+<p><img src="/files/notes/sending-email-using-go-gmail/blog-mailer-1.png" alt=""></p>
+<p>When the button Create is clicked, there will be a modal popping out containing a generated password, just keep it to use later.</p>
+<p><img src="/files/notes/sending-email-using-go-gmail/blog-mailer-2.png" alt=""></p>
+<h4 id="now-lets-jump-into-the-code">Now let’s jump into the code!</h4>
+<p>Start with creating a file for setup purpose in a package named <code>mailer</code> in a new mail folder, save the file as <code>mail-setup.go</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#6A737D">// mail/setup.go</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">package</span><span style="color:#B392F0"> mailer</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#9ECBFF">	"</span><span style="color:#B392F0">fmt</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#9ECBFF">	"</span><span style="color:#B392F0">net/smtp</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#9ECBFF">	"</span><span style="color:#B392F0">sync</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">type</span><span style="color:#B392F0"> SMTPMailSetup</span><span style="color:#F97583"> struct</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">	Server   </span><span style="color:#F97583">string</span></span>
+<span class="line"><span style="color:#E1E4E8">	Port     </span><span style="color:#F97583">string</span></span>
+<span class="line"><span style="color:#E1E4E8">	Address  </span><span style="color:#F97583">string</span></span>
+<span class="line"><span style="color:#E1E4E8">	Sender   </span><span style="color:#F97583">string</span></span>
+<span class="line"><span style="color:#E1E4E8">	Password </span><span style="color:#F97583">string</span></span>
+<span class="line"><span style="color:#E1E4E8">	Auth     </span><span style="color:#B392F0">smtp</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Auth</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">var</span><span style="color:#E1E4E8"> mailSetup </span><span style="color:#F97583">*</span><span style="color:#B392F0">SMTPMailSetup</span></span>
+<span class="line"><span style="color:#F97583">var</span><span style="color:#E1E4E8"> once </span><span style="color:#B392F0">sync</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Once</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">func</span><span style="color:#B392F0"> getSetup</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">*</span><span style="color:#B392F0">SMTPMailSetup</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">	once.</span><span style="color:#B392F0">Do</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">func</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#E1E4E8">		mailSetup </span><span style="color:#F97583">=</span><span style="color:#F97583"> &#x26;</span><span style="color:#B392F0">SMTPMailSetup</span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#E1E4E8">			Server:   </span><span style="color:#9ECBFF">"smtp.gmail.com"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">			Port:     </span><span style="color:#9ECBFF">"587"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">			Sender:   </span><span style="color:#9ECBFF">"your_email"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// change with your own email</span></span>
+<span class="line"><span style="color:#E1E4E8">			Password: </span><span style="color:#9ECBFF">"generated_app_password"</span><span style="color:#E1E4E8">, </span><span style="color:#6A737D">// change with your trimmed generated app password earlier</span></span>
+<span class="line"><span style="color:#E1E4E8">		}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">		mailSetup.Address </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> fmt.</span><span style="color:#B392F0">Sprintf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">%s</span><span style="color:#9ECBFF">:</span><span style="color:#79B8FF">%s</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, mailSetup.Server, mailSetup.Port)</span></span>
+<span class="line"><span style="color:#E1E4E8">		mailSetup.Auth </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> smtp.</span><span style="color:#B392F0">PlainAuth</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">, mailSetup.Sender, mailSetup.Password, mailSetup.Server)</span></span>
+<span class="line"><span style="color:#E1E4E8">	})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	return</span><span style="color:#E1E4E8"> mailSetup</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Then create a Usecase in another file.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#6A737D">// mail/usecase.go</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">package</span><span style="color:#B392F0"> mailer</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#9ECBFF">	"</span><span style="color:#B392F0">bytes</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#9ECBFF">	"</span><span style="color:#B392F0">fmt</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#9ECBFF">	"</span><span style="color:#B392F0">text/template</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#9ECBFF">	"</span><span style="color:#B392F0">net/smtp</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">type</span><span style="color:#B392F0"> Mailer</span><span style="color:#F97583"> struct</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">	Body  []</span><span style="color:#F97583">byte</span></span>
+<span class="line"><span style="color:#E1E4E8">	Setup </span><span style="color:#F97583">*</span><span style="color:#B392F0">SMTPMailSetup</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">func</span><span style="color:#B392F0"> NewSMTPMailer</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">*</span><span style="color:#B392F0">Mailer</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">	return</span><span style="color:#F97583"> &#x26;</span><span style="color:#B392F0">Mailer</span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#E1E4E8">		Setup: </span><span style="color:#B392F0">getSetup</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">func</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">m </span><span style="color:#F97583">*</span><span style="color:#B392F0">Mailer</span><span style="color:#E1E4E8">) </span><span style="color:#B392F0">createBody</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">subject</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">htmlTemplate</span><span style="color:#F97583"> string</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">data</span><span style="color:#B392F0"> any</span><span style="color:#E1E4E8">) (</span><span style="color:#FFAB70">err</span><span style="color:#F97583"> error</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">	var</span><span style="color:#E1E4E8"> body </span><span style="color:#B392F0">bytes</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Buffer</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	const</span><span style="color:#79B8FF"> mime</span><span style="color:#F97583"> =</span><span style="color:#9ECBFF"> "MIME-version: 1.0;</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">Content-Type: text/html; charset=</span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF">UTF-8</span><span style="color:#79B8FF">\"</span><span style="color:#9ECBFF">;</span><span style="color:#79B8FF">\n\n</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#E1E4E8">	body.</span><span style="color:#B392F0">Write</span><span style="color:#E1E4E8">([]</span><span style="color:#F97583">byte</span><span style="color:#E1E4E8">(fmt.</span><span style="color:#B392F0">Sprintf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Subject: </span><span style="color:#79B8FF">%s\n%s\n\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, subject, mime)))</span></span>
+<span class="line"><span style="color:#E1E4E8">	t, err </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> template.</span><span style="color:#B392F0">ParseFiles</span><span style="color:#E1E4E8">(htmlTemplate)</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> err </span><span style="color:#F97583">!=</span><span style="color:#79B8FF"> nil</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">		return</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	err </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> t.</span><span style="color:#B392F0">Execute</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">body, data)</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> err </span><span style="color:#F97583">!=</span><span style="color:#79B8FF"> nil</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">		return</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	m.Body </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> body.</span><span style="color:#B392F0">Bytes</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	return</span><span style="color:#79B8FF"> nil</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">func</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">m </span><span style="color:#F97583">*</span><span style="color:#B392F0">Mailer</span><span style="color:#E1E4E8">) </span><span style="color:#B392F0">Send</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">receipent</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">subject</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">template</span><span style="color:#F97583"> string</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">data</span><span style="color:#B392F0"> any</span><span style="color:#E1E4E8">) (</span><span style="color:#FFAB70">err</span><span style="color:#F97583"> error</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">	defer</span><span style="color:#F97583"> func</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">		if</span><span style="color:#E1E4E8"> r </span><span style="color:#F97583">:=</span><span style="color:#B392F0"> recover</span><span style="color:#E1E4E8">(); r </span><span style="color:#F97583">!=</span><span style="color:#79B8FF"> nil</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">			err </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> fmt.</span><span style="color:#B392F0">Errorf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF">%s</span><span style="color:#9ECBFF"> | </span><span style="color:#79B8FF">%v</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"error on sending email"</span><span style="color:#E1E4E8">, r)</span></span>
+<span class="line"><span style="color:#E1E4E8">		}</span></span>
+<span class="line"><span style="color:#E1E4E8">	}()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	err </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> m.</span><span style="color:#B392F0">createBody</span><span style="color:#E1E4E8">(subject, template, data)</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> err </span><span style="color:#F97583">!=</span><span style="color:#79B8FF"> nil</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">		return</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	err </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> smtp.</span><span style="color:#B392F0">SendMail</span><span style="color:#E1E4E8">(m.Setup.Address, m.Setup.Auth, m.Setup.Sender, []</span><span style="color:#F97583">string</span><span style="color:#E1E4E8">{receipent}, m.Body)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	return</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Next let’s create a sample template for the body of the email. (*You probably don’t need this if you want to send a plain text instead).</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">// mail/sample.template</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;!</span><span style="color:#85E89D">DOCTYPE</span><span style="color:#B392F0"> html</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">html</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">    Sending email from golang app!</span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">body</span><span style="color:#E1E4E8">></span></span>
+<span class="line"><span style="color:#E1E4E8">&#x3C;/</span><span style="color:#85E89D">html</span><span style="color:#E1E4E8">></span></span></code></pre>
+<p>Finally! Let’s implement the mailer feature in the <strong>main</strong> file.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#6A737D">// main.go</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">package</span><span style="color:#B392F0"> main</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> (</span></span>
+<span class="line"><span style="color:#9ECBFF">	"</span><span style="color:#B392F0">log</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#9ECBFF">	"</span><span style="color:#B392F0">time</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	mailer </span><span style="color:#9ECBFF">"</span><span style="color:#B392F0">mailer/mail</span><span style="color:#9ECBFF">"</span></span>
+<span class="line"><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">func</span><span style="color:#E1E4E8"> main () {</span></span>
+<span class="line"><span style="color:#E1E4E8">	mail </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> mailer.</span><span style="color:#B392F0">NewSMTPMailer</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">	</span></span>
+<span class="line"><span style="color:#E1E4E8">	err </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> mail.</span><span style="color:#B392F0">Send</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"sample_receipent@xemaildomain.com"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"Test"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"./mail/sample.template"</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">nil</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> err </span><span style="color:#F97583">!=</span><span style="color:#79B8FF"> nil</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">		log.</span><span style="color:#B392F0">Println</span><span style="color:#E1E4E8">(err)</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	time.</span><span style="color:#B392F0">Sleep</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">30</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8"> time.Second)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>If it successfully sent, the receipent will receive an email like below.</p>
+<p><img src="/files/notes/sending-email-using-go-gmail/blog-mailer-3.png" alt=""></p>
+<p>The full source code can be found in this <a href="https://github.com/uhkrowi/go-gmail-mailer">repository</a>.</p> </article> </main>  <button id="theme-toggle" type="button" class="fixed bottom-12 right-8 z-50 p-3 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 shadow-lg hover:scale-110 transition-transform duration-200 border border-zinc-200 dark:border-zinc-700" aria-label="Toggle theme"> <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> <script>
+  const handleToggleClick = () => {
+    const element = document.documentElement;
+    element.classList.toggle("dark");
+
+    const isDark = element.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+
+  document
+    .getElementById("theme-toggle")
+    .addEventListener("click", handleToggleClick);
+</script> </body></html>

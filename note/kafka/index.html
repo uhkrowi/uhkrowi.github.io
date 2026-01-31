@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Nurul Uhkrowi's personal website"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.ico"><meta name="generator" content="Astro v5.17.0"><title>Messaging Communication Among Services With Kafka - Uhkrowi</title><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://uhkrowi.com/note/kafka/"><meta property="og:title" content="Messaging Communication Among Services With Kafka - Uhkrowi"><meta property="og:description" content="Nurul Uhkrowi's personal website"><meta property="og:image" content="https://uhkrowi.com/placeholder-social.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://uhkrowi.com/note/kafka/"><meta property="twitter:title" content="Messaging Communication Among Services With Kafka - Uhkrowi"><meta property="twitter:description" content="Nurul Uhkrowi's personal website"><meta property="twitter:image" content="https://uhkrowi.com/placeholder-social.jpg"><script>
+      const theme = (() => {
+        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+    
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+      window.localStorage.setItem("theme", theme);
+    </script><link rel="stylesheet" href="/_astro/about.Csnh4uPE.css"></head> <body class="bg-gray-50 text-gray-900 dark:bg-[#232323] dark:text-white font-sans antialiased transition-colors duration-300">  <main class="min-h-screen flex flex-col p-8 md:p-16 max-w-3xl mx-auto"> <!-- Header --> <header class="flex flex-col gap-6 mb-12"> <a href="/notes" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-2 w-fit"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path> </svg>
+Back to Notes
+</a> <div> <span class="text-sm text-gray-600 dark:text-gray-400 block mb-6 text-right">February 16, 2024</span> <h1 class="text-3xl lg:text-4xl font-serif mb-4 leading-tight text-center">Messaging Communication Among Services With Kafka</h1> <h3> <span class="text-gray-600 dark:text-gray-400"> Kafka intro. </span> </h3> <hr class="border-gray-300 dark:border-gray-700 my-8"> </div> </header> <!-- Content --> <article class="prose dark:prose-invert max-w-none text-gray-800 dark:text-gray-300 font-sans lg:prose-lg prose-img:border prose-img:border-zinc-200 dark:prose-img:border-zinc-700 prose-img:rounded-lg prose-img:mx-auto"> <h3 id="knowing-about-publish-and-subscribe">Knowing about Publish and Subscribe</h3>
+<p>Communication methods among services can be achieved directly and indirectly.</p>
+<ul>
+<li>Direct communication commonly using RPC (Remote Procedure Call) with RESTful API as the most popular choice nowadays. Take a look about RESTful API <a href="https://en.wikipedia.org/wiki/Overview_of_RESTful_API_Description_Languages">here</a>.</li>
+<li>On the other hand, we can do indirect communication using messaging or publisher/subscriber method. This method needs an application called “Message Broker” to act as a mediator to hold informations about what to be processed by its subscribers (publisher is the sender of the data, and subscriber is the consumer of the data).</li>
+</ul>
+<p>Using Pub/Sub has an advantage below:</p>
+<p>The publisher services don’t need to have any complexity about how the informations they sent used, they just have to know that the data is successfully stored in the Message Broker.</p>
+<p><img src="/files/notes/kafka_101/pubsub-rpc.png" alt=""></p>
+<p>If we’re using direct communication, when we got new applications or services that have to work with the related data, the producer of the resource has to adjust about sending the data, it has to think who has gonna receive the information, and this process of adjustment will happen every any brand new service that needs the data.</p>
+<p><img src="/files/notes/kafka_101/pubsub-mb.png" alt=""></p>
+<p>Pub/Sub DiagramPub/Sub Diagram
+Otherwise, with messaging communication method we can make sure when there’s any new brand service comes to consume the related data, the producer of the data doesn’t need take extra action, it will be as it is, just let the data sent into the Message Broker.</p>
+<p>Therefore, besides the advantage of reducing complexity above, we have to consider about the Pub/Sub disadvantages:</p>
+<ul>
+<li>
+<p><strong>Delay</strong>. Because of doing indirect communication and using a mediator, there’s a chance our informations that come into the Message Broker will be postponed and delayed to be processed in a duration we probably difficult to predict, it can be happened when the subscriber is quite slow on processing the data it consumes, or the Message Broker server is down or has low specs.</p>
+</li>
+<li>
+<p><strong>Insistency of status</strong>. If somehow any subscriber fail to process the data, our publisher will not know about it in default, so the subscriber should has a capability of retrying on getting and processing the data.</p>
+</li>
+</ul>
+<h3 id="introduction-to-kafka">Introduction to Kafka</h3>
+<p>Kafka is one of the popular Message Broker applications out there, it has a dozen of users. With its Apache 2.0 licence we can use Kafka for personal or even commercial purposes for free. There are few reasons why Kafka is the best choice:</p>
+<ul>
+<li><strong>Scalable</strong>. Kafka is known reliable Message Broker to handle a lot of data, even the incoming data is increasing over time.</li>
+<li><strong>Good performance</strong>. Compares to similiar applications Kafka is well tested having the ability to process data pretty good and quick.</li>
+<li><strong>Persistence</strong>. Kafka store our data on disk to make sure we can avoid of losing it, so when failure happens on processing data in subsciber sides, the data will stay and standby to be reconsumed.</li>
+<li><strong>Reliable ecosystem</strong>. The ecosystem of Kafka is suprisingly good, because this Message Broker is so popular and has a lot of users, we don’t need to worry of it. Kafka can be integrated with several programming languages such Java, Python, Go, JavaScript (NodeJS), C++ and so on, we also can use Kafka combined with data ecosystem software like Elasticsearch, Apache Hadoop etc.</li>
+</ul>
+<p>…</p> </article> </main>  <button id="theme-toggle" type="button" class="fixed bottom-12 right-8 z-50 p-3 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 shadow-lg hover:scale-110 transition-transform duration-200 border border-zinc-200 dark:border-zinc-700" aria-label="Toggle theme"> <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> <script>
+  const handleToggleClick = () => {
+    const element = document.documentElement;
+    element.classList.toggle("dark");
+
+    const isDark = element.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+
+  document
+    .getElementById("theme-toggle")
+    .addEventListener("click", handleToggleClick);
+</script> </body></html>

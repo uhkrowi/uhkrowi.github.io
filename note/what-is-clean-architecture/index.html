@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Nurul Uhkrowi's personal website"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.ico"><meta name="generator" content="Astro v5.17.0"><title>What is Clean Architecture? - Uhkrowi</title><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://uhkrowi.com/note/what-is-clean-architecture/"><meta property="og:title" content="What is Clean Architecture? - Uhkrowi"><meta property="og:description" content="Nurul Uhkrowi's personal website"><meta property="og:image" content="https://uhkrowi.com/placeholder-social.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://uhkrowi.com/note/what-is-clean-architecture/"><meta property="twitter:title" content="What is Clean Architecture? - Uhkrowi"><meta property="twitter:description" content="Nurul Uhkrowi's personal website"><meta property="twitter:image" content="https://uhkrowi.com/placeholder-social.jpg"><script>
+      const theme = (() => {
+        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+    
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+      window.localStorage.setItem("theme", theme);
+    </script><link rel="stylesheet" href="/_astro/about.Csnh4uPE.css"></head> <body class="bg-gray-50 text-gray-900 dark:bg-[#232323] dark:text-white font-sans antialiased transition-colors duration-300">  <main class="min-h-screen flex flex-col p-8 md:p-16 max-w-3xl mx-auto"> <!-- Header --> <header class="flex flex-col gap-6 mb-12"> <a href="/notes" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-2 w-fit"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path> </svg>
+Back to Notes
+</a> <div> <span class="text-sm text-gray-600 dark:text-gray-400 block mb-6 text-right">January 6, 2023</span> <h1 class="text-3xl lg:text-4xl font-serif mb-4 leading-tight text-center">What is Clean Architecture?</h1> <h3> <span class="text-gray-600 dark:text-gray-400"> Clean architecture intro </span> </h3> <hr class="border-gray-300 dark:border-gray-700 my-8"> </div> </header> <!-- Content --> <article class="prose dark:prose-invert max-w-none text-gray-800 dark:text-gray-300 font-sans lg:prose-lg prose-img:border prose-img:border-zinc-200 dark:prose-img:border-zinc-700 prose-img:rounded-lg prose-img:mx-auto"> <p>Clean Architecture is a software design philosophy that aims to separate the concerns of an application into distinct layers, with the goal of making the application more maintainable, testable, and scalable.</p>
+<p>The basic structure of a clean architecture application is as follows:</p>
+<p>The innermost layer is the domain layer, which contains the business logic and entities of the application. This layer should not depend on any other layers.</p>
+<p>The next layer is the interface adapters layer, which contains the code that communicates with external systems, such as databases, APIs, and user interfaces. This layer should depend only on the domain layer.</p>
+<p>The outermost layer is the frameworks and drivers layer, which contains the code that interfaces with the operating system and other external dependencies. This layer should depend only on the interface adapters layer.</p>
+<p>By following this structure, the application can be more easily maintained and tested, as changes to the outer layers will not affect the inner layers.</p>
+<p>Here is an example of a clean architecture application in Go:</p>
+<p><strong># Domain Layer</strong><br>
+The domain layer contains the business logic and entities of the application. It should not depend on any other layers.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#F97583">type</span><span style="color:#B392F0"> User</span><span style="color:#F97583"> struct</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">	ID   </span><span style="color:#F97583">int</span></span>
+<span class="line"><span style="color:#E1E4E8">	Name </span><span style="color:#F97583">string</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong># Interface Adapters Layer</strong>
+The interface adapters layer contains the code that communicates with external systems, such as databases, APIs, and user interfaces. It should depend only on the domain layer.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#F97583">type</span><span style="color:#B392F0"> UserRepository</span><span style="color:#F97583"> interface</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">	Get</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">id</span><span style="color:#F97583"> int</span><span style="color:#E1E4E8">) (</span><span style="color:#F97583">*</span><span style="color:#B392F0">User</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">error</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#B392F0">	Save</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">*</span><span style="color:#B392F0">User</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">error</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong># Frameworks and Drivers Layer</strong>
+The frameworks and drivers layer contains the code that interfaces with the operating system and other external dependencies. It should depend only on the interface adapters layer.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#F97583">type</span><span style="color:#B392F0"> HTTPHandler</span><span style="color:#F97583"> struct</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">	repo </span><span style="color:#B392F0">UserRepository</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">func</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">h </span><span style="color:#F97583">*</span><span style="color:#B392F0">HTTPHandler</span><span style="color:#E1E4E8">) </span><span style="color:#B392F0">ServeHTTP</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">w</span><span style="color:#B392F0"> http</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">ResponseWriter</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">r</span><span style="color:#F97583"> *</span><span style="color:#B392F0">http</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Request</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">	user, err </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> h.repo.</span><span style="color:#B392F0">Get</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> err </span><span style="color:#F97583">!=</span><span style="color:#79B8FF"> nil</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">		http.</span><span style="color:#B392F0">Error</span><span style="color:#E1E4E8">(w, err.</span><span style="color:#B392F0">Error</span><span style="color:#E1E4E8">(), http.StatusInternalServerError)</span></span>
+<span class="line"><span style="color:#F97583">		return</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	w.</span><span style="color:#B392F0">Write</span><span style="color:#E1E4E8">([]</span><span style="color:#F97583">byte</span><span style="color:#E1E4E8">(fmt.</span><span style="color:#B392F0">Sprintf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Hello, </span><span style="color:#79B8FF">%s</span><span style="color:#9ECBFF">!"</span><span style="color:#E1E4E8">, user.Name)))</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<p><strong># Full code:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#F97583">type</span><span style="color:#B392F0"> User</span><span style="color:#F97583"> struct</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">	ID   </span><span style="color:#F97583">int</span></span>
+<span class="line"><span style="color:#E1E4E8">	Name </span><span style="color:#F97583">string</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">type</span><span style="color:#B392F0"> UserRepository</span><span style="color:#F97583"> interface</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">	Get</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">id</span><span style="color:#F97583"> int</span><span style="color:#E1E4E8">) (</span><span style="color:#F97583">*</span><span style="color:#B392F0">User</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">error</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#B392F0">	Save</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">*</span><span style="color:#B392F0">User</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">error</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">type</span><span style="color:#B392F0"> HTTPHandler</span><span style="color:#F97583"> struct</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">	repo </span><span style="color:#B392F0">UserRepository</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">func</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">h </span><span style="color:#F97583">*</span><span style="color:#B392F0">HTTPHandler</span><span style="color:#E1E4E8">) </span><span style="color:#B392F0">ServeHTTP</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">w</span><span style="color:#B392F0"> http</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">ResponseWriter</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">r</span><span style="color:#F97583"> *</span><span style="color:#B392F0">http</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Request</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">	user, err </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> h.repo.</span><span style="color:#B392F0">Get</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> err </span><span style="color:#F97583">!=</span><span style="color:#79B8FF"> nil</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">		http.</span><span style="color:#B392F0">Error</span><span style="color:#E1E4E8">(w, err.</span><span style="color:#B392F0">Error</span><span style="color:#E1E4E8">(), http.StatusInternalServerError)</span></span>
+<span class="line"><span style="color:#F97583">		return</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	w.</span><span style="color:#B392F0">Write</span><span style="color:#E1E4E8">([]</span><span style="color:#F97583">byte</span><span style="color:#E1E4E8">(fmt.</span><span style="color:#B392F0">Sprintf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Hello, </span><span style="color:#79B8FF">%s</span><span style="color:#9ECBFF">!"</span><span style="color:#E1E4E8">, user.Name)))</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>In this example, the User struct is part of the domain layer, the <strong>UserRepository</strong> interface is part of the interface adapters layer, and the <strong>HTTPHandler</strong> struct is part of the frameworks and drivers layer and depends on the <strong>UserRepository</strong> interface, which is part of the interface adapters layer, but not on the implementation of the repository, which allows the application to be more flexible and maintainable.</p> </article> </main>  <button id="theme-toggle" type="button" class="fixed bottom-12 right-8 z-50 p-3 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 shadow-lg hover:scale-110 transition-transform duration-200 border border-zinc-200 dark:border-zinc-700" aria-label="Toggle theme"> <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> <script>
+  const handleToggleClick = () => {
+    const element = document.documentElement;
+    element.classList.toggle("dark");
+
+    const isDark = element.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+
+  document
+    .getElementById("theme-toggle")
+    .addEventListener("click", handleToggleClick);
+</script> </body></html>

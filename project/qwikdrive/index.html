@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Nurul Uhkrowi's personal website"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.ico"><meta name="generator" content="Astro v5.17.0"><title>QwikDrive - Uhkrowi</title><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://uhkrowi.com/project/qwikdrive/"><meta property="og:title" content="QwikDrive - Uhkrowi"><meta property="og:description" content="Nurul Uhkrowi's personal website"><meta property="og:image" content="https://uhkrowi.com/placeholder-social.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://uhkrowi.com/project/qwikdrive/"><meta property="twitter:title" content="QwikDrive - Uhkrowi"><meta property="twitter:description" content="Nurul Uhkrowi's personal website"><meta property="twitter:image" content="https://uhkrowi.com/placeholder-social.jpg"><script>
+      const theme = (() => {
+        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+    
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+      window.localStorage.setItem("theme", theme);
+    </script><link rel="stylesheet" href="/_astro/about.Csnh4uPE.css"></head> <body class="bg-gray-50 text-gray-900 dark:bg-[#232323] dark:text-white font-sans antialiased transition-colors duration-300">  <main class="min-h-screen flex flex-col p-8 md:p-16 max-w-4xl mx-auto"> <!-- Header --> <header class="flex flex-col gap-6 mb-12"> <a href="/projects" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-2 w-fit"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path> </svg>
+Back to Projects
+</a> <div> <h1 class="text-4xl lg:text-4xl font-sans mb-4 text-center"> QwikDrive </h1> <h3 class="mb-8"> <span class="text-gray-600 dark:text-gray-400"> A self-hosted, open-source file manager built for speed and privacy, featuring multi-user support and specialized media viewers. </span> </h3> <div class="flex flex-wrap gap-2"> <span class="px-3 py-1 bg-gray-200 dark:bg-zinc-800 rounded-full text-sm text-gray-700 dark:text-gray-300 border border-zinc-300 dark:border-zinc-700"> Go </span><span class="px-3 py-1 bg-gray-200 dark:bg-zinc-800 rounded-full text-sm text-gray-700 dark:text-gray-300 border border-zinc-300 dark:border-zinc-700"> File System </span> </div> </div> </header> <!-- Content --> <article class="max-w-none"> <!-- <div class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-8 mb-12">
+        <p class="text-xl text-gray-300 leading-relaxed font-serif">
+          {project.data.description}
+        </p>
+      </div> --> <div class="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 prose-img:border prose-img:border-zinc-200 dark:prose-img:border-zinc-700 prose-img:rounded-lg"> <!-- class="bg-gray-100 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-8 mb-12" --> <div class=""> <p><img src="/files/projects/qwikdrive/thumbnail.jpeg" alt="Thumbnail">
+<img src="/files/projects/qwikdrive/1.jpeg" alt="Gallery 1">
+<img src="/files/projects/qwikdrive/2.jpeg" alt="Gallery 2">
+<img src="/files/projects/qwikdrive/3.jpeg" alt="Image Viewer"></p>
+<p><a href="https://qwikdrive.simplefunc.com/">Go to QwikDrive website 🌐</a></p>
+<h3 id="-overview">📖 Overview</h3>
+<p>QwikDrive is a lightweight, self-hosted file management solution designed for individuals and teams who value speed, privacy, and simplicity. Built with Go, it offers a robust alternative to commercial cloud storage like Dropbox or Google Drive. With a focus on doing team file storage well and affordably, QwikDrive allows you to manage files on your own infrastructure or choose our hosted plans—saving costs while keeping data secure.</p>
+<h3 id="-features">🎯 Features</h3>
+<ul>
+<li><strong>Self-Hosted &#x26; Private</strong>: Your data stays on your server or encrypted in our cloud. No third-party data mining.</li>
+<li><strong>Team Collaboration</strong>: Invite members, manage granular permissions (view/edit/admin), and track activity without IT complexity.</li>
+<li><strong>High Performance</strong>: Single binary architecture (Go 1.20+) optimized for gigabit networks, creating a snappy experience even for large libraries.</li>
+<li><strong>Specialized Media Viewers</strong>: Includes a “Webtoon-mode” image viewer optimized for sequential media like manga and comics, plus instant previews for PDFs and images.</li>
+<li><strong>Robust Management</strong>: Features per-user storage quotas, expiring share links, version control, and a comprehensive admin dashboard.</li>
+</ul>
+<h3 id="️-deployment--tech">🛠️ Deployment &#x26; Tech</h3>
+<p>QwikDrive is production-ready with over 4,000 lines of code. It supports <strong>Windows, macOS and Linux</strong>.</p>
+<ul>
+<li><strong>Stack</strong>: Go backend, Vanilla JS/HTML/CSS frontend, JSON file-based database (easy backups).</li>
+<li><strong>Options</strong>: Run it on a home server, VPS, Docker container, or even offline on a local network.</li>
+<li><strong>Performance</strong>: &#x3C;10s startup, &#x3C;100ms file browsing, and optimized for low system resource usage.</li>
+</ul>
+<p>Get up and running in 5 minutes. Download the pre-built binary, run the executable, and start uploading.</p> </div> </div> </article> </main>  <button id="theme-toggle" type="button" class="fixed bottom-12 right-8 z-50 p-3 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 shadow-lg hover:scale-110 transition-transform duration-200 border border-zinc-200 dark:border-zinc-700" aria-label="Toggle theme"> <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> <script>
+  const handleToggleClick = () => {
+    const element = document.documentElement;
+    element.classList.toggle("dark");
+
+    const isDark = element.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+
+  document
+    .getElementById("theme-toggle")
+    .addEventListener("click", handleToggleClick);
+</script> </body></html>

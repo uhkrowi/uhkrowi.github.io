@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Nurul Uhkrowi's personal website"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.ico"><meta name="generator" content="Astro v5.17.0"><title>Simple CRUD with GoFiber - Uhkrowi</title><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://uhkrowi.com/note/go-simple-crud/"><meta property="og:title" content="Simple CRUD with GoFiber - Uhkrowi"><meta property="og:description" content="Nurul Uhkrowi's personal website"><meta property="og:image" content="https://uhkrowi.com/placeholder-social.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://uhkrowi.com/note/go-simple-crud/"><meta property="twitter:title" content="Simple CRUD with GoFiber - Uhkrowi"><meta property="twitter:description" content="Nurul Uhkrowi's personal website"><meta property="twitter:image" content="https://uhkrowi.com/placeholder-social.jpg"><script>
+      const theme = (() => {
+        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+    
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+      window.localStorage.setItem("theme", theme);
+    </script><link rel="stylesheet" href="/_astro/about.Csnh4uPE.css"></head> <body class="bg-gray-50 text-gray-900 dark:bg-[#232323] dark:text-white font-sans antialiased transition-colors duration-300">  <main class="min-h-screen flex flex-col p-8 md:p-16 max-w-3xl mx-auto"> <!-- Header --> <header class="flex flex-col gap-6 mb-12"> <a href="/notes" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-2 w-fit"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path> </svg>
+Back to Notes
+</a> <div> <span class="text-sm text-gray-600 dark:text-gray-400 block mb-6 text-right">December 23, 2023</span> <h1 class="text-3xl lg:text-4xl font-serif mb-4 leading-tight text-center">Simple CRUD with GoFiber</h1> <h3> <span class="text-gray-600 dark:text-gray-400"> A quick guide of simple CRUD web API using the GoFiber framework. </span> </h3> <hr class="border-gray-300 dark:border-gray-700 my-8"> </div> </header> <!-- Content --> <article class="prose dark:prose-invert max-w-none text-gray-800 dark:text-gray-300 font-sans lg:prose-lg prose-img:border prose-img:border-zinc-200 dark:prose-img:border-zinc-700 prose-img:rounded-lg prose-img:mx-auto"> <p>Creating web APIs with Go is relatively easy and straight forward, especially when using framework, it will help you to fasten the development process.</p>
+<p>In this article we’re gonna examine a little bit a simple CRUD web API with GoFiber, one of popular Go web frameworks existed.</p>
+<p>First thing first, you have to make sure your environtment supports developing Go apps. You need MySQL on your machine to work with data in this app, you can use any other database if you want, just change the configuration and <code>.env</code> file as much as required.</p>
+<p>To know better about this project, go to or get the full code by cloning the repo at <a href="https://github.com/uhkrowi/go-simple-crud">https://github.com/uhkrowi/go-simple-crud</a>.</p>
+<p>At the <code>/cmd/app/main.go</code> you’ll find <code>main()</code> and <code>setup()</code> function in order to initialize the setup of the application and running its web server.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#F97583">func</span><span style="color:#B392F0"> main</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#F97583">	defer</span><span style="color:#E1E4E8"> config.</span><span style="color:#B392F0">CloseDBConnection</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	app </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> fiber.</span><span style="color:#B392F0">New</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">fiber</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">Config</span><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#E1E4E8">		AppName: </span><span style="color:#9ECBFF">"CRUD"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">	})</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	app.</span><span style="color:#B392F0">Use</span><span style="color:#E1E4E8">(cors.</span><span style="color:#B392F0">New</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">	setup</span><span style="color:#E1E4E8">(app)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	port </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> os.</span><span style="color:#B392F0">Getenv</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"PORT"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> port </span><span style="color:#F97583">==</span><span style="color:#9ECBFF"> ""</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">		port </span><span style="color:#F97583">=</span><span style="color:#9ECBFF"> "8080"</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	err </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">Listen</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">":"</span><span style="color:#F97583"> +</span><span style="color:#E1E4E8"> port)</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> err </span><span style="color:#F97583">!=</span><span style="color:#79B8FF"> nil</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">		panic</span><span style="color:#E1E4E8">(err)</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">func</span><span style="color:#B392F0"> setup</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">app</span><span style="color:#F97583"> *</span><span style="color:#B392F0">fiber</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">App</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#E1E4E8">	config.</span><span style="color:#B392F0">InitDB</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"><span style="color:#E1E4E8">	db </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> config.DBConn</span></span>
+<span class="line"><span style="color:#E1E4E8">	validate </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> validator.</span><span style="color:#B392F0">New</span><span style="color:#E1E4E8">()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	apiV1 </span><span style="color:#F97583">:=</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">Group</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/api/v1"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	route.</span><span style="color:#B392F0">ProductRoute</span><span style="color:#E1E4E8">(apiV1.</span><span style="color:#B392F0">Group</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/product"</span><span style="color:#E1E4E8">), db, validate)</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Move to <code>/internal/app/model/product.go</code> you’ll find a model of product that has a <code>Variants</code> field which would contains the list of variants of the product.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#F97583">type</span><span style="color:#B392F0"> Product</span><span style="color:#F97583"> struct</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">	ID       </span><span style="color:#B392F0">uuid</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">UUID</span><span style="color:#9ECBFF"> `gorm:"primaryKey;column:id" json:"id" swaggerignore:"true"`</span></span>
+<span class="line"><span style="color:#E1E4E8">	Name     </span><span style="color:#F97583">string</span><span style="color:#9ECBFF">    `gorm:"column:name" json:"name"`</span></span>
+<span class="line"><span style="color:#E1E4E8">	IsActive </span><span style="color:#F97583">bool</span><span style="color:#9ECBFF">      `gorm:"column:is_active" json:"is_active"`</span></span>
+<span class="line"><span style="color:#E1E4E8">	Variants []</span><span style="color:#B392F0">Variant</span><span style="color:#9ECBFF"> `gorm:"-" json:"variants"`</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="go"><code><span class="line"><span style="color:#F97583">type</span><span style="color:#B392F0"> VariantReqFilter</span><span style="color:#F97583"> struct</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">	ProductID </span><span style="color:#F97583">*</span><span style="color:#B392F0">uuid</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">UUID</span><span style="color:#9ECBFF"> `query:"product_id"`</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">type</span><span style="color:#B392F0"> Variant</span><span style="color:#F97583"> struct</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">	ID          </span><span style="color:#B392F0">uuid</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">UUID</span><span style="color:#9ECBFF"> `gorm:"primaryKey;column:id" json:"id" search:"id" swaggerignore:"true"`</span></span>
+<span class="line"><span style="color:#E1E4E8">	Name        </span><span style="color:#F97583">string</span><span style="color:#9ECBFF">    `gorm:"column:name" json:"name"`</span></span>
+<span class="line"><span style="color:#E1E4E8">	ProductID   </span><span style="color:#B392F0">uuid</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">UUID</span><span style="color:#9ECBFF"> `gorm:"column:product_id" json:"product_id"`</span></span>
+<span class="line"><span style="color:#E1E4E8">	ProductName </span><span style="color:#F97583">string</span><span style="color:#9ECBFF">    `gorm:"column:product_name" json:"product_name" `</span></span>
+<span class="line"><span style="color:#E1E4E8">	Price       </span><span style="color:#F97583">float64</span><span style="color:#9ECBFF">   `gorm:"column:price" json:"price" `</span></span>
+<span class="line"><span style="color:#E1E4E8">	Stock       </span><span style="color:#F97583">int</span><span style="color:#9ECBFF">       `gorm:"column:stock" json:"stock"`</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>From the models above, now we know there’s a model layer, and there are several different layers that will be envolved with the process in the app, such as:</p>
+<ul>
+<li>route: mapping usecase and handler based on what endpoint being hit.</li>
+<li>handler: receiving and handling incoming http requests and directing them to the right appropriate usecase.</li>
+<li>usecase: this layer is a place where you put the main logic, usually communicate with repository and other usecase.</li>
+<li>repository: a layer to work with data from your database.</li>
+</ul>
+<p>Now for the rest of examinations, you can explore how the flow create, read, update and delete works by your own through the repo :D</p> </article> </main>  <button id="theme-toggle" type="button" class="fixed bottom-12 right-8 z-50 p-3 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 shadow-lg hover:scale-110 transition-transform duration-200 border border-zinc-200 dark:border-zinc-700" aria-label="Toggle theme"> <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> <script>
+  const handleToggleClick = () => {
+    const element = document.documentElement;
+    element.classList.toggle("dark");
+
+    const isDark = element.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+
+  document
+    .getElementById("theme-toggle")
+    .addEventListener("click", handleToggleClick);
+</script> </body></html>

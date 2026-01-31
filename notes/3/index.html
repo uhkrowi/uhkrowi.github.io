@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="description" content="Nurul Uhkrowi's personal website"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.ico"><meta name="generator" content="Astro v5.17.0"><title>Notes - Uhkrowi</title><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://uhkrowi.com/notes/3/"><meta property="og:title" content="Notes - Uhkrowi"><meta property="og:description" content="Nurul Uhkrowi's personal website"><meta property="og:image" content="https://uhkrowi.com/placeholder-social.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://uhkrowi.com/notes/3/"><meta property="twitter:title" content="Notes - Uhkrowi"><meta property="twitter:description" content="Nurul Uhkrowi's personal website"><meta property="twitter:image" content="https://uhkrowi.com/placeholder-social.jpg"><script>
+      const theme = (() => {
+        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+    
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+      window.localStorage.setItem("theme", theme);
+    </script><link rel="stylesheet" href="/_astro/about.Csnh4uPE.css"></head> <body class="bg-gray-50 text-gray-900 dark:bg-[#232323] dark:text-white font-sans antialiased transition-colors duration-300">  <main class="min-h-screen flex flex-col p-8 md:p-16 max-w-7xl mx-auto"> <!-- Header --> <header class="flex justify-between items-center mb-12 lg:mb-20"> <h1 class="text-2xl font-serif tracking-wider">Notes</h1> <a href="/" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-2"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path> </svg>
+Home
+</a> </header> <!-- Posts List --> <!-- <div class="space-y-6"> --> <div> <a href="/note/ds-array" class="group block lg:px-8 py-6 border-b border-zinc-200 dark:border-zinc-700 hover:border-amber-500 dark:hover:border-[#fce79d] transition-colors">  <article class="flex flex-col h-full"> <div class="lg:grid grid-cols-[1fr_auto]"> <div class="flex items-center gap-4 text-sm text-gray-500 mb-2"> <span>July 15, 2022</span> </div> <h3 class="text-2xl font-serif mb-2 group-hover:text-amber-600 dark:group-hover:text-[#fce79d] transition-colors lg:order-first"> DS: Array </h3> </div> <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">  </p> </article> </a><a href="/note/generate-pdf-using-pdfmake" class="group block lg:px-8 py-6 border-b border-zinc-200 dark:border-zinc-700 hover:border-amber-500 dark:hover:border-[#fce79d] transition-colors">  <article class="flex flex-col h-full"> <div class="lg:grid grid-cols-[1fr_auto]"> <div class="flex items-center gap-4 text-sm text-gray-500 mb-2"> <span>March 22, 2022</span> </div> <h3 class="text-2xl font-serif mb-2 group-hover:text-amber-600 dark:group-hover:text-[#fce79d] transition-colors lg:order-first"> Generate PDFs using PDFMake </h3> </div> <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">  </p> </article> </a><a href="/note/ds-intro" class="group block lg:px-8 py-6 border-b border-zinc-200 dark:border-zinc-700 hover:border-amber-500 dark:hover:border-[#fce79d] transition-colors">  <article class="flex flex-col h-full"> <div class="lg:grid grid-cols-[1fr_auto]"> <div class="flex items-center gap-4 text-sm text-gray-500 mb-2"> <span>March 16, 2022</span> </div> <h3 class="text-2xl font-serif mb-2 group-hover:text-amber-600 dark:group-hover:text-[#fce79d] transition-colors lg:order-first"> DS: Intro </h3> </div> <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">  </p> </article> </a><a href="/note/styling-with-tailwindcss-in-quasar" class="group block lg:px-8 py-6 border-b border-zinc-200 dark:border-zinc-700 hover:border-amber-500 dark:hover:border-[#fce79d] transition-colors">  <article class="flex flex-col h-full"> <div class="lg:grid grid-cols-[1fr_auto]"> <div class="flex items-center gap-4 text-sm text-gray-500 mb-2"> <span>February 15, 2022</span> </div> <h3 class="text-2xl font-serif mb-2 group-hover:text-amber-600 dark:group-hover:text-[#fce79d] transition-colors lg:order-first"> Styling with Tailwind CSS in Quasar </h3> </div> <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">  </p> </article> </a> </div> <!-- Pagination --> <div class="flex lg:justify-between mt-12 gap-8 lg:gap-0 justify-center"> <a href="/notes/2" class="text-amber-600 dark:text-[#fce79d] hover:underline">
+← Previous
+</a> <div></div> </div> </main>  <button id="theme-toggle" type="button" class="fixed bottom-12 right-8 z-50 p-3 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 shadow-lg hover:scale-110 transition-transform duration-200 border border-zinc-200 dark:border-zinc-700" aria-label="Toggle theme"> <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> <script>
+  const handleToggleClick = () => {
+    const element = document.documentElement;
+    element.classList.toggle("dark");
+
+    const isDark = element.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  };
+
+  document
+    .getElementById("theme-toggle")
+    .addEventListener("click", handleToggleClick);
+</script> </body></html>
