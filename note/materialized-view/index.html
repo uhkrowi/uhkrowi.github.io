@@ -15,15 +15,15 @@
         document.documentElement.classList.remove("dark");
       }
       window.localStorage.setItem("theme", theme);
-    </script><script type="module">document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("pre").forEach(t=>{if(t.querySelector(".copy-code-btn"))return;t.classList.add("relative","group");const e=document.createElement("button");e.className="copy-code-btn absolute top-2 right-2 bg-gray-700/80 hover:bg-gray-600 text-gray-100 text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 select-none z-10 backdrop-blur-sm cursor-pointer",e.type="button",e.innerText="Copy",e.setAttribute("aria-label","Copy code"),e.addEventListener("click",()=>{const r=t.querySelector("code"),n=r?r.innerText:t.innerText;navigator.clipboard.writeText(n).then(()=>{const o="Copy";e.innerText="Copied!",e.classList.add("text-green-400"),setTimeout(()=>{e.innerText=o,e.classList.remove("text-green-400")},2e3)}).catch(o=>{console.error("Failed to copy:",o),e.innerText="Error"})}),t.appendChild(e)})});</script><link rel="stylesheet" href="/_astro/about.DX9V5q-B.css"></head> <body class="bg-gray-50 text-gray-900 dark:bg-[#232323] dark:text-white font-sans antialiased transition-colors duration-300">  <main class="min-h-screen flex flex-col p-8 md:p-16 max-w-3xl mx-auto"> <!-- Header --> <header class="flex flex-col gap-6 mb-12"> <a href="/notes" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-2 w-fit"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path> </svg>
+    </script><script type="module">document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("pre").forEach(t=>{if(t.querySelector(".copy-code-btn"))return;t.classList.add("relative","group");const e=document.createElement("button");e.className="copy-code-btn absolute top-2 right-2 bg-gray-700/80 hover:bg-gray-600 text-gray-100 text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 select-none z-10 backdrop-blur-sm cursor-pointer",e.type="button",e.innerText="Copy",e.setAttribute("aria-label","Copy code"),e.addEventListener("click",()=>{const r=t.querySelector("code"),n=r?r.innerText:t.innerText;navigator.clipboard.writeText(n).then(()=>{const o="Copy";e.innerText="Copied!",e.classList.add("text-green-400"),setTimeout(()=>{e.innerText=o,e.classList.remove("text-green-400")},2e3)}).catch(o=>{console.error("Failed to copy:",o),e.innerText="Error"})}),t.appendChild(e)})});</script><link rel="stylesheet" href="/_astro/about.BgDprOUi.css"></head> <body class="bg-gray-50 text-gray-900 dark:bg-[#232323] dark:text-white font-sans antialiased transition-colors duration-300 pb-20 lg:pb-0">  <main class="min-h-screen flex flex-col p-8 md:p-16 max-w-3xl mx-auto"> <!-- Header --> <header class="flex flex-col gap-6 mb-12"> <a href="/notes" class="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors flex items-center gap-2 w-fit"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path> </svg>
 Back to Notes
-</a> <div> <span class="text-sm text-gray-600 dark:text-gray-400 block mb-6 text-right">February 07, 2026</span> <h1 class="text-3xl lg:text-4xl font-serif mb-4 leading-tight text-center">MATERIALIZED VIEW</h1> <h3> <span class="text-gray-600 dark:text-gray-400"> How to deal with costly query 🆚 realtime data in PostgreSQL </span> </h3> <hr class="border-gray-300 dark:border-gray-700 my-8"> </div> </header> <!-- Content --> <article class="prose dark:prose-invert max-w-none text-gray-800 dark:text-gray-300 font-sans lg:prose-lg prose-img:border prose-img:border-zinc-200 dark:prose-img:border-zinc-700 prose-img:rounded-lg prose-img:mx-auto"> <p>I can say I’m a kinda fan of PostgreSQL, every application I build mostly used PostgreSQL as the database, but TBH I don’t really know deeply about it.</p>
+</a> <div> <span class="text-sm text-gray-600 dark:text-gray-400 block mb-6 text-right">February 07, 2026</span> <h1 class="text-3xl lg:text-4xl font-serif-pro mb-4 leading-tight text-center">MATERIALIZED VIEW</h1> <h3> <span class="text-gray-600 dark:text-gray-400"> How to deal with costly query 🆚 realtime data in PostgreSQL </span> </h3> <hr class="border-gray-300 dark:border-gray-700 my-8"> </div> </header> <!-- Content --> <article class="prose dark:prose-invert max-w-none text-gray-800 dark:text-gray-300 font-sans lg:prose-lg prose-img:border prose-img:border-zinc-200 dark:prose-img:border-zinc-700 prose-img:rounded-lg prose-img:mx-auto"> <p>I can say I’m a kinda fan of PostgreSQL, every application I build mostly used PostgreSQL as the database, but TBH I don’t really know deeply about it.</p>
 <p>Recently I’m struggling with tweaking searching data mechanism, the goal is how to fetch data rows from a table with some clauses as fast as possible. I’ve been using indexing, partitioning, caching, even grouping data, but it doesn’t satisfies me enough. (caching is OK tho, but it’s not that good practice in my case)</p>
 <p>Then I tried to exploring to look at other alternatives, I was asking ChatGPT with this kinda question <em><strong>“How if I create a new brand table from a query with some criterias applied to reduce recalculation every time?”</strong></em>, the AI gave me insight to do it at the first time but then it also recommended me a better way, it’s <code>MATERIALIZED VIEW</code>, one of the fab features that PostgreSQL has.</p>
 <p>At the time I thought it is the same as regular <code>VIEW</code> until I got the point of its comprehensive explanation. Let’s dive in a bit.</p>
 <hr>
 <h4 id="what-is-it">What is it❓</h4>
-<p>In essence <code>MATERIALIZED VIEW</code> or <code>MV</code> is a result of a query that saved phisically in a database while regular <code>VIEW</code> will act as only an alias of defined query that will recalculate the query’s logic every time it’s executed, the <code>MATERIALIZED VIEW</code> will stay same as the data resulted when it’s built or refreshed.</p>
+<p>In essence <code>MATERIALIZED VIEW</code> or <code>MV</code> is a result of a query that saved physically in a database while regular <code>VIEW</code> will act as only an alias of defined query that will recalculate the query’s logic every time it’s executed, the <code>MATERIALIZED VIEW</code> will stay same as the data resulted when it’s built or refreshed.</p>
 <p>If <code>VIEW</code>:<br>
 ➡️ Every <code>SELECT</code> -> the logic of query is recalculated</p>
 <p>Then <code>MATERIALIZED VIEW</code>:<br>
@@ -32,13 +32,13 @@ Back to Notes
 ➡️ Next <code>SELECT</code> will read the result without adding any other logic (fast)</p>
 <hr>
 <h4 id="when-materialized-view-properly-used">When <code>MATERIALIZED VIEW</code> properly used❓</h4>
-<p><code>MV</code> is not a silver bullet, but you can get its benefit if:<br>
+<p><code>MV</code> is not a silver bullet, but you can get its benefit when:<br>
 ✅ Data read heavy<br>
 ✅ Costly query (a lot of joins, aggregate, sort, etc)<br>
 ✅ Not serving a really realtime data<br>
 ✅ Less latency is a must</p>
 <p>Examples:<br>
-🔹 Rank<br>
+🔹 Rank Leaderboard
 🔹 Report<br>
 🔹 Analythic Dashboard</p>
 <hr>
@@ -58,22 +58,23 @@ Back to Notes
 <p>🔹 The size of <code>MV</code> depends on how much data it contains, it can be larger than you expected, but it’s usually smaller (because of filtering applied).<br>
 🔹 You can’t find data outside the <code>MV</code>s filtered result, it is fixed and permanent until you recreate or refresh the <code>MV</code>.<br>
 🔹 You can’t automate (in database side) refresh the <code>MV</code>, so you should do it manually or programmatically.<br>
-🔹 When an <code>MV</code> is refreshing, it will be freeze, you can’t read data from it, sounds bad, right?. Just chill out, there’s a solution will be explained below.</p>
+🔹 When an <code>MV</code> is refreshing, it will be freeze, you can’t read data from it, sounds awful, right?. Just chill out, there’s a solution will be explained below.</p>
 <hr>
-<p>When source tables change, the <code>MV</code> you created doesn’t change/refresh automatically, it needs you to do the refresh, but be careful refresing the <code>MV</code> will freezes the <code>MV</code> itself.</p>
+<p>When source tables change, the <code>MV</code> you created doesn’t change/refresh automatically, it needs you to do the refresh, but be careful refreshing the <code>MV</code> will freezes the <code>MV</code> itself.</p>
 <p>There’s a solution to avoid such a nightmare, it is <code>REFRESH CONCURRENTLY</code> keyword.</p>
 <pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#E1E4E8">REFRESH MATERIALIZED VIEW CONCURRENTLY sales_summary_2026;</span></span></code></pre>
 <p>With <code>REFRESH MATERIALIZED VIEW CONCURRENTLY</code>:<br>
 ✅ You can still read the old version of <code>MV</code><br>
 ✅ The database creates a new version of <code>MV</code>’s with new results updated<br>
-✅ The database swaps the data atomicly</p>
+✅ The database swaps the data atomically</p>
 <p>Note: to use <code>REFRESH MATERIALIZED VIEW CONCURRENTLY</code> you should assign unique index into the related <code>MV</code>, like:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#E1E4E8">nganu</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#F97583">CREATE</span><span style="color:#F97583"> UNIQUE</span><span style="color:#F97583"> INDEX</span></span>
+<span class="line"><span style="color:#F97583">ON</span><span style="color:#E1E4E8"> sales_summary_2026 (user_id);</span></span></code></pre>
 <hr>
 <p>Tips:<br>
-❌ Do not refresh too much <code>MV</code>s at the same time, 2 or 3 is still OK if the loaded data is not huge.<br>
+❌ Do not refresh too much <code>MV</code>s at the same time, 2 or 3 is still OK if the data result is not huge.<br>
 ❌ Do not use trigger of <code>UPDATE</code> to do the refresh, it’s unpredictable (IMHO)<br>
-❌ Do not use <code>MATERIALIZED VIEW</code> if your case can be solved with only indexing, it’s not recommended (at least by me)</p>
+❌ Do not use <code>MATERIALIZED VIEW</code> if your case can be solved with only indexing, it only adds unnecessary complexity</p>
 <hr>
 <p><code>MATERIALIZED VIEW</code> is not a solution for all cases, it is not free (still costs), it is not realtime, and you have to operate it properly.</p>
 <p>But if you manage it right, you’ll get performance increment, simpler query, less resource usage. Just use it when you need, not only when you want to.</p> </article> </main>  <button id="theme-toggle" type="button" class="fixed bottom-12 right-8 z-50 p-3 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-100 shadow-lg hover:scale-110 transition-transform duration-200 border border-zinc-200 dark:border-zinc-700" aria-label="Toggle theme"> <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> </svg> <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path> </svg> </button> <script>
